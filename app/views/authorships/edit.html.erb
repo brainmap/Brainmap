@@ -1,0 +1,20 @@
+<h1>Editing authorship</h1>
+
+<% form_for(@authorship) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :person_id %><br />
+    <%= f.text_field :person_id %>
+  </p>
+  <p>
+    <%= f.label :publication_id %><br />
+    <%= f.text_field :publication_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @authorship %> |
+<%= link_to 'Back', authorships_path %>

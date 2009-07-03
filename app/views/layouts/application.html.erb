@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Wisconsin ADRC - Johnson Neuroimage Core Laboratory</title>
+  <%= stylesheet_link_tag 'application' %>
+	<%= javascript_include_tag :defaults %>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<ul id="top-nav">
+  <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'brainmap', root_url, :class => 'lower-case' %>
+	</li>
+	<li id="about-tab" <%= @active_nav_tab == "about-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'about us', research_objectives_url %>
+	</li>
+	<li id="pubs-tab" <%= @active_nav_tab == "pubs-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'publications', publications_path %>
+	</li>
+	<li id="resources-tab" <%= @active_nav_tab == "resources-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<a>resources</a>
+	</li>
+	<li id="opportunities-tab" <%= @active_nav_tab == "opportunites-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'opportunities', job_advertisements_path %>
+	</li>
+	<li id="news-tab" <%= @active_nav_tab == "news-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'news', events_path %>
+	</li>
+	<li id="contact-tab" <%= @active_nav_tab == "contact-tab" ? 'class="selected-nav-tab"' : "" %>>
+		<%= link_to 'contact', people_path %>
+	</li>
+</ul>
+
+<%= yield %>
+
+<div id="footer">
+	<hr class="yellow-hr" />
+	<p id="copyright">&copy; Copyright - Brainmap</p>
+	<p id="attribution">Site design <%= link_to '38one' %></p>
+</div>
+
+</body>
+</html>

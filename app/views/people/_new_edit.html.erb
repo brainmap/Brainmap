@@ -1,0 +1,104 @@
+<% form_for @person, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+	<div style="float:left; margin-right:2em;">
+		<h3>Biographical Information</h3>
+	  <p>
+	    <%= f.label :first_name %><br />
+	    <%= f.text_field :first_name %>
+	  </p>
+	  <p>
+	    <%= f.label :last_name %><br />
+	    <%= f.text_field :last_name %>
+	  </p>
+	  <p>
+	    <%= f.label :middle_initial %><br />
+	    <%= f.text_field :middle_initial %>
+	  </p>
+		<p>
+			<%= f.label :degree %><br />
+			<%= f.text_field :degree %>
+		</p>
+	  <p>
+	    <%= f.label :job_title %><br />
+	    <%= f.text_field :job_title %>
+	  </p>
+	</div>
+
+	<div style="float:left; margin-right:2em;">
+		<h3>Contact Information</h3>
+	  <p>
+	    <%= f.label :office_phone %><br />
+	    <%= f.text_field :office_phone %>
+	  </p>
+	  <p>
+	    <%= f.label :office_phone_ext %><br />
+	    <%= f.text_field :office_phone_ext %>
+	  </p>
+	  <p>
+	    <%= f.label :lab_phone %><br />
+	    <%= f.text_field :lab_phone %>
+	  </p>
+	  <p>
+	    <%= f.label :lab_phone_ext %><br />
+	    <%= f.text_field :lab_phone_ext %>
+	  </p>
+	  <p>
+	    <%= f.label :fax %><br />
+	    <%= f.text_field :fax %>
+	  </p>
+	  <p>
+	    <%= f.label :email %><br />
+	    <%= f.text_field :email %>
+	  </p>
+	</div>
+
+	<div style="float:left; margin-right:2em;">
+		<h3>Address</h3>
+		<% f.fields_for :address do |af| %>
+			<p>
+		    <%= af.label :line1 %><br />
+		    <%= af.text_field :line1 %>
+		  </p>
+		  <p>
+		    <%= af.label :line2 %><br />
+		    <%= af.text_field :line2 %>
+		  </p>
+		  <p>
+		    <%= af.label :street %><br />
+		    <%= af.text_field :street %>
+		  </p>
+		  <p>
+		    <%= af.label :city %><br />
+		    <%= af.text_field :city %>
+		  </p>
+		  <p>
+		    <%= af.label :state %><br />
+		    <%= af.text_field :state %>
+		  </p>
+		  <p>
+		    <%= af.label :zip %><br />
+		    <%= af.text_field :zip %>
+		  </p>
+		<% end %>
+	</div>
+
+	<br style="clear:both" />
+
+	<h3>Brief Statement of Interests</h3>
+
+  <p>
+    <%= f.label :research_activities %><br />
+    <%= f.text_area :research_activities %>
+  </p>
+
+	<p>
+	  <%= f.label 'Photo' %><br />
+	  <%= f.file_field :photo %>
+	</p>
+
+  <p>
+    <%= f.submit action %>
+  </p>
+
+<% end %>

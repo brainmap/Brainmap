@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  pvl: 1
+  body: MyText
+  responder_id: 1
+
+two:
+  title: MyString
+  body: MyText
+  pvl: 1
+  body: MyText
+  responder_id: 1

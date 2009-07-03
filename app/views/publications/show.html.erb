@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @publication.title %>
+</p>
+
+<p>
+  <b>Journal info:</b>
+  <%=h @publication.journal_info %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%=h @publication.abstract %>
+</p>
+
+<p>
+  <b>Publication date:</b>
+  <%=h @publication.publication_date %>
+</p>
+
+<p>
+  <b>PMID:</b>
+  <%=h @publication.pmid %>
+</p>
+
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %>

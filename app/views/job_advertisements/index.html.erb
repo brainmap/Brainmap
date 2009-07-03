@@ -1,0 +1,28 @@
+<h1>Listing job_advertisements</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Pvl</th>
+    <th>Body</th>
+    <th>Responder</th>
+  </tr>
+
+<% @job_advertisements.each do |job_advertisement| %>
+  <tr>
+    <td><%=h job_advertisement.title %></td>
+    <td><%=h job_advertisement.body %></td>
+    <td><%=h job_advertisement.pvl %></td>
+    <td><%=h job_advertisement.body %></td>
+    <td><%=h job_advertisement.responder_id %></td>
+    <td><%= link_to 'Show', job_advertisement %></td>
+    <td><%= link_to 'Edit', edit_job_advertisement_path(job_advertisement) %></td>
+    <td><%= link_to 'Destroy', job_advertisement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New job_advertisement', new_job_advertisement_path %>

@@ -1,0 +1,28 @@
+<h1>Editing job_advertisement</h1>
+
+<% form_for(@job_advertisement) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :pvl %><br />
+    <%= f.text_field :pvl %>
+  </p>
+  <p>
+    <%= f.label :responder_id %><br />
+    <%= f.text_field :responder_id %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @job_advertisement %> |
+<%= link_to 'Back', job_advertisements_path %>

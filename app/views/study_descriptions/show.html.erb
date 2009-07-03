@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @study_description.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @study_description.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_study_description_path(@study_description) %> |
+<%= link_to 'Back', study_descriptions_path %>

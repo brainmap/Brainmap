@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @job_advertisement.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @job_advertisement.body %>
+</p>
+
+<p>
+  <b>Pvl:</b>
+  <%=h @job_advertisement.pvl %>
+</p>
+
+<p>
+  <b>Responder:</b>
+  <%=h @job_advertisement.responder_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_advertisement_path(@job_advertisement) %> |
+<%= link_to 'Back', job_advertisements_path %>

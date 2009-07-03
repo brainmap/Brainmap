@@ -1,0 +1,99 @@
+
+<div id="home-banner" class="banner-row">
+	<div class="mid-heading">
+		<h3>The Johnson Neuroimaging Lab studies the aging brain with and without Alzheimer disease.</h3>
+	</div>
+	<div class="detail">
+		<p>
+			The Neuropsychology Neuroimaging Lab, directed by Sterling Johnson PhD, at the University of Wisconsin, uses cutting
+			edge neuroimaging techniques to examine brain function in aging and clinical disorders such as Alzheimer Disease (AD).
+			Imaging methods are combined with comprehensive clinical evaluations, including neuropsychological assessment, and 
+			select genetic and laboratory tests to determine how large scale brain changes relate to cognitive decline in aging,
+			neurodegenerative disease, or recovery after injury.
+		</p>
+		<%= link_to 'More info...', research_objectives_path %>
+	</div>
+</div>
+
+<div class="cell-row">
+	
+	<div id="join-us-box">
+		<h3>Join Us!</h3>
+		<p>
+			Copy that talks about how to join, who can join the lab, about working in the lab and so on - a short description
+			of who this is meant for. Then, you put a link to read more about it.
+		</p>
+		<%= link_to 'More info...', job_advertisements_path %>
+	</div>
+	
+	<div id="volunteers-links" class="link-cell">
+		<h3>Volunteers</h3>
+		<%= image_tag 'volunteers.jpg', :style => 'color:#61c361' %>
+		<p>
+			<%= link_to 'Learn About Current Studies', study_descriptions_path %><br />
+			<%= link_to 'Contact a Coordinator', people_path %>
+		</p>
+	</div>
+	
+	<div id="students-links" class="link-cell">
+		<h3>Students</h3>
+		<%= image_tag 'students.jpg', :style => 'color:#910091' %>
+		<p>
+			<%= link_to 'Syllabus & Class Curriculum' %><br />
+			<%= link_to 'Apply for Undergrad Positions', job_advertisements_path %>
+		</p>
+	</div>
+	
+	<div id="collaborators-links" class="link-cell">
+		<h3>Collaborators</h3>
+		<%= image_tag 'collaborators.jpg', :style => 'color:#ff9900' %>
+		<p>
+			<%= link_to 'Resources: Papers, Methods, and Procedures' %><br />
+			<%= link_to 'Available Positions', job_advertisements_path %>
+		</p>
+	</div>
+	
+	<div id="researchers-links" class="link-cell">
+		<h3>Researchers</h3>
+		<%= image_tag 'researchers.jpg', :style => 'color:#ff0066' %>
+		<p>
+			<%= link_to 'Our Papers', publications_path %><br />
+			<%= link_to 'Authors & Staff', people_path %><br />
+			<%= link_to 'Ongoing Studies', study_descriptions_path %>
+		</p>
+	</div>
+	
+</div>
+	
+<hr class="yellow-hr" />
+
+<div class="cell-row">
+	<div id="home-pubs">
+		<h3>Recent Publications:</h3>
+		<% unless @recent_pubs.nil? %>
+			<ul>
+				<% for pub in @recent_pubs %>
+					<li>
+						<%= link_to pub.title, pub.pubmed_link %><br />
+						<p><%= pub.journal_info %></p>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+		<%= link_to 'read more...', publications_path %>
+	</div>
+
+	<div id="home-news">
+		<h3>News:</h3>
+		<% unless @recent_news_items.nil? %>
+			<ul>
+				<% for news_item in @recent_news_items %>
+					<li>
+						<%= link_to news_item.title %><br />
+						<p><%= news_item.updated_at.to_s(:short) %></p>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<h1>New publication</h1>
+
+<% form_for(@publication) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :journal_info %><br />
+    <%= f.text_field :journal_info %>
+  </p>
+  <p>
+    <%= f.label :abstract %><br />
+    <%= f.text_area :abstract %>
+  </p>
+  <p>
+    <%= f.label :publication_date %><br />
+    <%= f.date_select :publication_date %>
+  </p>
+  <p>
+    <%= f.label :pmid %><br />
+    <%= f.text_field :pmid %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', publications_path %>

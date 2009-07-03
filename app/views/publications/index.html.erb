@@ -1,0 +1,26 @@
+<div class="banner-row">
+	<h2>Johnson Lab and Affiliated Publications</h2>
+</div>
+
+<div id="pubs-index">
+	<ul>
+		<% @publications.each do |pub| %>
+			<% pubid = "pub-#{pub.id}" %>
+			<% pubtog = "#{pubid}-tog" %>
+			<li>
+				<%= link_to_function(pub.title) do |page|
+					page.visual_effect(:toggle_blind, pubid, :duration => 0.5)
+				end %>
+				<p class="journal-info">
+					<%= pub.journal_info %> <%= link_to '[pubmed]', pub.pubmed_link %>
+				</p>
+				<%= content_tag :p, pub.abstract, :id => pubid, :style => "display:none" %>
+		    <%= link_to 'edit', edit_publication_path(pub) %>
+		    <%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+	</ul>
+</div>
+
+<br />
+
+<%= link_to 'New publication', new_publication_path %>
