@@ -23,7 +23,7 @@
 		<%= link_to 'publications', publications_path %>
 	</li>
 	<li id="resources-tab" <%= @active_nav_tab == "resources-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<a>resources</a>
+		<%= link_to 'resources', pages_path %>
 	</li>
 	<li id="opportunities-tab" <%= @active_nav_tab == "opportunites-tab" ? 'class="selected-nav-tab"' : "" %>>
 		<%= link_to 'opportunities', job_advertisements_path %>

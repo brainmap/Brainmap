@@ -1,0 +1,9 @@
+<ul id="menu">
+  <% for page in Page.roots %>
+    <%= children_list page %>
+  <% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New page', new_page_path %>

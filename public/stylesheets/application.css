@@ -148,6 +148,13 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 #people-list h3 { margin:0; padding:0; font-size:small; }
 #people-list p { margin:0; padding:0; font-size:x-small; }
 
+#events-list { list-style:none; }
+#events-list li { margin-bottom:2em; padding-right:4em; }
+#events-list img { float:left; margin-right:1em; }
+
+.pages-nav { list-style:none; padding-left:0; }
+.pages-nav li { display:inline-block; }
+
 #footer p { font-size:x-small; color:gray; }
 #footer #copyright { float:left; }
 #footer #attribution { float:right; }

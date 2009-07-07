@@ -1,13 +1,11 @@
-<p>
-  <b>Title:</b>
-  <%=h @event.title %>
-</p>
+<div class="banner-row">
+	<h1><%=h @event.title %></h1>
+</div>
 
-<p>
-  <b>Body:</b>
-  <%=h @event.body %>
-</p>
-
+<div>
+	<%= image_tag @event.image.url(:large) if @event.image.exists? %>
+	<p><%= RedCloth.new(@event.body).to_html %></p>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

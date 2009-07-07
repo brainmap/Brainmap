@@ -1,0 +1,24 @@
+<ul id="page-ancestors-nav" class="pages-nav">
+	<% for page in @page.ancestors.reverse %>
+		<li><%= link_to page.title, page %> > </li>
+	<% end %>
+	<li><%= link_to @page.title, @page %></li>
+</ul>
+
+
+<div id="page-content">
+  <%= RedCloth.new(@page.content).to_html %>
+</div>
+
+
+<h3>Child Pages:</h3>
+<ul id=page-children-nav class="pages-nav">
+	<% for page in @page.children %>
+		<li><%= link_to page.title, page %></li>
+	<% end %>
+</ul>
+
+<hr class="yellow-hr" />
+	
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

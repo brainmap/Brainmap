@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :pages
+
   map.current_studies 'about/current_studies', :controller => 'application', :action => 'current_studies'
   map.research_objectives 'about/research_objectives', :controller => 'application', :action => 'research_objectives'
   
