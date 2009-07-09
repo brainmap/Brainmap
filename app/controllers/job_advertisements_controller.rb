@@ -8,8 +8,14 @@ class JobAdvertisementsController < ApplicationController
   # GET /job_advertisements
   # GET /job_advertisements.xml
   def index
-    @job_advertisements = JobAdvertisement.all
-
+    if params['opportunity_type'].nil?
+      @job_advertisements = JobAdvertisement.find_all_by_opp_type('volunteers')
+      @opp_type = 'volunteers'
+    else
+      @job_advertisements = JobAdvertisement.find_all_by_opp_type(params['opportunity_type'])
+      @opp_type = params['opportunity_type']
+    end
+      
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @job_advertisements }
@@ -51,7 +57,7 @@ class JobAdvertisementsController < ApplicationController
     respond_to do |format|
       if @job_advertisement.save
         flash[:notice] = 'JobAdvertisement was successfully created.'
-        format.html { redirect_to(@job_advertisement) }
+        format.html { redirect_to(opportunities_path(@job_advertisement.opp_type)) }
         format.xml  { render :xml => @job_advertisement, :status => :created, :location => @job_advertisement }
       else
         format.html { render :action => "new" }

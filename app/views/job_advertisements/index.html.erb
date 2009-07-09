@@ -1,28 +1,36 @@
-<h1>Listing job_advertisements</h1>
+<ul id="subpages">
+	<%= content_tag :li, link_to('Volunteers', opportunities_path(:volunteers)), :class => subpage_class(@opp_type, 'volunteers') %>
+	<%= content_tag :li, link_to('Researchers', opportunities_path(:researchers)), :class => subpage_class(@opp_type, 'researchers') %>
+	<%= content_tag :li, link_to('Students', opportunities_path(:students)), :class => subpage_class(@opp_type, 'students') %>
+</ul>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Pvl</th>
-    <th>Body</th>
-    <th>Responder</th>
-  </tr>
+<div class="banner-row">
+	<h3>Volunteer opportunites and available positions</h3>
+</div>
 
-<% @job_advertisements.each do |job_advertisement| %>
-  <tr>
-    <td><%=h job_advertisement.title %></td>
-    <td><%=h job_advertisement.body %></td>
-    <td><%=h job_advertisement.pvl %></td>
-    <td><%=h job_advertisement.body %></td>
-    <td><%=h job_advertisement.responder_id %></td>
-    <td><%= link_to 'Show', job_advertisement %></td>
-    <td><%= link_to 'Edit', edit_job_advertisement_path(job_advertisement) %></td>
-    <td><%= link_to 'Destroy', job_advertisement, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="opportunities-listing">
+	<% for ad in @job_advertisements %>
+		<p><b><%=h "PVL: #{ad.pvl}" unless ad.pvl.nil? %></b></p>
+    <h3><i><%=h ad.title %></i></h3>
+		<p>
+    	<%= RedCloth.new(ad.body).to_html %>
+		</p>
+		<% unless ad.responder.nil? %>
+			<p>
+				Interested applicants please contact:<br />
+	    	<%=h ad.responder.first_name %> <%=h ad.responder.last_name %><br />
+				<%= ad.responder.address.to_html %>
+			</p>
+		<% end %>
+		<% if logged_in? %>
+    	<%= link_to 'edit', edit_job_advertisement_path(ad) %>
+    	<%= link_to 'delete', ad, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+	<% end %>
+</div>
 
 <br />
 
-<%= link_to 'New job_advertisement', new_job_advertisement_path %>
+<% if logged_in? %>
+	<%= link_to 'New opportunity', new_job_advertisement_path %>
+<% end %>

@@ -1,24 +1,31 @@
 <ul id="page-ancestors-nav" class="pages-nav">
+	<li><%= link_to 'Resources', pages_url %> > </li>
 	<% for page in @page.ancestors.reverse %>
 		<li><%= link_to page.title, page %> > </li>
 	<% end %>
-	<li><%= link_to @page.title, @page %></li>
 </ul>
 
+
+<div class="banner-row">
+	<h3><%= @page.title %></h3>
+</div>
 
 <div id="page-content">
   <%= RedCloth.new(@page.content).to_html %>
 </div>
 
 
-<h3>Child Pages:</h3>
-<ul id=page-children-nav class="pages-nav">
-	<% for page in @page.children %>
-		<li><%= link_to page.title, page %></li>
-	<% end %>
-</ul>
+<% unless @page.children.empty? %>
+	<h3>Related pages:</h3>
+	<ul id=page-children-nav class="pages-nav">
+		<% for page in @page.children %>
+			<li><%= link_to page.title, page %></li>
+		<% end %>
+	</ul>
+<% end %>
 
-<hr class="yellow-hr" />
-	
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+
+<% if logged_in? %>
+	<%= link_to 'Edit this page', edit_page_path(@page) %> | 
+	<%= link_to 'delete this page', @page, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>

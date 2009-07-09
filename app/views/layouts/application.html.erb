@@ -2,12 +2,14 @@
        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Wisconsin ADRC - Johnson Neuroimage Core Laboratory</title>
   <%= stylesheet_link_tag 'application' %>
 	<%= javascript_include_tag :defaults %>
 </head>
+
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
@@ -26,7 +28,7 @@
 		<%= link_to 'resources', pages_path %>
 	</li>
 	<li id="opportunities-tab" <%= @active_nav_tab == "opportunites-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'opportunities', job_advertisements_path %>
+		<%= link_to 'opportunities', opportunities_path(:volunteers) %>
 	</li>
 	<li id="news-tab" <%= @active_nav_tab == "news-tab" ? 'class="selected-nav-tab"' : "" %>>
 		<%= link_to 'news', events_path %>
@@ -41,7 +43,14 @@
 <div id="footer">
 	<hr class="yellow-hr" />
 	<p id="copyright">&copy; Copyright - Brainmap</p>
-	<p id="attribution">Site design <%= link_to '38one' %></p>
+	<p id="attribution">
+		Site design <%= link_to '38one' %>
+		<% if logged_in? %>
+			<%= link_to 'Logout', logout_path %>
+		<% else %>
+			<%= link_to 'Login', login_path %>
+		<% end %>
+	</p>
 </div>
 
 </body>

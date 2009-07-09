@@ -11,12 +11,16 @@
 <% @study_descriptions.each do |study_description| %>
 	<div class="study-description">
 		<h3><%=h study_description.title %></h3>
-		<p><%=h study_description.body %></p>
-		<%= link_to 'edit', edit_study_description_path(study_description) %>
-    <%= link_to 'delete', study_description, :confirm => 'Are you sure?', :method => :delete %>
+		<p><%= RedCloth.new(study_description.body).to_html %></p>
+		<% if logged_in? %>
+			<%= link_to 'edit', edit_study_description_path(study_description) %>
+    	<%= link_to 'delete', study_description, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
 	</div>
 <% end %>
 
 <br />
 
-<%= link_to 'New study description', new_study_description_path %>
+<% if logged_in? %>
+	<%= link_to 'New study description', new_study_description_path %>
+<% end %>

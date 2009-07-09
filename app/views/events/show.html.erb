@@ -7,5 +7,7 @@
 	<p><%= RedCloth.new(@event.body).to_html %></p>
 </div>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<% if logged_in? %>
+	<%= link_to 'Edit', edit_event_path(@event) %> |
+	<%= link_to 'Back', events_path %>
+<% end %>

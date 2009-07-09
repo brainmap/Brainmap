@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
+  before_filter :set_active_tab
+  
+  def set_active_tab
+    @active_nav_tab = 'resources-tab'
+  end
+  
   # GET /pages
   # GET /pages.xml
   def index

@@ -1,5 +1,5 @@
 <div class="banner-row">
-	<h2>Johnson Lab and Affiliated Publications</h2>
+	<h2>Publications from the WADRC Imaging Lab and Affiliates</h2>
 </div>
 
 <div id="pubs-index">
@@ -12,15 +12,22 @@
 					page.visual_effect(:toggle_blind, pubid, :duration => 0.5)
 				end %>
 				<p class="journal-info">
-					<%= pub.journal_info %> <%= link_to '[pubmed]', pub.pubmed_link %>
+					<%= pub.journal_info %> 
+					<% unless pub.pubmed_link.nil? %>
+						<%= link_to '[pubmed]', pub.pubmed_link %>
+					<% end %>
 				</p>
 				<%= content_tag :p, pub.abstract, :id => pubid, :style => "display:none" %>
-		    <%= link_to 'edit', edit_publication_path(pub) %>
-		    <%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+				<% if logged_in? %>
+		    	<%= link_to 'edit', edit_publication_path(pub) %>
+		    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
 		<% end %>
 	</ul>
 </div>
 
 <br />
 
-<%= link_to 'New publication', new_publication_path %>
+<% if logged_in? %>
+	<%= link_to 'New publication', new_publication_path %>
+<% end %>

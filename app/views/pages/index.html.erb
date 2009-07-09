@@ -6,4 +6,6 @@
 
 <br />
 
-<%= link_to 'New page', new_page_path %>
+<% if logged_in? %>
+	<%= link_to 'New page', new_page_path %>
+<% end %>

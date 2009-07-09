@@ -2,6 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+  # Be sure to include AuthenticationSystem in Application Controller instead
+  include AuthenticatedSystem
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -12,6 +15,7 @@ class ApplicationController < ActionController::Base
     @active_nav_tab = 'brainmap-tab'
     @recent_news_items = Event.all.first(4)
     @recent_pubs = Publication.all.first(3)
+    @courses_page = Page.find_by_title('Courses')
     
     respond_to do |format|
       format.html # index.html.erb

@@ -1,4 +1,10 @@
 class StudyDescriptionsController < ApplicationController
+  before_filter :set_active_tab
+  
+  def set_active_tab
+    @active_nav_tab = 'about-tab'
+  end
+  
   # GET /study_descriptions
   # GET /study_descriptions.xml
   def index

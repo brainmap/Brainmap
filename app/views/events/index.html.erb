@@ -10,8 +10,10 @@
 				<p><%= link_to event.title, event %> <%= event.date.to_s(:long) %></p>
 				<p>
 					<%= RedCloth.new(event.body).to_html %>
-					<%= link_to 'edit', edit_event_path(event) %>
-		    	<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
+					<% if logged_in? %>
+						<%= link_to 'edit', edit_event_path(event) %>
+		    		<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
+					<% end %>
 				</p>
 			</li>
 		<% end %>
@@ -20,4 +22,6 @@
 
 <br />
 
-<%= link_to 'New event', new_event_path %>
+<% if logged_in? %>
+	<%= link_to 'New event', new_event_path %>
+<% end %>

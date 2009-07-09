@@ -1,30 +1,21 @@
 
 <div id="home-banner" class="banner-row">
 	<div class="mid-heading">
-		<h3>The Johnson Neuroimaging Lab studies the aging brain with and without Alzheimer disease.</h3>
+		<h3>We study brain structure and function in aging and Alzheimer's Disease</h3>
 	</div>
 	<div class="detail">
 		<p>
-			The Neuropsychology Neuroimaging Lab, directed by Sterling Johnson PhD, at the University of Wisconsin, uses cutting
-			edge neuroimaging techniques to examine brain function in aging and clinical disorders such as Alzheimer Disease (AD).
-			Imaging methods are combined with comprehensive clinical evaluations, including neuropsychological assessment, and 
-			select genetic and laboratory tests to determine how large scale brain changes relate to cognitive decline in aging,
-			neurodegenerative disease, or recovery after injury.
+			The <%= link_to 'Wisconsin ADRC', 'http://wisconsinadrc.wisc.edu/' %> Imaging Lab, directed by Sterling Johnson PhD, at the University of 
+			Wisconsin and the Madison VA Hospital, uses cutting edge neuroimaging techniques to examine brain function in aging 
+			and clinical disorders such as Alzheimer Disease (AD). Imaging methods are combined with comprehensive clinical 
+			evaluations, including neuropsychological assessment, and select genetic and laboratory tests to determine how large 
+			scale brain changes relate to cognitive decline in aging, neurodegenerative disease, or recovery after injury. 
 		</p>
 		<%= link_to 'More info...', research_objectives_path %>
 	</div>
 </div>
 
 <div class="cell-row">
-	
-	<div id="join-us-box">
-		<h3>Join Us!</h3>
-		<p>
-			Copy that talks about how to join, who can join the lab, about working in the lab and so on - a short description
-			of who this is meant for. Then, you put a link to read more about it.
-		</p>
-		<%= link_to 'More info...', job_advertisements_path %>
-	</div>
 	
 	<div id="volunteers-links" class="link-cell">
 		<h3>Volunteers</h3>
@@ -39,8 +30,8 @@
 		<h3>Students</h3>
 		<%= image_tag 'students.jpg', :style => 'color:#910091' %>
 		<p>
-			<%= link_to 'Syllabus & Class Curriculum' %><br />
-			<%= link_to 'Apply for Undergrad Positions', job_advertisements_path %>
+			<%= link_to 'Syllabus & Class Curriculum', @courses_page %><br />
+			<%= link_to 'Apply for Undergrad Positions', opportunities_path('students') %>
 		</p>
 	</div>
 	
@@ -48,7 +39,7 @@
 		<h3>Collaborators</h3>
 		<%= image_tag 'collaborators.jpg', :style => 'color:#ff9900' %>
 		<p>
-			<%= link_to 'Resources: Papers, Methods, and Procedures' %><br />
+			<%= link_to 'Resources: Methods, Procedures, Software, and Downloads' %><br />
 			<%= link_to 'Available Positions', job_advertisements_path %>
 		</p>
 	</div>
@@ -80,7 +71,7 @@
 				<% end %>
 			</ul>
 		<% end %>
-		<%= link_to 'read more...', publications_path %>
+		<%= link_to 'read more research...', publications_path %>
 	</div>
 
 	<div id="home-news">
@@ -95,5 +86,7 @@
 				<% end %>
 			</ul>
 		<% end %>
+		<%= link_to 'read more news...', events_path %>
 	</div>
 </div>
+
