@@ -30,7 +30,7 @@
 		<h3>Students</h3>
 		<%= image_tag 'students.jpg', :style => 'color:#910091' %>
 		<p>
-			<%= link_to 'Syllabus & Class Curriculum', @courses_page %><br />
+			<%= link_to 'Syllabus & Class Curriculum', pages_path %><br />
 			<%= link_to 'Apply for Undergrad Positions', opportunities_path('students') %>
 		</p>
 	</div>
@@ -39,8 +39,8 @@
 		<h3>Collaborators</h3>
 		<%= image_tag 'collaborators.jpg', :style => 'color:#ff9900' %>
 		<p>
-			<%= link_to 'Resources: Methods, Procedures, Software, and Downloads' %><br />
-			<%= link_to 'Available Positions', job_advertisements_path %>
+			<%= link_to 'Resources: Methods, Procedures, Software, and Downloads', pages_path %><br />
+			<%= link_to 'Available Positions', opportunities_path('researchers') %>
 		</p>
 	</div>
 	
@@ -65,7 +65,7 @@
 			<ul>
 				<% for pub in @recent_pubs %>
 					<li>
-						<%= link_to pub.title, pub.pubmed_link %><br />
+						<%= link_to pub.title, pub %><br />
 						<p><%= pub.journal_info %></p>
 					</li>
 				<% end %>
@@ -80,7 +80,7 @@
 			<ul>
 				<% for news_item in @recent_news_items %>
 					<li>
-						<%= link_to news_item.title %><br />
+						<%= link_to news_item.title, news_item %><br />
 						<p><%= news_item.updated_at.to_s(:short) %></p>
 					</li>
 				<% end %>

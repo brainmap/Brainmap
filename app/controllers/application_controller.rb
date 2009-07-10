@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     @active_nav_tab = 'brainmap-tab'
     @recent_news_items = Event.all.first(4)
     @recent_pubs = Publication.all.first(3)
-    @courses_page = Page.find_by_title('Courses')
+    @courses_page = Page.find_by_title('Courses Offered')
     
     respond_to do |format|
       format.html # index.html.erb

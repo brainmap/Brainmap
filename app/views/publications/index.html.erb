@@ -12,12 +12,18 @@
 					page.visual_effect(:toggle_blind, pubid, :duration => 0.5)
 				end %>
 				<p class="journal-info">
-					<%= pub.journal_info %> 
-					<% unless pub.pubmed_link.nil? %>
+					<% unless pub.authors_info.nil? %>
+						<%= pub.authors_info %><br />
+					<% end %>
+					<%= pub.journal_info %>
+					<% unless pub.pmid.nil? or pub.pmid.empty? %>
 						<%= link_to '[pubmed]', pub.pubmed_link %>
 					<% end %>
 				</p>
-				<%= content_tag :p, pub.abstract, :id => pubid, :style => "display:none" %>
+				<div id="<%= pubid %>" style="display:none">
+					<p><%=h pub.abstract %>
+					<%= link_to 'show more...', pub %></p>
+				</div>
 				<% if logged_in? %>
 		    	<%= link_to 'edit', edit_publication_path(pub) %>
 		    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>

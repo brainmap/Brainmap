@@ -8,10 +8,11 @@
 	<div id="sterling-blurb">
 		<h3>Sterling C. Johnson, PhD</h3>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-			magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Dr. Johnson is a neuropsychologist with research interests in brain function in clinical disorders. Current projects focus on 
+			A) the neurobiological and psychological processes that affect memory; B) early detection of Alzheimer's Disease; 
+			C) imaging markers of AD progression; D) brain changes in normal aging; E) the effect of intervention on the brain 
+			in aging and AD. His lab has funding from The National Institute on Aging, The US Dept of Veterans Affairs, 
+			and the State of Wisconsin.
 		</p>
 		<p>Extention: 11452</p>
 	</div>
@@ -19,8 +20,8 @@
 		<%= image_tag 'scj-sans.gif', :height => '215px' %>
 	</div>
 	<div id="contact-blurb">
-		<%= link_to 'Want to be part of our research?' %><br />
-		<%= link_to "We're hiring!" %><br />
+		<%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %><br />
+		<%= link_to "We're hiring!", opportunities_path('students') %><br />
 		<h3>Keep in touch!</h3>
 		<p>
 			D4225 GRECC<br />
@@ -40,12 +41,12 @@
 <ul id="people-list">
 	<% for person in @people %>
 		<li>
-			<%= image_tag person.photo.url unless person.photo.nil? %>
+			<%= link_to(image_tag(person.photo.url), person) %>
 			<h3><%=h person.first_name %> <%=h person.last_name %></h3>
 			<h3><%=h person.degree %></h3>
 			<p><%=h person.job_title %></p>
 			<p>Ext. <%= person.lab_phone_ext %></p>
-			<p style="clear:both"><%=h person.research_activities %></p>
+			<p style="clear:both"><%=h person.brief_bio %></p>
 			<% if logged_in? %>
 				<%= link_to 'edit', edit_person_path(person) %>
 				<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>

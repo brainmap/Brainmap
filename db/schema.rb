@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090710012419) do
+ActiveRecord::Schema.define(:version => 20090710172916) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -72,13 +72,14 @@ ActiveRecord::Schema.define(:version => 20090710012419) do
     t.string   "lab_phone_ext"
     t.string   "fax"
     t.string   "email"
-    t.text     "research_activities"
+    t.text     "brief_bio"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "degree"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.text     "long_bio"
   end
 
   create_table "personnel_groups", :force => true do |t|
@@ -95,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20090710012419) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "pmid"
+    t.string   "authors_info"
   end
 
   create_table "study_descriptions", :force => true do |t|

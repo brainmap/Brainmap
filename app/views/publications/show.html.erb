@@ -4,6 +4,11 @@
 </p>
 
 <p>
+	<b>Authors:</b>
+	<%= @publication.authors_info %>
+</p>
+
+<p>
   <b>Journal info:</b>
   <%=h @publication.journal_info %>
 </p>
@@ -19,10 +24,16 @@
 </p>
 
 <p>
-  <b>PMID:</b>
-  <%=h @publication.pmid %>
+  <b>Pubmed ID:</b>
+  <%= link_to @publication.pmid, @publication.pubmed_link %>
 </p>
 
+<h3>Contributing Lab Members</h3>
+<ul>
+	<% for person in @publication.people %>
+		<li><%= link_to person.full_name, person %></li>
+	<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>

@@ -85,11 +85,18 @@
 
 	<br style="clear:both" />
 
-	<h3>Brief Statement of Interests</h3>
+	<h3>Brief Statement of Interests (plain text only)</h3>
 
   <p>
-    <%= f.label :research_activities %><br />
-    <%= f.text_area :research_activities %>
+    <%= f.label :brief_bio %><br />
+    <%= f.text_area :brief_bio %>
+  </p>
+
+	<h3>Longer Statement of Interests (optional, use textile markup if you wish)</h3>
+
+  <p>
+    <%= f.label :long_bio %><br />
+    <%= f.text_area :long_bio %>
   </p>
 
 	<p>

@@ -1,51 +1,40 @@
-<p>
-  <b>First name:</b>
-  <%=h @person.first_name %>
-</p>
+<ul id="subpages">
+	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
+	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
+	<li class="active-subpage"><%= link_to 'People', people_path %></li>
+</ul>
+
+<div class="banner-row">
+	<h1>
+	  <%=h @person.first_name %> 
+		<%=h @person.middle_initial %>
+	  <%=h @person.last_name %>
+	</h1>
+</div>
 
 <p>
-  <b>Last name:</b>
-  <%=h @person.last_name %>
-</p>
-
-<p>
-  <b>Middle initial:</b>
-  <%=h @person.middle_initial %>
-</p>
-
-<p>
-  <b>Job title:</b>
   <%=h @person.job_title %>
 </p>
 
+<%= image_tag @person.photo.url(:medium) %>
+
 <p>
-  <b>Address:</b>
-  <%=h @person.address_id %>
+  <%= @person.address.to_html %>
 </p>
 
 <p>
-  <b>Office phone:</b>
-  <%=h @person.office_phone %>
+  <b>Office:</b>
+  <%=h @person.office_phone_formatted %>
 </p>
 
 <p>
-  <b>Office phone ext:</b>
-  <%=h @person.office_phone_ext %>
-</p>
-
-<p>
-  <b>Lab phone:</b>
-  <%=h @person.lab_phone %>
-</p>
-
-<p>
-  <b>Lab phone ext:</b>
-  <%=h @person.lab_phone_ext %>
+  <b>Lab:</b>
+  <%=h @person.lab_phone_formatted %>
 </p>
 
 <p>
   <b>Fax:</b>
-  <%=h @person.fax %>
+  <%=h @person.fax_formatted %>
 </p>
 
 <p>
@@ -54,10 +43,18 @@
 </p>
 
 <p>
-  <b>Research activities:</b>
-  <%=h @person.research_activities %>
+	<% unless @person.long_bio.nil? %>
+	  <b>Biography:</b>
+  	<%= RedCloth.new(@person.long_bio).to_html %>
+	<% end %>
 </p>
 
+<h3>Publications</h3>
+<ul>
+	<% for pub in @person.publications %>
+		<li><%= link_to pub.title, pub %></li>
+	<% end %>
+</ul>
 
 <%= link_to 'Edit', edit_person_path(@person) %> |
 <%= link_to 'Back', people_path %>

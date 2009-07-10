@@ -5,12 +5,12 @@
 </ul>
 
 <div class="banner-row">
-	<h3>Volunteer opportunites and available positions</h3>
+	<h3>Opportunities available for <%= @opp_type %></h3>
 </div>
 
 <div id="opportunities-listing">
 	<% for ad in @job_advertisements %>
-		<p><b><%=h "PVL: #{ad.pvl}" unless ad.pvl.nil? %></b></p>
+		<p><b><%=h "PVL: #{ad.pvl}" unless ad.pvl.nil? or ad.pvl.empty? %></b></p>
     <h3><i><%=h ad.title %></i></h3>
 		<p>
     	<%= RedCloth.new(ad.body).to_html %>
@@ -19,7 +19,8 @@
 			<p>
 				Interested applicants please contact:<br />
 	    	<%=h ad.responder.first_name %> <%=h ad.responder.last_name %><br />
-				<%= ad.responder.address.to_html %>
+				<%= ad.responder.address.to_html %><br />
+				<%= ad.responder.office_phone_formatted %>
 			</p>
 		<% end %>
 		<% if logged_in? %>

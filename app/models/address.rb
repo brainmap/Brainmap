@@ -6,7 +6,7 @@ class Address < ActiveRecord::Base
     out += "#{line1}<br />" unless line1.nil?
     out += "#{line2}<br />" unless line2.nil?
     out += "#{street}<br />"
-    out += "#{city}, #{state}, #{zip}<br />"
+    out += "#{city}, #{state}, #{zip}"
     return out
   end
 end

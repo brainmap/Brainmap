@@ -17,7 +17,7 @@
   </p>
   <p>
     <%= f.label :responder_id %><br />
-		<%= f.collection_select :responder_id, Person.all, :id, :first_name  %>
+		<%= f.collection_select :responder_id, Person.all, :id, :full_name  %>
   </p>
   <p>
     <%= f.label :type %><br />
