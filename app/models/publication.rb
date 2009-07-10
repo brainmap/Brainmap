@@ -6,4 +6,5 @@ class Publication < ActiveRecord::Base
   def pubmed_link
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"
   end
+  
 end
