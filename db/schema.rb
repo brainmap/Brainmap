@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090709171106) do
+ActiveRecord::Schema.define(:version => 20090710012419) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20090709171106) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.integer  "zip"
+    t.string   "zip"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "person_id"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20090709171106) do
   create_table "job_advertisements", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "pvl"
+    t.string   "pvl"
     t.integer  "responder_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,11 +66,11 @@ ActiveRecord::Schema.define(:version => 20090709171106) do
     t.string   "middle_initial"
     t.string   "job_title"
     t.integer  "address_id"
-    t.integer  "office_phone"
-    t.integer  "office_phone_ext"
-    t.integer  "lab_phone"
-    t.integer  "lab_phone_ext"
-    t.integer  "fax"
+    t.string   "office_phone"
+    t.string   "office_phone_ext"
+    t.string   "lab_phone"
+    t.string   "lab_phone_ext"
+    t.string   "fax"
     t.string   "email"
     t.text     "research_activities"
     t.datetime "created_at"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20090709171106) do
     t.date     "publication_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pmid"
+    t.string   "pmid"
   end
 
   create_table "study_descriptions", :force => true do |t|
