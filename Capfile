@@ -3,6 +3,6 @@ Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 load 'config/deploy'
 
 
-
-
 # A different comment
+
+# do nothing
