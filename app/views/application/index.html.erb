@@ -19,6 +19,11 @@
 <div class="cell-row">
 	
 	<div id="volunteers-links" class="link-cell">
+		<h2>&nbsp</h2>
+		<h3 style="line-height:6em; background-color:#e3f8fb; text-align:center;" >Info for:</h3>
+	</div>
+	
+	<div id="volunteers-links" class="link-cell">
 		<h3>Volunteers</h3>
 		<%= image_tag 'volunteers.jpg', :style => 'color:#61c361' %>
 		<p>
@@ -82,7 +87,7 @@
 				<% for news_item in @recent_news_items %>
 					<li>
 						<%= link_to news_item.title, news_item %><br />
-						<p><%= news_item.updated_at.to_s(:short) %></p>
+						<p><%= news_item.date.to_s(:long) %></p>
 					</li>
 				<% end %>
 			</ul>
