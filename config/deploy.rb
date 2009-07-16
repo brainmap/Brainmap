@@ -1,64 +1,49 @@
-set :application, "JohnsonLabPublicSite"
-set :repository,  "/Users/kjklocal/code/JohnsonLabPublicSite"
-set :scp, :git
-
-# If you aren't deploying to /u/apps/#{application} on the target
-# servers (which is the default), you can specify the actual location
-# via the :deploy_to variable:
-# set :deploy_to, "/var/www/#{application}"
-
-# If you aren't using Subversion to manage your source code, specify
-# your SCM below:
-# set :scm, :subversion
-
-role :app, "pepe.medicine.wisc.edu"
-role :web, "pepe.medicine.wisc.edu"
-role :db,  "pepe.medicine.wisc.edu", :primary => true
-
-set :deploy_to, "/var/www/html/JohnsonLabPublicSite_test_deployment"
-
-
-#############################################################
-#	Application
-#############################################################
-
-set :application, "example"
-set :deploy_to, "/var/www/#{application}"
-
-#############################################################
-#	Settings
-#############################################################
-
 default_run_options[:pty] = true
-set :use_sudo, true
+ssh_options[:paranoid] = false
 
-#############################################################
-#	Servers
-#############################################################
+set :application, "Brainmap"
+set :host_server, "pepe.medicine.wisc.edu"
+role :app, host_server
+role :web, host_server
+role :db,  host_server, :primary => true
 
-set :user, "jim"
-set :domain, "example.com"
-server domain, :app, :web
-role :db, domain, :primary => true
+set :user, "deployer"
+set :deploy_to, "/var/www/html/#{application}"
+# set :deploy_via, :remote_cache
+set :use_sudo, false
 
-#############################################################
-#	Subversion
-#############################################################
+set :scm, "git"
+set :repository, "git@github.com:brainmap/Brainmap.git"
+set :branch, "master"
 
-set :repository,  "http://www.example.com/svn/example"
-set :svn_username, "jim"
-set :svn_password, "password"
-set :checkout, "export"
-
-#############################################################
-#	Passenger
-#############################################################
-
-namespace :passenger do
-  desc "Restart Application"
+namespace :deploy do
+  # task :update_code
+  
+  desc "Symlink shared configs and folders on each release."
+  task :symlink_shared do
+    run "rm -rf #{release_path}/config/database.yml"
+    run "rm -rf #{release_path}/images/*"
+    run "rm -rf #{release_path}/system/*"
+    run "rm -rf #{release_path}/db/production.sqlite3"
+    
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/images #{release_path}/public/images"
+    run "ln -nfs #{shared_path}/system #{release_path}/public/system"
+    run "ln -nfs #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
+  end
+  
+  # task :symlink
+  
+  desc "Set ownerships of release for apache"
+  task :update_ownerships do
+    run "chown -R apache:apache #{release_path}"
+  end
+  
+  desc "Tell Passenger to restart the app."
   task :restart do
     run "touch #{current_path}/tmp/restart.txt"
   end
 end
 
-after :deploy, "passenger:restart"
+after 'deploy:update_code', 'deploy:symlink_shared'
+# after 'deploy:symlink', 'deploy:update_ownerships'
