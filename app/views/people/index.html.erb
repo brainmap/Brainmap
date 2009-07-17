@@ -1,10 +1,10 @@
-<ul id="subpages">
+<ul id="subpages" class="clearfix">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
 	<li class="active-subpage"><%= link_to 'People', people_path %></li>
 </ul>
 
-<div id="people-banner" class="banner-row">
+<div id="people-banner" class="banner-row clearfix">
 	<div id="sterling-blurb">
 		<h3>Sterling C. Johnson, PhD</h3>
 		<p>
@@ -17,7 +17,7 @@
 		<p>Extention: 11452</p>
 	</div>
 	<div id="sterling-photo">
-		<%= image_tag 'scj-sans.gif', :height => '215px' %>
+		<%= image_tag 'scj-sans.gif', :height => '250px' %>
 	</div>
 	<div id="contact-blurb">
 		<%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %><br />
@@ -38,8 +38,8 @@
 
 <hr class="yellow-hr" />
 
-<ul id="people-list">
-	<% for person in @people %>
+<ul id="people-list" class="clearfix">
+	<% @people.each_with_index do |person, i| %>
 		<li>
 			<%= link_to(image_tag(person.photo.url), person) %>
 			<h3><%=h person.first_name %> <%=h person.last_name %></h3>
@@ -52,6 +52,7 @@
 				<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
 		</li>
+		<%= content_tag(:br, "", :style => "clear:both") if (i+1) % 4 == 0 %>
 	<% end %>
 </ul>
 

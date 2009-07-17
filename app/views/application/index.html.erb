@@ -1,6 +1,6 @@
 <% @page_title = "Wisconsin ADRC Imaging Core - Welcome" %>
 
-<div id="home-banner" class="banner-row">
+<div id="home-banner" class="banner-row clearfix">
 	<div class="mid-heading">
 		<h3>We study brain structure and function in aging and Alzheimer's Disease</h3>
 	</div>
@@ -16,11 +16,11 @@
 	</div>
 </div>
 
-<div class="cell-row">
+<div class="cell-row clearfix">
 	
-	<div id="volunteers-links" class="link-cell">
-		<h2>&nbsp</h2>
-		<h3 style="line-height:6em; background-color:#e3f8fb; text-align:center;" >Info for:</h3>
+	<div id="info-indicator" class="link-cell">
+		<h3>&nbsp</h3>
+		<h3 class="indicator-box">Information for</h3>
 	</div>
 	
 	<div id="volunteers-links" class="link-cell">
@@ -52,7 +52,7 @@
 	
 	<div id="researchers-links" class="link-cell">
 		<h3>Researchers</h3>
-		<%= image_tag 'researchers.jpg', :style => 'color:#ff0066' %>
+		<%= image_tag 'pet-grid.jpg', :style => 'color:#ff0066' %>
 		<p>
 			<%= link_to 'Our Papers', publications_path %><br />
 			<%= link_to 'Authors & Staff', people_path %><br />
@@ -64,7 +64,7 @@
 	
 <hr class="yellow-hr" />
 
-<div class="cell-row">
+<div class="cell-row clearfix">
 	<div id="home-pubs">
 		<h3>Recent Publications:</h3>
 		<% unless @recent_pubs.nil? %>

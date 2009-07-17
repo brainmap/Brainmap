@@ -1,11 +1,11 @@
-<ul id="subpages">
+<ul id="subpages" class="clearfix">
 	<%= content_tag :li, link_to('Volunteers', opportunities_path(:volunteers)), :class => subpage_class(@opp_type, 'volunteers') %>
 	<%= content_tag :li, link_to('Researchers', opportunities_path(:researchers)), :class => subpage_class(@opp_type, 'researchers') %>
 	<%= content_tag :li, link_to('Students', opportunities_path(:students)), :class => subpage_class(@opp_type, 'students') %>
 </ul>
 
 <div class="banner-row">
-	<h3>Opportunities available for <%= @opp_type %></h3>
+	<h2>Opportunities available for <%= @opp_type %></h2>
 </div>
 
 <div id="opportunities-listing">

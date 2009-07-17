@@ -63,7 +63,7 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 	background-repeat:repeat-x;
 	background-position:bottom;
 }
-#top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0 -0.3em 0 0; display:inline-block; 
+#top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0 -0.3em 0 0; float:left; 
 	text-align:center; font-variant:small-caps; font-size:large; 
 }
 #top-nav li.selected-nav-tab { 
@@ -83,10 +83,10 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 #top-nav li a { color:#006599; margin:0; padding:0; }
 #top-nav li a:hover { border-bottom:none; }
 
-#subpages { margin:0; padding:0; }
+#subpages { margin:0; padding:0; list-style:none; }
 #subpages li {
 	text-align:center;
-	display:inline-block;
+	float:left;
 	padding:0 0 1.5em 0;
 	margin:0 1em -0.8em 0;
 }
@@ -98,18 +98,24 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 #subpages li.active-subpage a { color:black; }
 
 .banner-row { border-bottom:solid thin #ffcc00; border-top:solid thin #98c5da;
-	background-image:url(../images/introduction-gradient.jpg); 
-	background-repeat:repeat-x;
-	background-position:top;
+	background-image:url(../images/monkey_brain_banner.png);
+	background-repeat:no-repeat;
+	background-position:top left;
 	background-color:#e3f8fb;
+	min-height:200px;
 }
-.banner-row div { display:inline-block; vertical-align:top; }
+.banner-row div { float:left; vertical-align:top; }
 .banner-row div.mid-heading { margin-left:242px; width:242px; padding:1em 1em 1em 0; }
 .banner-row div.detail { padding:1em 1em 1em 0; width:490px; margin-bottom:2em; }
-.banner-row h2 { padding-left:1em; }
+.banner-row h2 { text-align:right; margin-left:15em; margin-right:3em; margin-top:3em;}
+
+#people-banner { 
+	background-image:url(../images/introduction-gradient.jpg);
+	background-repeat:repeat-x;
+}
 
 .cell-row { margin-bottom:3em; }
-.cell-row div { display:inline-block; vertical-align:top; }
+.cell-row div { float:left; vertical-align:top; }
 
 
 #join-us-box { width:19em; }
@@ -119,14 +125,14 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 
 .yellow-hr { color:#ffcc00; background-color:#ffcc00; height:1px; border:none; }
 
-#research-objectives div { display:inline-block; vertical-align:top; margin-right:4em; margin-bottom:3em; }
+#research-objectives div { float:left; vertical-align:top; margin-right:4em; margin-bottom:3em; }
 #research-objectives ul { list-style:none outside url(../images/objectives-bullet.jpg); width:425px; padding-left:20px; }
 #research-objectives ul li { margin-bottom:1em; }
 
-.study-description { display:inline-block; width:220px; vertical-align:top; padding:1em; }
+.study-description { float:left; width:220px; vertical-align:top; padding:1em; }
 
-#home-pubs { width:700px; display:inline-block; }
-#home-news { width:318px; display:inline-block; }
+#home-pubs { width:700px; float:left; }
+#home-news { width:318px; float:left; }
 #home-news ul { list-style:none; margin:0; padding:0; }
 #home-pubs ul { list-style:none inside url(../images/paper-icon.jpg); margin:0; padding:0; }
 #home-pubs ul li, #home-news ul li { margin-bottom:1em; }
@@ -138,11 +144,11 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 #pubs-index ul p.journal-info { color:gray; font-style:italic; margin:0; padding:0; }
 
 #sterling-blurb { width:450px; margin:1em; }
-#sterling-photo { vertical-align:bottom; margin:0 2em; }
+#sterling-photo { vertical-align:bottom; margin:2em 2em 0 2em; }
 #contact-blurb { width:256px; margin:2em 1em 1em 1em; }
 
 #people-list { list-style:none; padding:0; }
-#people-list li { display:inline-block; margin:0; padding:0; width:237px; vertical-align:top; 
+#people-list li { float:left; margin:0; padding:0; width:237px; vertical-align:top; 
 	margin-right:1em; margin-bottom:1em; }
 #people-list img { float:left; width:80px; height:80px; margin-right:1em; margin-bottom:1em; }
 #people-list h3 { margin:0; padding:0; font-size:small; }
@@ -153,7 +159,21 @@ a:hover { border-bottom:dotted thin #1e77a4; }
 #events-list img { float:left; margin-right:1em; }
 
 .pages-nav { list-style:none; padding-left:0; }
-.pages-nav li { display:inline-block; }
+.pages-nav li { float:left; }
+
+#info-indicator h3.indicator-box {
+	background-image:url(../images/indicator_arrow.png);
+	background-repeat:no-repeat;
+	padding: 3.5em 0 3.5em 1em; margin:0;
+}
+
+.clearfix:after {
+	content:".";
+    display: block;
+    height: 0;
+    clear: left;
+    visibility: hidden; margin:0; padding:0;
+}
 
 #footer p { font-size:x-small; color:gray; }
 #footer #copyright { float:left; }

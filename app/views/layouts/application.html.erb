@@ -14,7 +14,10 @@
 
 <p style="color: green"><%= flash[:notice] %></p>
 
-<ul id="top-nav">
+<%= link_to image_tag('color_va_seal.gif', :size => '60x60', :style => 'float:right; margin-top:-12px; margin-right:10px'), 'http://www.madison.va.gov/' %>
+<%= link_to image_tag('uwcrest.gif', :size => '42x60', :style => 'float:right; margin-top:-12px; margin-right:10px'), 'http://www.wisc.edu' %>
+
+<ul id="top-nav" class="clearfix">
   <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
 		<%= link_to 'brainmap', root_url, :class => 'lower-case' %>
 	</li>

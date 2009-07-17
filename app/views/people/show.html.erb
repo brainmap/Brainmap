@@ -5,11 +5,11 @@
 </ul>
 
 <div class="banner-row">
-	<h1>
+	<h2>
 	  <%=h @person.first_name %> 
 		<%=h @person.middle_initial %>
 	  <%=h @person.last_name %>
-	</h1>
+	</h2>
 </div>
 
 <p>
@@ -41,6 +41,7 @@
   <b>Email:</b>
   <%=h @person.email %>
 </p>
+
 
 <p>
 	<% unless @person.long_bio.nil? %>
