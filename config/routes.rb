@@ -8,7 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :session
 
   map.resources :pages
-
+  
+  
   map.current_studies 'about/current_studies', :controller => 'application', :action => 'current_studies'
   map.research_objectives 'about/research_objectives', :controller => 'application', :action => 'research_objectives'
   map.opportunities 'opportunites/:opportunity_type', :controller => 'job_advertisements', :action => 'index'
@@ -72,4 +73,6 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing the them or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  map.permalinked_pages '/:permalink.:format', :controller => 'pages', :action => 'show'
 end

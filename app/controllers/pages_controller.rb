@@ -19,11 +19,21 @@ class PagesController < ApplicationController
   # GET /pages/1
   # GET /pages/1.xml
   def show
-    @page = Page.find(params[:id])
+    if params[:permalink]
+      @page = Page.find_by_permalink(params[:permalink])
+      # raise ActiveRecord::RecordNotFound, "Page not Found" if @page.nil?
+    else
+      @page = Page.find(params[:id])
+    end
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @page }
+      if @page.nil?
+        flash[:notice] = 'No resources page found with this permalink.'
+        format.html { redirect_to(root_url) }
+      else
+        format.html # show.html.erb
+        format.xml  { render :xml => @page }
+      end
     end
   end
 
