@@ -20,6 +20,7 @@ h3 { font-weight:normal; }
 a { color: #1e77a4; text-decoration:none; }
 a:visited { color: #1e77a4; }
 a:hover { border-bottom:dotted thin #1e77a4; }
+a > img { border:none; }
 
 .fieldWithErrors {
   padding: 2px;
