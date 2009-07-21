@@ -64,7 +64,7 @@ a > img { border:none; }
 	background-repeat:repeat-x;
 	background-position:bottom;
 }
-#top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0 -0.3em 0 0; float:left; 
+#top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0; float:left; 
 	text-align:center; font-variant:small-caps; font-size:large; 
 }
 #top-nav li.selected-nav-tab { 
@@ -117,11 +117,9 @@ a > img { border:none; }
 
 .cell-row { margin-bottom:3em; }
 .cell-row div { float:left; vertical-align:top; }
-
-
-#join-us-box { width:19em; }
-.link-cell { width:12.6em; margin-left:2em; }
-.link-cell img { border-bottom:solid 1em; }
+.arrow-cell { width:12em; }
+.link-cell { margin-left:4.3em; width:160px; }
+.link-cell img { border-bottom:solid 1em; padding:0; margin:0; }
 .link-cell h3 { font-weight:normal; }
 
 .yellow-hr { color:#ffcc00; background-color:#ffcc00; height:1px; border:none; }

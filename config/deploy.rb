@@ -39,3 +39,4 @@ namespace :deploy do
 end
 
 after 'deploy:symlink', 'deploy:symlink_shared'
+after 'deploy:migrate', 'deploy:restart'
