@@ -15,7 +15,11 @@ class Person < ActiveRecord::Base
       :medium => "300x300>",
       :large =>   "400x400>" 
     }
-    
+  
+  named_scope :in_group, lambda { |group_name|
+    { :conditions => { :group => group_name } }
+  }
+  
   def full_name
     "#{first_name} #{last_name}"
   end

@@ -23,6 +23,10 @@
 	    <%= f.label :job_title %><br />
 	    <%= f.text_field :job_title %>
 	  </p>
+		<p>
+			<%= f.label :group %><br />
+			<%= f.select :group, ['Researchers','Staff','Graduate Students','Student Employees','Collaborators','Alumni'], :include_blank => 'choose group' %>
+		</p>
 	</div>
 
 	<div style="float:left; margin-right:2em;">

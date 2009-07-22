@@ -34,27 +34,70 @@
 	</div>
 </div>
 
-<h3>Meet the Team</h3>
+<h2>Meet the Imaging Team</h2>
 
-<hr class="yellow-hr" />
-
-<ul id="people-list" class="clearfix">
-	<% @people.each_with_index do |person, i| %>
-		<li>
-			<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
-			<h3><%=h person.first_name %> <%=h person.last_name %></h3>
-			<h3><%=h person.degree %></h3>
-			<p><%=h person.job_title %></p>
-			<p>Ext. <%= person.lab_phone_ext %></p>
-			<p style="clear:both"><%=h person.brief_bio %></p>
-			<% if logged_in? %>
-				<%= link_to 'edit', edit_person_path(person) %>
-				<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+<table>
+<tr>
+	<td style="width:760px">
+	<% for group in [ @researchers, @staff, @grads, @studs ] %>
+		<h3><%= group.first.group unless group.empty? %></h3>
+		<hr class="yellow-hr" />
+		<ul class="people-list clearfix">
+			<% group.each_with_index do |person, i| %>
+				<li>
+					<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
+					<h3><%=h person.first_name %> <%=h person.last_name %></h3>
+					<h3><%=h person.degree %></h3>
+					<p><%=h person.job_title %></p>
+					<p>Ext. <%= person.lab_phone_ext %></p>
+					<p style="clear:left"><%=h person.brief_bio %></p>
+					<% if logged_in? %>
+						<%= link_to 'edit', edit_person_path(person) %>
+						<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+					<% end %>
+				</li>
+				<% if (i+1) % 3 == 0 %>
+					<br style="clear:both" />
+				<% end %>
 			<% end %>
-		</li>
-		<%= content_tag(:br, "", :style => "clear:both") if (i+1) % 4 == 0 %>
+		</ul>
 	<% end %>
-</ul>
+
+	<h3>Alumni</h3>
+	<hr class="yellow-hr" />
+	<ul>
+		<% @alumni.each_with_index do |person, i| %>
+			<li><h3><%=h person.first_name %> <%=h person.last_name %></h3></li>
+		<% end %>
+	</ul>
+	</td>
+	
+	<td>&nbsp</td>
+	
+	<td style="width:256px; vertical-align:top; background-color:#eee; border:solid thin #ddd; padding:0 0.5em 0;">
+	<h3>Collaborators</h3>
+	<hr class="yellow-hr" />
+	<ul class="people-list">
+		<% for person in @collabs %>
+			<li>
+				<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
+				<h3><%=h person.first_name %> <%=h person.last_name %></h3>
+				<h3><%=h person.degree %></h3>
+				<p><%=h person.job_title %></p>
+				<p>Ext. <%= person.lab_phone_ext %></p>
+				<p style="clear:left"><%=h person.brief_bio %></p>
+				<% if logged_in? %>
+					<%= link_to 'edit', edit_person_path(person) %>
+					<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</li>
+		<% end %>
+	</ul>
+	</td>
+</tr>
+</table>
+
+<br style="clear:both" />
 
 <% if logged_in? %>
 	<%= link_to 'New person', new_person_path %>

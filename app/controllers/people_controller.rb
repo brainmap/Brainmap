@@ -9,6 +9,12 @@ class PeopleController < ApplicationController
   # GET /people.xml
   def index
     @people = Person.all
+    @researchers = Person.in_group('Researchers')
+    @staff = Person.in_group('Staff')
+    @grads = Person.in_group('Graduate Students')
+    @studs = Person.in_group('Student Employees')
+    @collabs = Person.in_group('Collaborators')
+    @alumni = Person.in_group('Alumni')
 
     respond_to do |format|
       format.html # index.html.erb
