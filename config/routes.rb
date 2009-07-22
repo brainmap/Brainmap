@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/index.php/Publications', :controller => 'redirect', :url => '/publications'
   map.connect '/publications.html', :controller => 'redirect', :url => '/publications'
   map.connect '/index.php/Neuropsychology_Neuroimaging_Lab', :controller => 'redirect'
+  map.connect '/index.php/:title', :controller => 'redirect'
 
   
   # map.register '/register', :controller => 'users', :action => 'create'
