@@ -1,6 +1,21 @@
 ActionController::Routing::Routes.draw do |map|
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
+  
+  # Include some very specific 301 Redirects for top content and people following old links and Search Engines.
+  # index.php links were from the wiki; .html links were from the original Dreamweaver site.
+  map.connect '/scj.htm', :controller => 'redirect', :url => '/people/15'
+  map.connect '/index.php/Principal_Investigator', :controller => 'redirect', :url => '/people/15'
+  map.connect '/index.php/People', :controller => 'redirect', :url => '/people'
+  map.connect '/index.php/Rhesus_Brain_Atlas', :controller => 'redirect', :url => '/pages/2'
+  map.connect '/index.php/Research', :controller => 'redirect', :url => '/about/research_objectives'
+  map.connect '/index.php/Employment', :controller => 'redirect', :url => '/opportunites/researchers'
+  map.connect '/opportunities/employment.html', :controller => 'redirect', :url => '/opportunites/researchers'
+  map.connect '/index.php/Publications', :controller => 'redirect', :url => '/publications'
+  map.connect '/publications.html', :controller => 'redirect', :url => '/publications'
+  map.connect '/index.php/Neuropsychology_Neuroimaging_Lab', :controller => 'redirect'
+
+  
   # map.register '/register', :controller => 'users', :action => 'create'
   # map.signup '/signup', :controller => 'users', :action => 'new'
   # map.resources :users
