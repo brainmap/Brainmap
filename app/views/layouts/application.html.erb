@@ -47,12 +47,14 @@
 	<hr class="yellow-hr" />
 	<p id="copyright">&copy; Copyright - Brainmap</p>
 	<p id="attribution">
-		Site design <%= link_to '38one' %>
 		<% if logged_in? %>
-			<%= link_to 'Logout', logout_path %>
+			Logged in as <%= current_user.login %> |
+			<%= link_to 'Manage', users_path %> |
+			<%= link_to 'Logout', logout_path %> |
 		<% else %>
-			<%= link_to 'Login', login_path %>
+			<%= link_to 'Login', login_path %> |
 		<% end %>
+		Site design <%= link_to '38one' %>
 	</p>
 </div>
 
