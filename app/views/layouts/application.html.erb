@@ -5,7 +5,6 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <meta name="verify-v1" content="Suw7lxNNyIT1P7ciGb9g+68mW0i3wtBEoVKlszyq3S4=" />
   <title><%= @page_title ||= "Wisconsin ADRC - Johnson Neuroimage Core Laboratory" %></title>
   <%= stylesheet_link_tag 'application' %>
   <%= javascript_include_tag :defaults %>
@@ -56,6 +55,17 @@
 		<% end %>
 	</p>
 </div>
+
+# Google Analytics Tracking Cookie
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3259914-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
 
 </body>
 </html>
