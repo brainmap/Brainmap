@@ -1,6 +1,6 @@
 body { background-color: #fff; color: #333; 
   width: 1024px;
-  margin:0 auto 0 auto;
+  margin:0 auto 5em;
 }
 
 body, p, ol, ul, td {
@@ -108,7 +108,7 @@ a > img { border:none; }
 	min-height:200px;
 }
 .banner-row div { float:left; vertical-align:top; }
-.banner-row div.mid-heading { margin-left:242px; width:242px; padding:1em 1em 1em 0; }
+.banner-row div.mid-heading { margin-left:220px; width:220px; padding:1em 3em 0; text-align: right;}
 .banner-row div.detail { padding:1em 1em 1em 0; width:490px; margin-bottom:2em; }
 .banner-row h2 { text-align:right; margin-left:15em; margin-right:3em; margin-top:3em;}
 
