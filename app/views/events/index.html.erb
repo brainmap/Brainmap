@@ -6,15 +6,20 @@
 	<ul id="events-list">
 		<% for event in @events %>
 			<li>
-				<%= image_tag(event.image.url(:small)) if event.image.exists? %>
-				<p><%= link_to event.title, event %> <%= event.date.to_s(:long) %></p>
-				<p>
-					<%= RedCloth.new(event.body).to_html %>
-					<% if logged_in? %>
-						<%= link_to 'edit', edit_event_path(event) %>
-		    		<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
-					<% end %>
-				</p>
+				<h3>
+					<span><%= link_to event.title, event %></span>
+					<span class="right-date"><%= event.date.to_s(:long) %></span>
+				</h3>
+				<div class="event-content">
+					<%= image_tag(event.image.url(:small)) if event.image.exists? %>
+					<p>
+						<%= RedCloth.new(event.body).to_html %>
+						<% if logged_in? %>
+							<%= link_to 'edit', edit_event_path(event) %>
+			    		<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
+						<% end %>
+					</p>
+				</div>
 			</li>
 		<% end %>
 	</ul>

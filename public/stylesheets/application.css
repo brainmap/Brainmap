@@ -117,7 +117,7 @@ a > img { border:none; }
 	background-repeat:repeat-x;
 }
 
-.cell-row { margin-bottom:3em; }
+.cell-row { margin-bottom:1em; }
 .cell-row div { float:left; vertical-align:top; }
 .arrow-cell { width:12em; }
 .link-cell { margin-left:4.3em; width:160px; }
@@ -155,9 +155,21 @@ a > img { border:none; }
 .people-list h3 { margin:0; padding:0; font-size:small; }
 .people-list p { margin:0; padding:0; font-size:x-small; }
 
-#events-list { list-style:none; }
-#events-list li { margin-bottom:2em; padding-right:4em; }
+#events-list { list-style:none; padding:0; }
+#events-list li { margin-bottom:2em; }
 #events-list img { float:left; margin-right:1em; }
+
+#events-list li h3 { margin:0; padding:0.5em; background-color:#eee; border:solid thin #ddd;
+	-webkit-border-top-left-radius:10px; -webkit-border-top-right-radius:10px; 
+	-moz-border-top-left-radius:10px; -moz-border-top-right-radius:10px;
+	border-top-left-radius:10px; border-top-right-radius:10px;
+}
+.right-date { float:right; font-size:small; }
+#events-list li div.event-content { padding:0.5em; border:solid thin #ddd; 
+	-webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px; 
+	-moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px; 
+	border-bottom-left-radius:5px; border-bottom-right-radius:5px; 
+}
 
 .pages-nav { list-style:none; padding-left:0; }
 .pages-nav li { float:left; }

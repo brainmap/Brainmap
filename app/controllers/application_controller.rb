@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   
+  before_filter :login_required, :except => [ :show, :index, :research_objectives ]
+  
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -28,11 +30,5 @@ class ApplicationController < ActionController::Base
       format.html # index.html.erb
     end
   end
-  
-  def current_studies
-    @active_nav_tab = 'about-tab'
-    respond_to do |format|
-      format.html # index.html.erb
-    end
-  end
+
 end
