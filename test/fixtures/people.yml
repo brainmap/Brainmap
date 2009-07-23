@@ -12,7 +12,6 @@ one:
   lab_phone_ext: 1
   fax: 1
   email: MyString
-  research_activities: MyText
 
 two:
   first_name: MyString
@@ -26,4 +25,3 @@ two:
   lab_phone_ext: 1
   fax: 1
   email: MyString
-  research_activities: MyText
