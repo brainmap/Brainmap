@@ -1,3 +1,44 @@
+/* p, pre {
+margin: 2px 5px 2px 5px;
+}
+*/
+table.textile-example {
+float: right;
+width: 30em;
+}
+/* table.textile-example td pre {
+background-color: #ffeeee;
+font-family: georgia, serif;
+font-size: 8pt;
+padding: 5px;
+}
+*/
+table.textile-example td {
+border: solid 1px #ddd;
+background-color: #eee;
+font-size: 8pt;
+padding: 5px;
+
+}
+
+p.indent {
+text-indent: 12px;
+}
+#sidebar {
+border: 1px dotted black;
+float: right;
+margin: 0;
+}
+#form {
+float: left;
+margin-left: 35px;
+}
+/* #form form input {
+width: 130px;
+}
+*/
+
+
 body { background-color: #fff; color: #333; 
   width: 1024px;
   margin:0 auto 5em;

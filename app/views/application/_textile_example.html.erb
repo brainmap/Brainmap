@@ -1,0 +1,18 @@
+
+	<%
+		textile_examples = ['h1. This is a heading.']
+		textile_examples << 'Surround text with underscores for _italics_'
+	%>
+	
+	<table class="textile-example" border="0" cellspacing="0" cellpadding="5">
+		<tfoot><td colspan="3">
+			<%= link_to "More info at Textile Cheat Sheet", "http://hobix.com/textile/quick.html" %>
+		</td></tfoot>
+		<% for example in textile_examples %>
+			<tr>
+				<td><tt><%= example %></tt></td>
+				<td>➟</td>
+				<td><%= RedCloth.new(example).to_html%></td>
+			</tr>
+		<% end %>
+	</table>	

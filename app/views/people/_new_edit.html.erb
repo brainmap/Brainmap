@@ -98,9 +98,14 @@
 
 	<h3>Longer Statement of Interests (optional, use textile markup if you wish)</h3>
 
+<%= render :partial => 'application/textile_example'
+
+%>
+
+
   <p>
     <%= f.label :long_bio %><br />
-    <%= f.text_area :long_bio %>
+    <%= f.text_area :long_bio, :cols => 60 %>
   </p>
 
 	<p>
