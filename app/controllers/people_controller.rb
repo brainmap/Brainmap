@@ -9,10 +9,10 @@ class PeopleController < ApplicationController
   # GET /people.xml
   def index
     @people = Person.all
-    @researchers = Person.in_group('Researchers')
-    @staff = Person.in_group('Staff')
+    @scientists = Person.in_group('Scientists')
+    @staff = Person.in_group('Research Staff')
     @grads = Person.in_group('Graduate Students')
-    @studs = Person.in_group('Student Employees')
+    @studs = Person.in_group('Research Assistants')
     @collabs = Person.in_group('Collaborators')
     @alumni = Person.in_group('Alumni')
 
@@ -26,10 +26,10 @@ class PeopleController < ApplicationController
   # GET /people/1.xml
   def show
     @people = Person.all
-    @researchers = Person.in_group('Researchers')
-    @staff = Person.in_group('Staff')
+    @scientists = Person.in_group('Scientists')
+    @staff = Person.in_group('Research Staff')
     @grads = Person.in_group('Graduate Students')
-    @studs = Person.in_group('Student Employees')
+    @studs = Person.in_group('Research Assistants')
     @collabs = Person.in_group('Collaborators')
     @alumni = Person.in_group('Alumni')
 

@@ -9,11 +9,17 @@
 </div>
 
 <div id="people-nav" class="clear-fix">
-<% for group in [ @researchers, @staff, @grads, @studs ] %>
+<% for group in [ @scientists, @staff, @grads, @studs ] %>
 	<h3><%= group.first.group unless group.empty? %></h3>
 	<ul>
 	<% group.each do |person| %>
-		<li><%= link_to person.full_name, person %></li>
+		<li>
+			<% if person == @person %>
+				<%= person.full_name %>
+				<% else %>
+				<%= link_to person.full_name, person %>
+			<% end %>
+		</li>
 	<% end %>
 	</ul>
 <% end %>
@@ -21,22 +27,21 @@
 
 <div id="person-description" class="clear-fix">
 	<div id="person-contactcard" class="clear-fix">
-		<%= image_tag @person.photo.url(:medium) %>
+		<%= image_tag @person.photo.url(:small) %>
 		<h2><%=h @person.full_name %></h2>
 		<h3><%=h @person.job_title %></h3>
 
-		<p>
+		<p class="left">
 		  <%= @person.address.to_html %>
 		</p>
 
-		<p>
+		<p class="right">
 		  <b>Office:</b>
 		  <%=h @person.office_phone_formatted %><br/>
 		  <b>Lab:</b>
 		  <%=h @person.lab_phone_formatted %><br/>
 		  <b>Fax:</b>
-		  <%=h @person.fax_formatted %><br/><br/>
-
+		  <%=h @person.fax_formatted %><br/>
 		  <b>Email:</b>
 		  <%=h @person.email %>
 		</p>
