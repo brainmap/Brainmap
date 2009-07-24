@@ -8,7 +8,7 @@ body { background-color: #fff; color: #333;
 /* body {   background:url(../images/grid_bg.jpg) center repeat-y} */
 
 body, p, ol, ul, td {
-  font-size:   13px;
+  font-size:   11pt;
   line-height: 18px;
 }
 
@@ -141,13 +141,13 @@ a > img { border:none; }
 #pubs-index ul p.journal-info { color:gray; font-style:italic; margin:0; padding:0; }
 
 /* People Index */
-#sterling-blurb { width:35em; padding: 1em;}
+#sterling-blurb { width:30em; padding: 1em;}
 #sterling-photo { vertical-align:bottom; }
 #contact-blurb { width:15em; padding-top: 1em; padding-left: 1em; }
 #contact-blurb h3 { margin: .5em 0 }
 
 .people-list { list-style:none; padding:0;}
-.people-list li { float:left; margin:0; padding:0; width:200px; vertical-align:top; 
+.people-list li { float:left; margin:0; padding:0; width:180px; vertical-align:top; 
    margin-right:20px; margin-bottom:1em; }
 .people-list img { float:left; margin-right:1em; margin-bottom:1em; }
 .people-list h3 { margin:0 0 .4em; padding:0; font-size:14px; line-height: normal;}
