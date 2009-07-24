@@ -88,8 +88,10 @@
 	</div>
 
 	<br style="clear:both" />
-
+	
 	<h3>Brief Statement of Interests (plain text only)</h3>
+	
+	<%= render :partial => 'application/textile_example'%>
 
   <p>
     <%= f.label :brief_bio %><br />
@@ -97,11 +99,6 @@
   </p>
 
 	<h3>Longer Statement of Interests (optional, use textile markup if you wish)</h3>
-
-<%= render :partial => 'application/textile_example'
-
-%>
-
 
   <p>
     <%= f.label :long_bio %><br />

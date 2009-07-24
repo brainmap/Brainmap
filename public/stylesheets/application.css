@@ -1,3 +1,5 @@
+/* CSS Styles for WADRC Imaging Core Public Site - brainmap.wisc.edu */
+
 body { background-color: #fff; color: #333; 
   width: 940px;
   margin:0 auto 5em;
@@ -185,18 +187,32 @@ a > img { border:none; }
 #footer #copyright { float:left; }
 #footer #attribution { float:right; }
 
+
 /* Textile Markup Table Styles */
 table.textile-example {
-float: right;
-width: 30em;
+	margin: 1px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #dddddd;
+	table-layout: fixed;
+	word-wrap:break-word;
+	float: right;
+	font-size: 8pt;
+	background-color: #eee;
+	width: 40em;
 }
 
 table.textile-example td {
-border: solid 1px #ddd;
-background-color: #eee;
-font-size: 8pt;
-padding: 5px;
- 
+	font-size: 8pt;
+	padding: 3px;
+}
+
+table.textile-example caption {
+	margin-bottom: 2px;
+	text-align: center;
+	font-weight: bold;
+	font-size: x-large;
+	font-variant: small-caps;
 }
 
 /* Rails CLasses */ 
@@ -234,4 +250,3 @@ padding: 5px;
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
-}

@@ -1,18 +1,34 @@
-
 	<%
 		textile_examples = ['h1. This is a heading.']
-		textile_examples << 'Surround text with underscores for _italics_'
+		textile_examples << 'Symbols around text render it _italic_ or *bold*.' 
+		textile_examples << '# Make lists <br />
+# with pound symbols. <br />
+## Use more pound symbols <br />
+## to get child entries.' 
+		textile_examples << '* Bulleted lists <br />
+* just use an asterisk(*) instead of a pound. <br />
+** The same goes <br />
+** for child entries.' 
+		textile_examples << 'Add an image by putting exclamation marks around its URL. <br /> !http://www.brainmap.wisc.edu/images/uwcrest_sm.png!' 
+		textile_examples << 'Create a hypertext link to a page by "putting a descriptive phrase in quote":http://www.brainmap.wisc.edu, followed by a colon and the URL. <br /> <br />
+Replace the quote with an image for a linked image. <br />
+!http://www.brainmap.wisc.edu/images/uwcrest_sm.png!:http://www.wisc.edu/'
 	%>
 	
-	<table class="textile-example" border="0" cellspacing="0" cellpadding="5">
-		<tfoot><td colspan="3">
-			<%= link_to "More info at Textile Cheat Sheet", "http://hobix.com/textile/quick.html" %>
+	<table class="textile-example" border="1" cellspacing="0" cellpadding="3">
+		<caption>A Few Textile Examples</caption>
+		<tfoot><td colspan="3"> More info can be found at:  
+			<%= link_to "Textile Cheat Sheet", "http://hobix.com/textile/quick.html" %><br />
+			Ohmigod!!!! Waytogo!!! Even <i>more</i> than that at: 
+			<%= link_to "A Textile Reference", "http://hobix.com/textile/" %>
 		</td></tfoot>
+		<tbody> 
 		<% for example in textile_examples %>
 			<tr>
-				<td><tt><%= example %></tt></td>
-				<td>➟</td>
-				<td><%= RedCloth.new(example).to_html%></td>
+				<td width="48%"><tt><%= example %></tt></td>
+				<td width="5%" align="center">&#10143;</td>
+				<td width="47%"><%= RedCloth.new(example).to_html%></td>
 			</tr>
+		</tbody>
 		<% end %>
 	</table>	
