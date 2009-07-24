@@ -25,6 +25,14 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.xml
   def show
+    @people = Person.all
+    @researchers = Person.in_group('Researchers')
+    @staff = Person.in_group('Staff')
+    @grads = Person.in_group('Graduate Students')
+    @studs = Person.in_group('Student Employees')
+    @collabs = Person.in_group('Collaborators')
+    @alumni = Person.in_group('Alumni')
+
     @person = Person.find(params[:id])
 
     respond_to do |format|

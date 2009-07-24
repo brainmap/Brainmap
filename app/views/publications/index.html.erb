@@ -1,5 +1,7 @@
+<%= javascript_include_tag :defaults %>
+
 <div class="banner-row">
-	<h2>Publications from the WADRC Imaging Lab and Affiliates</h2>
+	<h2>Publications from the WADRC Imaging Lab and Collaborators</h2>
 </div>
 
 <div id="pubs-index">
@@ -28,6 +30,7 @@
 		    	<%= link_to 'edit', edit_publication_path(pub) %>
 		    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
 				<% end %>
+			</li>
 		<% end %>
 	</ul>
 </div>

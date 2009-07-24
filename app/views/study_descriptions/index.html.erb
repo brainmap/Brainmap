@@ -9,7 +9,7 @@
 </div>
 
 <div class="clearfix">
-<% @study_descriptions.each do |study_description| %>
+<% @study_descriptions.each_with_index do |study_description, i| %>
 	<div class="study-description">
 		<h3><%=h study_description.title %></h3>
 		<p><%= RedCloth.new(study_description.body).to_html %></p>
@@ -18,6 +18,9 @@
     	<%= link_to 'delete', study_description, :confirm => 'Are you sure?', :method => :delete %>
 		<% end %>
 	</div>
+	<% if (i+1) % 3 == 0 %>
+		<br style="clear:both" />
+	<% end %>
 <% end %>
 </div>
 

@@ -19,8 +19,8 @@
 		<%= image_tag 'scj-sans.gif', :height => '250px' %>
 	</div>
 	<div id="contact-blurb">
-		<%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %><br />
-		<%= link_to "We're hiring!", opportunities_path('students') %><br />
+		<h4><%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %></h4>
+		<h4><%= link_to "We're hiring!", opportunities_path('students') %></h4>
 		<h3>Keep in touch!</h3>
 		<p>
 			WADRC Imaging Core<br />
@@ -47,9 +47,9 @@
 				<li>
 					<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
 					<h3><%=h person.first_name %> <%=h person.last_name %></h3>
-					<h3><%=h person.degree %></h3>
-					<p><%=h person.job_title %></p>
-					<p>Ext. <%= person.lab_phone_ext %></p>
+					<!-- <h4><%=h person.degree %></h4> -->
+					<h4><%=h person.job_title %></h4>
+					<!-- <p>Ext. <%= person.lab_phone_ext %></p> -->
 					<p style="clear:left"><%=h person.brief_bio %></p>
 					<% if logged_in? %>
 						<%= link_to 'edit', edit_person_path(person) %>
@@ -72,7 +72,7 @@
 	</ul>
 	</td>
 	
-	<td>&nbsp</td>
+	<td>&nbsp;</td>
 	
 	<td style="width:256px; vertical-align:top; background-color:#eee; border:solid thin #ddd; padding:0 0.5em 0;">
 	<h3>Collaborators</h3>
@@ -82,9 +82,9 @@
 			<li>
 				<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
 				<h3><%=h person.first_name %> <%=h person.last_name %></h3>
-				<h3><%=h person.degree %></h3>
-				<p><%=h person.job_title %></p>
-				<p>Ext. <%= person.lab_phone_ext %></p>
+				<!-- <h4><%=h person.degree %></h4> -->
+				<h4><%=h person.job_title %></h4>
+				<!--<p>Ext. <%= person.lab_phone_ext %></p> -->
 				<p style="clear:left"><%=h person.brief_bio %></p>
 				<% if logged_in? %>
 					<%= link_to 'edit', edit_person_path(person) %>

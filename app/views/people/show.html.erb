@@ -4,58 +4,66 @@
 	<li class="active-subpage"><%= link_to 'People', people_path %></li>
 </ul>
 
-<div class="banner-row">
-	<h2>
-	  <%=h @person.first_name %> 
-		<%=h @person.middle_initial %>
-	  <%=h @person.last_name %>
-	</h2>
+<div id="people-banner" class="banner-row">
+	&nbsp;
 </div>
 
-<p>
-  <%=h @person.job_title %>
-</p>
-
-<%= image_tag @person.photo.url(:medium) %>
-
-<p>
-  <%= @person.address.to_html %>
-</p>
-
-<p>
-  <b>Office:</b>
-  <%=h @person.office_phone_formatted %>
-</p>
-
-<p>
-  <b>Lab:</b>
-  <%=h @person.lab_phone_formatted %>
-</p>
-
-<p>
-  <b>Fax:</b>
-  <%=h @person.fax_formatted %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%=h @person.email %>
-</p>
-
-
-<p>
-	<% unless @person.long_bio.nil? %>
-	  <b>Biography:</b>
-  	<%= RedCloth.new(@person.long_bio).to_html %>
+<div id="people-nav" class="clear-fix">
+<% for group in [ @researchers, @staff, @grads, @studs ] %>
+	<h3><%= group.first.group unless group.empty? %></h3>
+	<ul>
+	<% group.each do |person| %>
+		<li><%= link_to person.full_name, person %></li>
 	<% end %>
-</p>
+	</ul>
+<% end %>
+</div>
 
-<h3>Publications</h3>
-<ul>
-	<% for pub in @person.publications %>
-		<li><%= link_to pub.title, pub %></li>
-	<% end %>
-</ul>
+<div id="person-description" class="clear-fix">
+	<div id="person-contactcard" class="clear-fix">
+		<%= image_tag @person.photo.url(:medium) %>
+		<h2><%=h @person.full_name %></h2>
+		<h3><%=h @person.job_title %></h3>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+		<p>
+		  <%= @person.address.to_html %>
+		</p>
+
+		<p>
+		  <b>Office:</b>
+		  <%=h @person.office_phone_formatted %><br/>
+		  <b>Lab:</b>
+		  <%=h @person.lab_phone_formatted %><br/>
+		  <b>Fax:</b>
+		  <%=h @person.fax_formatted %><br/><br/>
+
+		  <b>Email:</b>
+		  <%=h @person.email %>
+		</p>
+	</div>
+
+	
+	<div id="person-details">
+		<% unless @person.long_bio.empty? %>
+			<h3>Biography:</h3>
+		  	<%= RedCloth.new(@person.long_bio).to_html %>
+		<% end %>
+	</div>
+
+	<div style="float:left" id="person-pubs">
+		<% unless @person.publications.empty? %>
+		<h3>Publications:</h3>
+		<ul>
+			<% for pub in @person.publications %>
+				<li><%= link_to pub.title, pub %></li>
+			<% end %>
+		</ul>
+		<% end %>
+		
+	</div>
+</div>
+
+<% if logged_in? %>
+	<%= link_to 'Edit', edit_person_path(@person) %> |
+	<%= link_to 'Back', people_path %>
+<% end %>
