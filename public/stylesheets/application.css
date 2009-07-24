@@ -15,7 +15,7 @@ body, p, ol, ul, td {
 }
 
 /* Header Sans-serif Styles */
-.link-cell, .arrow-cell, #top-nav, #home-pubs, #home-news, #footer, #people-nav, #subpages, h1, h2, h3, h4 {
+.link-cell, .arrow-cell, #top-nav, #subpages, #footer, #home-pubs, #home-news, #people-nav, #person-contactcard, h1, h2, h3, h4 {
 	font-family: arial; sans-serif;
 }
 
@@ -29,36 +29,30 @@ h3 { font-weight:normal; }
 
 a { color: #1e77a4; text-decoration:none; }
 a:visited { color: #1e77a4; }
-a:hover { border-bottom:dotted thin #1e77a4; }
+a:hover { text-decoration: underline;}
 a > img { border:none; }
 
-#top-nav { padding:0; margin:2em 0 1.5em 0; list-style:none; 
-	background-color:#eee; color:#6599ff; 
-	background-image:url(../images/nav-gradient-inside.jpg);
-	background-repeat:repeat-x;
-	background-position:bottom;
+#top-nav { padding:0; margin:2em 0 1.5em 0; list-style:none; color:#6599ff; 
+	background: url(../images/nav-gradient-inside.jpg) repeat-x bottom #eee;
 }
+
 #top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0; float:left; 
-	text-align:center; font-variant:small-caps; font-size:medium; 
+	text-align:center; font-variant:small-caps; font-size: 17px; 
 }
 #top-nav li.selected-nav-tab { 
 	background-image:url(../images/nav-gradient-selected.jpg); 
 	background-repeat:repeat-x;
 	background-position:bottom;
 	background-color:#32cccc }
+	
 #top-nav li.selected-nav-tab a { color:white; }
-#top-nav li:hover { 
-	background-image:url(../images/nav-gradient-selected-darkblue.jpg); 
-	background-repeat:repeat-x;
-	background-position:bottom;
-	background-color:#6599ff; 
-}
+#top-nav li:hover { background:url(../images/nav-gradient-selected-darkblue.jpg) repeat-x bottom #6599ff; }
 #top-nav li:hover a { color:white; }
 #top-nav li a.lower-case { font-variant:normal; }
 #top-nav li a { color:#006599; margin:0; padding:0; }
-#top-nav li a:hover { border-bottom:none; }
+#top-nav li a:hover { text-decoration: none; }
 
-#subpages { margin:0; padding:0; list-style:none; }
+#subpages { margin:0; padding:0; list-style:none; clear: both;}
 #subpages li {
 	text-align:center;
 	float:left;
@@ -72,12 +66,13 @@ a > img { border:none; }
 }
 #subpages li.active-subpage a { color:black; }
 
+
+#page-content { clear: both; margin: 0; padding: 0;}
+
 .banner-row { border-bottom:solid thin #ffcc00; border-top:solid thin #98c5da;
-	background-image:url(../images/monkey_brain_banner.png);
-	background-repeat:no-repeat;
-	background-position:top left;
-	background-color:#e3f8fb;
+	background: url(../images/monkey_brain_banner.png) no-repeat top left #e3f8fb;
 	min-height:200px;
+	clear: both;
 }
 
 
@@ -89,16 +84,21 @@ a > img { border:none; }
 .banner-row h4 { margin: 0	;}
 
 #people-banner { background :url(../images/introduction-gradient.jpg) repeat-x; min-height: 1em;}
-#people-nav { float: left; width: 160px; padding-top: 20px;}
-#people-nav h3 { margin: 0.5em 0 ; font-size: 12pt; font-weight: bold; border-bottom: solid thin gray; color: gray;}
-#people-nav ul { margin: 0; padding: 0; list-style: none}
+
+#people-nav { float: left; width: 180px; padding-top: 20px; font-weight: bold;}
+#people-nav h3 { margin: 0 ; font-size: 12pt; }
+#people-nav ul { margin: 0; padding: 0.5em 1em 1.5em; list-style: none}
 
 #person-description { padding: 20px; margin-left: 160px;}
-#person-description #person-contactcard { float: left; overflow: auto; width: 720px;}
-#person-description #person-contactcard h3 { color: #666; margin: 0.5em;}
+
+#person-contactcard { font-size: 12px; float: left; overflow: auto; width: 720px; 
+	padding-bottom: 5px; margin-bottom: 5px; border-bottom: solid #ccc thin;}
+#person-contactcard h3 { color: #666; margin: 0.5em; font-size: 11px;}
+#person-contactcard p { float: left; font-size: 12px;}
+#person-contactcard p.left { margin-right: 7em; }
 
 /* #person-description #person-details { clear: left;} */
-#person-description img { float: left; margin-right: 1em; margin-bottom: 1em;}
+#person-description img { float: left; margin-right: 1.5em; margin-bottom: 1em;}
 #person-description h2 { margin: 0;}
 /* #person-description h3 { color: #666;} */
 #person-description ul { list-style:none outside url(../images/paper-icon.jpg); margin:0 1.5em 0; padding:0; }

@@ -26,7 +26,7 @@ class Person < ActiveRecord::Base
     { :conditions => { :group => group_name } }
   }
   
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :group
   
   def full_name
     "#{first_name} #{last_name}"

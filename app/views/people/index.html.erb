@@ -39,8 +39,8 @@
 <table>
 <tr>
 	<td style="width:760px">
-	<% for group in [ @researchers, @staff, @grads, @studs ] %>
-		<h3><%= group.first.group unless group.empty? %></h3>
+	<% for group in [ @scientists, @staff, @grads, @studs ] %>
+		<h3 style="clear: left;"><%= group.first.group unless group.empty? %></h3>
 		<hr class="yellow-hr" />
 		<ul class="people-list clearfix">
 			<% group.each_with_index do |person, i| %>
