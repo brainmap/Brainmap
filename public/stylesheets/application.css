@@ -37,7 +37,7 @@ a > img { border:none; }
 	background-position:bottom;
 }
 #top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0; float:left; 
-	text-align:center; font-variant:small-caps; font-size:large; 
+	text-align:center; font-variant:small-caps; font-size:medium; 
 }
 #top-nav li.selected-nav-tab { 
 	background-image:url(../images/nav-gradient-selected.jpg); 
