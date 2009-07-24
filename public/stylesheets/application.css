@@ -1,9 +1,11 @@
 /* CSS Styles for WADRC Imaging Core Public Site - brainmap.wisc.edu */
 
-body { background-color: #fff; color: #333; 
-  width: 940px;
-  margin:0 auto 5em;
+div#centered-layout-container { background-color: #fff; color: #333; 
+ width: 940px;
+ margin:0 auto 5em;
 }
+
+body { padding:0; margin:0; }
 
 /* body {   background:url(../images/grid_bg.jpg) center repeat-y} */
 
@@ -135,10 +137,12 @@ a > img { border:none; }
 #home-pubs ul p, #home-news ul p { color:gray; font-style:italic; margin:0; padding:0; }
 #home-pubs p { margin-left: 1.5em;}
 
+/*
 #pubs-index { padding:1em; }
 #pubs-index ul { list-style:none outside url(../images/paper-icon.jpg); margin:0 1em 0; padding:0; }
 #pubs-index ul li, #home-news ul li { margin-bottom:1em; }
 #pubs-index ul p.journal-info { color:gray; font-style:italic; margin:0; padding:0; }
+*/
 
 /* People Index */
 #sterling-blurb { width:30em; padding: 1em;}
@@ -182,6 +186,14 @@ a > img { border:none; }
     clear: left;
     visibility: hidden; margin:0; padding:0;
 }
+
+#pubs-list { list-style:none; overflow:auto; width:100%; padding:0; text-align:center; }
+#pubs-list li { position:relative; width:290px; height:18em; border:dotted thin gray; float:left; padding:10px; 
+	background-color:#f7f7f7; }
+#pubs-list li:hover { background-color:#e8e8e8;}
+#pubs-list li p.pub-authors { font-size:smaller; color:gray; margin:0 2em;}
+#pubs-list li p.pub-footer { position:absolute; bottom:0; right:1em; }
+#pubs-list li div.hidden { display:none; }
 
 #footer p { font-size:x-small; color:gray; }
 #footer #copyright { float:left; }

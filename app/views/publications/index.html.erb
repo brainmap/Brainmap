@@ -1,35 +1,36 @@
+<%= stylesheet_link_tag 'redbox' %>
 <%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'redbox' %>
 
 <div class="banner-row">
 	<h2>Publications from the WADRC Imaging Lab and Collaborators</h2>
 </div>
 
 <div id="pubs-index">
-	<ul>
+	<ul id="pubs-list">
 		<% @publications.each do |pub| %>
 			<% pubid = "pub-#{pub.id}" %>
 			<% pubtog = "#{pubid}-tog" %>
-			<li>
-				<%= link_to_function(pub.title) do |page|
-					page.visual_effect(:toggle_blind, pubid, :duration => 0.5)
-				end %>
-				<p class="journal-info">
-					<% unless pub.authors_info.nil? %>
-						<%= pub.authors_info %><br />
+			<li class="pub">
+				<% content_tag(:div, :id => pubid, :class => 'redbox-window') do -%>
+					<h3 class="pub-title"><%= pub.title %></h3>
+					<p class="pub-authors"><%= pub.authors_info %></p>
+					<p class="pub-journal"><%= pub.journal_info %></p>
+					<div class="hidden">
+						<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
+						<p class="pub-abstract"><%= pub.abstract%></p>
+						<%= link_to '[pubmed]', pub.pubmed_link, :style => 'float:left' %>
+						<%= link_to_close_redbox('[close]', :style => 'float:right') %>
+					</div>
+				<% end -%>
+				<p class="pub-footer">
+					<% if logged_in? %>
+			    	<%= link_to 'edit', edit_publication_path(pub) %>
+			    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
 					<% end %>
-					<%= pub.journal_info %>
-					<% unless pub.pmid.nil? or pub.pmid.empty? %>
-						<%= link_to '[pubmed]', pub.pubmed_link %>
-					<% end %>
+					<%= link_to_redbox('abstract', pubid) %>
+					<%= link_to '[pubmed]', pub.pubmed_link %>
 				</p>
-				<div id="<%= pubid %>" style="display:none">
-					<p><%=h pub.abstract %>
-					<%= link_to 'show more...', pub %></p>
-				</div>
-				<% if logged_in? %>
-		    	<%= link_to 'edit', edit_publication_path(pub) %>
-		    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
 			</li>
 		<% end %>
 	</ul>
