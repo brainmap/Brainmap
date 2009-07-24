@@ -8,12 +8,12 @@ body { background-color: #fff; color: #333;
 /* body {   background:url(../images/grid_bg.jpg) center repeat-y} */
 
 body, p, ol, ul, td {
-  font-size:   11pt;
+  font-size:   14px;
   line-height: 18px;
 }
 
 /* Header Sans-serif Styles */
-.link-cell, .arrow-cell, #top-nav, #home-pubs, #home-news, #footer, #people-nav, h1, h2, h3, h4 {
+.link-cell, .arrow-cell, #top-nav, #home-pubs, #home-news, #footer, #people-nav, #subpages, h1, h2, h3, h4 {
 	font-family: arial; sans-serif;
 }
 
@@ -56,7 +56,7 @@ a > img { border:none; }
 #top-nav li a { color:#006599; margin:0; padding:0; }
 #top-nav li a:hover { border-bottom:none; }
 
-#subpages { margin:0; padding:0; list-style:none; font-family: arial; sans-serif;}
+#subpages { margin:0; padding:0; list-style:none; }
 #subpages li {
 	text-align:center;
 	float:left;
