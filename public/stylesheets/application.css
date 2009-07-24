@@ -1,43 +1,5 @@
-/* p, pre {
-margin: 2px 5px 2px 5px;
-}
-*/
-table.textile-example {
-float: right;
-width: 30em;
-}
-/* table.textile-example td pre {
-background-color: #ffeeee;
-font-family: georgia, serif;
-font-size: 8pt;
-padding: 5px;
-}
-*/
-table.textile-example td {
-border: solid 1px #ddd;
-background-color: #eee;
-font-size: 8pt;
-padding: 5px;
 
-}
-
-p.indent {
-text-indent: 12px;
-}
-#sidebar {
-border: 1px dotted black;
-float: right;
-margin: 0;
-}
-#form {
-float: left;
-margin-left: 35px;
-}
-/* #form form input {
-width: 130px;
-}
-*/
-
+/* CSS Styles for WADRC Imaging Core Public Site - brainmap.wisc.edu */
 
 body { background-color: #fff; color: #333; 
   width: 1024px;
@@ -49,8 +11,6 @@ body, p, ol, ul, td {
   font-size:   13px;
   line-height: 18px;
 }
-
-ul { list-style:none; }
 
 pre {
   background-color: #eee;
@@ -232,3 +192,29 @@ a > img { border:none; }
 #footer p { font-size:x-small; color:gray; }
 #footer #copyright { float:left; }
 #footer #attribution { float:right; }
+
+table.textile-example {
+margin: 1px;
+border-style: solid;
+border-width: 1px;
+border-color: #dddddd;
+table-layout: fixed;
+word-wrap:break-word;
+float: right;
+font-size: 8pt;
+background-color: #eee;
+width: 40em;
+}
+
+table.textile-example td {
+font-size: 8pt;
+padding: 3px;
+}
+
+table.textile-example caption {
+margin-bottom: 2px;
+text-align: center;
+font-weight: bold;
+font-size: x-large;
+font-variant: small-caps;
+}
