@@ -4,6 +4,8 @@ class Publication < ActiveRecord::Base
   has_many :authorships
   has_many :people, :through => :authorships
   
+  validates_presence_of :title, :authors_info
+  
   def pubmed_link
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"
   end
