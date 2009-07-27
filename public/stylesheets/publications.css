@@ -1,0 +1,32 @@
+/*  Publications index */
+#pubs-list { list-style:none; padding:0; width:55%; }
+#pubs-list li { 
+	position:relative; padding:0.5em 1em; text-align:right;
+	-webkit-border-top-left-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	-moz-border-radius-bottomleft:20px;
+}
+#pubs-list li:hover div.abstract { display:block; }
+#pubs-list div.abstract { 
+	display:none; position:absolute; left:100%; top:0; width:365px; padding:0.5em 3em 0.5em 1em;
+	background-color:#def3fd;  text-align:left;
+	-webkit-border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-topright:20px;
+	-moz-border-radius-bottomright:20px;
+	-moz-border-radius-bottomleft:20px;
+} 
+#pubs-list div.abstract img { float:left; }
+#pubs-list li p.pub-authors { font-size:smaller; color:gray; }
+#pubs-list li > h3 { margin-bottom:-0.5em; }
+#pubs-list li > h3 a { color:black; }
+#pubs-list li:hover { background-color:#def3fd; }
+#pubs-list li:hover > h3 a { color:#006599;  }
+
+/* Publication Show */
+#pubs-show-sidebar { float:left; width:20em; }
+#pub-show-info { margin-left:22em; }
+#pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
+#pub-show-info p.authors { font-size:smaller; color:gray; }

@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'people' %>
+
 <ul id="subpages" class="clearfix">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
@@ -34,14 +36,33 @@
 	</div>
 </div>
 
-<h2>Meet the Imaging Team</h2>
+<div id="greeting-and-links">
+	<h2>Meet the Imaging Team</h2>
+	<ul>
+		<li><%= link_to 'Scientists', '#Scientists' %></li>
+		<li><%= link_to 'Collaborators', '#Collaborators' %></li>
+		<li><%= link_to 'Research Staff', '#Research Staff' %></li>
+		<li><%= link_to 'Graduate Students', '#Graduate Students' %></li>
+		<li><%= link_to 'Research Assistants', '#Research Assistants' %></li>
+		<li><%= link_to 'Alumni', '#Alumni' %></li>
+	</ul>
+</div>
+<hr class='yellow-hr' />
 
-<table>
-<tr>
-	<td style="width:760px">
-	<% for group in [ @scientists, @staff, @grads, @studs ] %>
-		<h3 style="clear: left;"><%= group.first.group unless group.empty? %></h3>
-		<hr class="yellow-hr" />
+
+
+<% for group in [ @scientists, @collabs, @staff, @grads, @studs ] %>
+	<div class="people-section">
+		<a name="<%= group.first.group %>"></a>
+		<div class="section-header">
+			<h3><%= group.first.group unless group.empty? %></h3>
+			<div class="divider">
+				<div class="upbutton">
+					<%= link_to '⇧', '#top-of-page' %>
+				</div>
+				<hr class="gray" />
+			</div>
+		</div>
 		<ul class="people-list clearfix">
 			<% group.each_with_index do |person, i| %>
 				<li>
@@ -56,46 +77,32 @@
 						<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
 					<% end %>
 				</li>
-				<% if (i+1) % 3 == 0 %>
+				<% if (i+1) % 4 == 0 %>
 					<br style="clear:both" />
 				<% end %>
 			<% end %>
 		</ul>
-	<% end %>
+	</div>
+<% end %>
 
-	<h3>Alumni</h3>
-	<hr class="yellow-hr" />
+<div class="people-section">
+	<a name="Alumni"></a>
+	<div class="section-header">
+		<h3>Alumni</h3>
+		<div class="divider">
+			<div class="upbutton">
+				<%= link_to '⇪', '#top-of-page' %>
+			</div>
+			<hr class="gray" />
+		</div>
+	</div>
 	<ul>
 		<% @alumni.each_with_index do |person, i| %>
 			<li><h3><%=h person.first_name %> <%=h person.last_name %></h3></li>
 		<% end %>
 	</ul>
-	</td>
-	
-	<td>&nbsp;</td>
-	
-	<td style="width:256px; vertical-align:top; background-color:#eee; border:solid thin #ddd; padding:0 0.5em 0;">
-	<h3>Collaborators</h3>
-	<hr class="yellow-hr" />
-	<ul class="people-list">
-		<% for person in @collabs %>
-			<li>
-				<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
-				<h3><%=h person.first_name %> <%=h person.last_name %></h3>
-				<!-- <h4><%=h person.degree %></h4> -->
-				<h4><%=h person.job_title %></h4>
-				<!--<p>Ext. <%= person.lab_phone_ext %></p> -->
-				<p style="clear:left"><%=h person.brief_bio %></p>
-				<% if logged_in? %>
-					<%= link_to 'edit', edit_person_path(person) %>
-					<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
-			</li>
-		<% end %>
-	</ul>
-	</td>
-</tr>
-</table>
+</div>
+
 
 <br style="clear:both" />
 
