@@ -6,10 +6,10 @@
 	<ul id="events-list">
 		<% for event in @events %>
 			<li>
-				<h3>
-					<span><%= link_to event.title, event %></span>
-					<span class="right-date"><%= event.date.to_s(:long) %></span>
-				</h3>
+				<div class="event-header">
+					<h3><%= link_to event.title, event %></h3>
+					<h4><%= event.date.to_s(:long) %></h4>
+				</div>
 				<div class="event-content">
 					<%= image_tag(event.image.url(:small)) if event.image.exists? %>
 					<p>

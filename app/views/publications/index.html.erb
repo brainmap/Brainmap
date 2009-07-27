@@ -12,32 +12,32 @@
 			<% pubid = "pub-#{pub.id}" %>
 			<% pubtog = "#{pubid}-tog" %>
 			<li class="pub">
-				<% content_tag(:div, :id => pubid, :class => 'redbox-window') do -%>
-					<h3 class="pub-title"><%= pub.title %></h3>
-					<p class="pub-authors"><%= pub.authors_info %></p>
+				<h3 class="pub-title"><%= link_to pub.title, pub %></h3>
+				<p class="pub-authors"><%= pub.authors_info %></p>
+				<div class="abstract">
 					<p class="pub-journal"><%= pub.journal_info %></p>
-					<div class="hidden">
+					<h3>Abstract</h3>
+					<% if pub.abstract.empty? %>
+						<p>No abstract available.</p>
+					<% else %>
 						<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
-						<p class="pub-abstract"><%= pub.abstract%></p>
-						<%= link_to '[pubmed]', pub.pubmed_link, :style => 'float:left' %>
-						<%= link_to_close_redbox('[close]', :style => 'float:right') %>
-					</div>
-				<% end -%>
-				<p class="pub-footer">
-					<% if logged_in? %>
-			    	<%= link_to 'edit', edit_publication_path(pub) %>
-			    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+						<p><%= pub.abstract%></p>
 					<% end %>
-					<%= link_to_redbox('abstract', pubid) %>
-					<%= link_to '[pubmed]', pub.pubmed_link %>
-				</p>
+					<p class="pub-footer">
+						<% if logged_in? %>
+				    	<%= link_to 'edit', edit_publication_path(pub) %>
+				    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+						<% end %>
+						<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.empty? %>
+					</p>
+				</div>
 			</li>
 		<% end %>
 	</ul>
 </div>
 
-<br />
-
-<% if logged_in? %>
-	<%= link_to 'New publication', new_publication_path %>
-<% end %>
+<p style="margin-bottom:500px;">
+	<% if logged_in? %>
+		<%= link_to 'New publication', new_publication_path %>
+	<% end %>
+</p>

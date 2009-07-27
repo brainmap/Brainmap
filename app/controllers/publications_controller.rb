@@ -19,6 +19,7 @@ class PublicationsController < ApplicationController
   # GET /publications/1
   # GET /publications/1.xml
   def show
+    @all_publications = Publication.all
     @publication = Publication.find(params[:id])
 
     respond_to do |format|
