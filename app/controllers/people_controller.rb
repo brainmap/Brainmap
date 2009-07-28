@@ -9,6 +9,12 @@ class PeopleController < ApplicationController
   # GET /people.xml
   def index
     @people = Person.all
+    @scientists = Person.in_group('Scientists')
+    @staff = Person.in_group('Research Staff')
+    @grads = Person.in_group('Graduate Students')
+    @studs = Person.in_group('Research Assistants')
+    @collabs = Person.in_group('Collaborators')
+    @alumni = Person.in_group('Alumni')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,6 +25,14 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.xml
   def show
+    @people = Person.all
+    @scientists = Person.in_group('Scientists')
+    @staff = Person.in_group('Research Staff')
+    @grads = Person.in_group('Graduate Students')
+    @studs = Person.in_group('Research Assistants')
+    @collabs = Person.in_group('Collaborators')
+    @alumni = Person.in_group('Alumni')
+
     @person = Person.find(params[:id])
 
     respond_to do |format|

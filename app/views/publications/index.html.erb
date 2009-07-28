@@ -1,39 +1,41 @@
+<%= stylesheet_link_tag 'publications' %>
+
 <div class="banner-row">
-	<h2>Publications from the WADRC Imaging Lab and Affiliates</h2>
+	<h2>Publications from the WADRC Imaging Lab and Collaborators</h2>
 </div>
 
 <div id="pubs-index">
-	<ul>
+	<ul id="pubs-list">
 		<% @publications.each do |pub| %>
 			<% pubid = "pub-#{pub.id}" %>
 			<% pubtog = "#{pubid}-tog" %>
-			<li>
-				<%= link_to_function(pub.title) do |page|
-					page.visual_effect(:toggle_blind, pubid, :duration => 0.5)
-				end %>
-				<p class="journal-info">
-					<% unless pub.authors_info.nil? %>
-						<%= pub.authors_info %><br />
+			<li class="pub">
+				<h3 class="pub-title"><%= link_to pub.title, pub %></h3>
+				<p class="pub-authors"><%= pub.authors_info %></p>
+				<div class="abstract">
+					<p class="pub-journal"><%= pub.journal_info %></p>
+					<h3>Abstract</h3>
+					<% if pub.abstract.empty? %>
+						<p>No abstract available.</p>
+					<% else %>
+						<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
+						<p><%= pub.abstract%></p>
 					<% end %>
-					<%= pub.journal_info %>
-					<% unless pub.pmid.nil? or pub.pmid.empty? %>
-						<%= link_to '[pubmed]', pub.pubmed_link %>
-					<% end %>
-				</p>
-				<div id="<%= pubid %>" style="display:none">
-					<p><%=h pub.abstract %>
-					<%= link_to 'show more...', pub %></p>
+					<p class="pub-footer">
+						<% if logged_in? %>
+				    	<%= link_to 'edit', edit_publication_path(pub) %>
+				    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+						<% end %>
+						<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.empty? %>
+					</p>
 				</div>
-				<% if logged_in? %>
-		    	<%= link_to 'edit', edit_publication_path(pub) %>
-		    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
+			</li>
 		<% end %>
 	</ul>
 </div>
 
-<br />
-
-<% if logged_in? %>
-	<%= link_to 'New publication', new_publication_path %>
-<% end %>
+<p style="margin-bottom:500px;">
+	<% if logged_in? %>
+		<%= link_to 'New publication', new_publication_path %>
+	<% end %>
+</p>

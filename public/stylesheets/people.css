@@ -1,0 +1,54 @@
+div.section-header h3 { margin:2em 0 0 0; }
+div.section-header .divider .upbutton { 
+	float:right; position:relative; top:0.7em; margin-top:-1em;
+	padding:0 0.7em; background-color:#ffcc00;
+	-webkit-border-radius:0.5em; -moz-border-radius:0.5em;
+}
+div#greeting-and-links { overflow:auto; }
+div#greeting-and-links h2 { float:left; margin:30px 0 4px 0; }
+div#greeting-and-links ul { float:right; list-style:none; margin:34px 0 0 0;}
+div#greeting-and-links ul li { float:left; margin-left:1em; }
+div#greeting-and-links ul li a { font-family:sans-serif; }
+
+
+
+.people-list { list-style:none; padding:0;}
+.people-list li { float:left; margin:0; padding:0; width:215px; vertical-align:top; 
+   margin-right:20px; margin-bottom:1em; }
+.people-list img { float:left; margin-right:1em; margin-bottom:1em; }
+.people-list h3 { margin:0 0 .4em; padding:0; font-size:14px; line-height: normal;}
+.people-list h4 { margin:0; padding:0; font-size:11px; color: gray; line-height: normal;}
+.people-list p { margin:0; padding:0; font-size:0.9em; }
+
+
+
+/* People Index */
+#sterling-blurb { width:30em; padding: 1em;}
+#sterling-photo { vertical-align:bottom; }
+#contact-blurb { width:15em; padding-top: 1em; padding-left: 1em; }
+#contact-blurb h3 { margin: .5em 0 }
+
+
+
+#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x; min-height: 1em;}
+
+#people-nav { float: left; width: 180px; padding-top: 20px; font-weight: bold;}
+#people-nav h3 { margin: 0 ; font-size: 12pt; }
+#people-nav ul { margin: 0; padding: 0.5em 1em 1.5em; list-style: none}
+
+#person-description { padding: 20px; margin-left: 160px;}
+
+#person-contactcard { font-size: 12px; float: left; overflow: auto; width: 720px; 
+	padding-bottom: 5px; margin-bottom: 5px; border-bottom: solid #ccc thin;}
+#person-contactcard h3 { color: #666; margin: 0.5em; font-size: 11px;}
+#person-contactcard p { float: left; font-size: 12px;}
+#person-contactcard p.left { margin-right: 7em; }
+
+/* #person-description #person-details { clear: left;} */
+#person-description img { float: left; margin-right: 1.5em; margin-bottom: 1em;}
+#person-description h2 { margin: 0;}
+/* #person-description h3 { color: #666;} */
+#person-description ul { list-style:none outside url(../images/paper-icon.jpg); margin:0 1.5em 0; padding:0; }
+#person-description ul li, #home-news ul li { margin-bottom:1em; }
+#person-description ul p, #home-news ul p { color:gray; font-style:italic; margin:0; padding:0; }
+/* #person-pubs { width: 200px;} */

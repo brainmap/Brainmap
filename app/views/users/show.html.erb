@@ -1,0 +1,12 @@
+
+<div class="banner-row">
+	<h2>
+	  You have reached the WADRC Imaging Lab Admin area
+	</h2>
+</div>
+
+<h3><%= @user.login %></h3>
+
+<p><%= @user.email %></p>
+
+<p><%= link_to 'edit', edit_user_path(@user) %></p>

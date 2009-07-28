@@ -7,11 +7,14 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= @page_title ||= "Wisconsin ADRC - Johnson Neuroimage Core Laboratory" %></title>
   <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag :defaults %>
 </head>
 
 <body>
 
+<a name="top-of-page"></a>
+
+<div id="centered-layout-container">
+	
 <p style="color: green"><%= flash[:notice] %></p>
 
 <%= link_to image_tag('vaseal_sm.png', :size => '60x60', :style => 'float:right; margin-top:-12px; margin-right:10px'), 'http://www.madison.va.gov/' %>
@@ -19,7 +22,7 @@
 
 <ul id="top-nav" class="clearfix">
   <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'brainmap', root_url, :class => 'lower-case' %>
+		<%= link_to 'WADRC Imaging Core', root_url, :class => 'lower-case' %>
 	</li>
 	<li id="about-tab" <%= @active_nav_tab == "about-tab" ? 'class="selected-nav-tab"' : "" %>>
 		<%= link_to 'about us', research_objectives_url %>
@@ -41,23 +44,26 @@
 	</li>
 </ul>
 
-<%= yield %>
+<div id="page-content">
+	<%= yield %>
+</div>
 
 <div id="footer">
 	<hr class="yellow-hr" />
 	<p id="copyright">&copy; Copyright - Brainmap</p>
 	<p id="attribution">
-		Site design <%= link_to '38one' %>
 		<% if logged_in? %>
-			<%= link_to 'Logout', logout_path %>
+			Logged in as <%= current_user.login %> |
+			<%= link_to 'Manage', users_path %> |
+			<%= link_to 'Logout', logout_path %> |
 		<% else %>
-			<%= link_to 'Login', login_path %>
+			<%= link_to 'Login', login_path %> |
 		<% end %>
+		Site design <%= link_to '38one', 'http://www.38one.com' %>
 	</p>
 </div>
 
-<!-- 
-# Google Analytics Tracking Cookie
+<!-- Google Analytics Tracking Cookie -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -67,7 +73,8 @@ try {
 var pageTracker = _gat._getTracker("UA-3259914-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
--->
+
+</div>
 
 </body>
 </html>

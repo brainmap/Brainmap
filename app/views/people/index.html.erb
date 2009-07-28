@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'people' %>
+
 <ul id="subpages" class="clearfix">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
@@ -14,16 +16,16 @@
 			in aging and AD. His lab has funding from The National Institute on Aging, The US Dept of Veterans Affairs, 
 			and the State of Wisconsin.
 		</p>
-		<p>Extention: 11452</p>
 	</div>
 	<div id="sterling-photo">
 		<%= image_tag 'scj-sans.gif', :height => '250px' %>
 	</div>
 	<div id="contact-blurb">
-		<%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %><br />
-		<%= link_to "We're hiring!", opportunities_path('students') %><br />
+		<h4><%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %></h4>
+		<h4><%= link_to "We're hiring!", opportunities_path('students') %></h4>
 		<h3>Keep in touch!</h3>
 		<p>
+			WADRC Imaging Core<br />
 			D4225 GRECC<br />
 			William S. Middleton VA Hospital<br />
 			2500 Overlook Terrace (11G)<br />
@@ -34,27 +36,75 @@
 	</div>
 </div>
 
-<h3>Meet the Team</h3>
+<div id="greeting-and-links">
+	<h2>Meet the Imaging Team</h2>
+	<ul>
+		<li><%= link_to 'Scientists', '#Scientists' %></li>
+		<li><%= link_to 'Collaborators', '#Collaborators' %></li>
+		<li><%= link_to 'Research Staff', '#Research Staff' %></li>
+		<li><%= link_to 'Graduate Students', '#Graduate Students' %></li>
+		<li><%= link_to 'Research Assistants', '#Research Assistants' %></li>
+		<li><%= link_to 'Alumni', '#Alumni' %></li>
+	</ul>
+</div>
+<hr class='yellow-hr' />
 
-<hr class="yellow-hr" />
 
-<ul id="people-list" class="clearfix">
-	<% @people.each_with_index do |person, i| %>
-		<li>
-			<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
-			<h3><%=h person.first_name %> <%=h person.last_name %></h3>
-			<h3><%=h person.degree %></h3>
-			<p><%=h person.job_title %></p>
-			<p>Ext. <%= person.lab_phone_ext %></p>
-			<p style="clear:both"><%=h person.brief_bio %></p>
-			<% if logged_in? %>
-				<%= link_to 'edit', edit_person_path(person) %>
-				<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+
+<% for group in [ @scientists, @collabs, @staff, @grads, @studs ] %>
+	<div class="people-section">
+		<a name="<%= group.first.group %>"></a>
+		<div class="section-header">
+			<h3><%= group.first.group unless group.empty? %></h3>
+			<div class="divider">
+				<div class="upbutton">
+					<%= link_to '⇧', '#top-of-page' %>
+				</div>
+				<hr class="gray" />
+			</div>
+		</div>
+		<ul class="people-list clearfix">
+			<% group.each_with_index do |person, i| %>
+				<li>
+					<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
+					<h3><%=h person.first_name %> <%=h person.last_name %></h3>
+					<!-- <h4><%=h person.degree %></h4> -->
+					<h4><%=h person.job_title %></h4>
+					<!-- <p>Ext. <%= person.lab_phone_ext %></p> -->
+					<p style="clear:left"><%=h person.brief_bio %></p>
+					<% if logged_in? %>
+						<%= link_to 'edit', edit_person_path(person) %>
+						<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+					<% end %>
+				</li>
+				<% if (i+1) % 4 == 0 %>
+					<br style="clear:both" />
+				<% end %>
 			<% end %>
-		</li>
-		<%= content_tag(:br, "", :style => "clear:both") if (i+1) % 4 == 0 %>
-	<% end %>
-</ul>
+		</ul>
+	</div>
+<% end %>
+
+<div class="people-section">
+	<a name="Alumni"></a>
+	<div class="section-header">
+		<h3>Alumni</h3>
+		<div class="divider">
+			<div class="upbutton">
+				<%= link_to '⇪', '#top-of-page' %>
+			</div>
+			<hr class="gray" />
+		</div>
+	</div>
+	<ul>
+		<% @alumni.each_with_index do |person, i| %>
+			<li><h3><%=h person.first_name %> <%=h person.last_name %></h3></li>
+		<% end %>
+	</ul>
+</div>
+
+
+<br style="clear:both" />
 
 <% if logged_in? %>
 	<%= link_to 'New person', new_person_path %>

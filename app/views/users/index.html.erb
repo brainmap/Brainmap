@@ -1,0 +1,28 @@
+<div class="banner-row">
+	<h2>
+	  WADRC Imaging Lab Admin area
+	</h2>
+</div>
+
+<h2>Manage site content</h2>
+
+<p><%= link_to 'Create a new news item', new_event_path %></p>
+
+<p><%= link_to 'Enter a new publication', new_publication_path %></p>
+
+<p><%= link_to 'Create a new lab personel entry', new_person_path %></p>
+
+<p><%= link_to 'Create a new resources page', new_page_path %></p>
+
+
+<h2>Manage admin users</h2>
+<ul>
+	<% for u in @users %>
+		<li>
+			<%= u.login %>
+			<%= link_to 'edit', edit_user_path(u) %>
+			<%= link_to 'delete', u, :confirm => 'Are you sure?', :method => :delete %>
+		</li>
+	<% end %>
+</ul>
+<p><%= link_to 'Add a new authorized admin', new_user_path %></p>

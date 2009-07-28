@@ -1,8 +1,7 @@
 class RedirectController < ApplicationController
   def index
-    headers["Status"] = "301 Moved Permanently"
     if params[:url]
-      redirect_to params[:url]
+      redirect_to params[:url], :status => :moved_permanently
       return
     else
       redirect_to "/"

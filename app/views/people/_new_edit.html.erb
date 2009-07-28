@@ -23,6 +23,10 @@
 	    <%= f.label :job_title %><br />
 	    <%= f.text_field :job_title %>
 	  </p>
+		<p>
+			<%= f.label :group %><br />
+			<%= f.select :group, ['Scientists','Research Staff','Graduate Students','Research Assistatns','Collaborators','Alumni'], :include_blank => 'choose group' %>
+		</p>
 	</div>
 
 	<div style="float:left; margin-right:2em;">
@@ -85,39 +89,9 @@
 	
 	<br style="clear:both" />
 
-
-	<% 
-	textile_examples = ['h1. This is a heading.']
-	textile_examples << 'Surround text with underscores for _italics_'
-	textile_examples << 'Surround text with asterisks to *make it bold*'
-	textile_examples << 'Double question marks indicate a ??Citation??'
-	textile_examples << 'Use at-symbols to distinguish @code_phrases@'
-	textile_examples << '# Make lists
-# with pound symbols'
-	textile_examples << '# Make lists  
-## with child entries 
-# by using  
-## more pound symbols'
-	textile_examples << '* Bulleted lists
-* just use an asterisk(*) instead of a pound.
-** The same goes for child entries.'
-textile_examples << 'Create a link to a page by "putting a descriptive phrase in quotes, followed by a colon and the URL":http://www.brainmap.wisc.edu.'
-textile_examples << '!imagey!'
-	
-	 %>
-
-	<table border="0" cellspacing="0" cellpadding="5">
-		<tfoot><td colspan="3"><%= link_to "More info at Textile Cheat Sheet", "http://hobix.com/textile/quick.html" %></td></tfoot>
-		<% for example in textile_examples %>
-			<tr>
-				<td><pre><%= example %></pre></td>
-				<td>→</td>
-				<td><%= RedCloth.new(example).to_html %></td>
-			</tr>
-		<% end %>
-	</table>
-
 	<h3>Brief Statement of Interests (plain text only)</h3>
+	
+	<%= render :partial => 'application/textile_example'%>
 
   <p>
     <%= f.label :brief_bio %><br />
@@ -128,7 +102,7 @@ textile_examples << '!imagey!'
 
   <p>
     <%= f.label :long_bio %><br />
-    <%= f.text_area :long_bio %>
+    <%= f.text_area :long_bio, :cols => 60 %>
   </p>
 
 	<p>

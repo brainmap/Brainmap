@@ -2,67 +2,65 @@
 
 <div id="home-banner" class="banner-row clearfix">
 	<div class="mid-heading">
-		<h3>We study brain structure and function in aging and Alzheimer's Disease</h3>
+		<h3>Our lab investigates brain structure and function in aging and Alzheimer's Disease</h3>
 	</div>
 	<div class="detail">
-		<p>
-			The <%= link_to 'Wisconsin ADRC', 'http://wisconsinadrc.wisc.edu/' %> Imaging Lab, directed by Sterling Johnson PhD, at the University of 
-			Wisconsin and the Madison VA Hospital, uses cutting edge neuroimaging techniques to examine brain function in aging 
-			and clinical disorders such as Alzheimer Disease (AD). Imaging methods are combined with comprehensive clinical 
-			evaluations, including neuropsychological assessment, and select genetic and laboratory tests to determine how large 
-			scale brain changes relate to cognitive decline in aging, neurodegenerative disease, or recovery after injury. 
+		<p>The <%= link_to 'Wisconsin Alzheimers Disease Research Center (WADRC)', 'http://wisconsinadrc.wisc.edu/' %> Imaging Core uses MRI &amp; PET neuroimaging techniques, clinical neuropsych evaluations, and genetic and laboratory tests to determine how large scale brain changes relate to cognitive function in aging, neuro-degenerative disease, and recovery after injury.
 		</p>
 		<%= link_to 'More info...', research_objectives_path %>
 	</div>
 </div>
-
+<br style="clear: left;"/>
 <div class="cell-row clearfix">
 	
 	<div id="info-indicator" class="arrow-cell">
-		<h3>&nbsp</h3>
-		<h3 class="indicator-box">Information for</h3>
+		<h3 class="indicator-box">Information for:</h3>
+		<p><%= link_to 'about the images...', permalinked_pages_path('front-page-image-captions') %></p>
+		
 	</div>
 	
-	<div id="volunteers-links" class="link-cell">
+	<div id="link-cell-container">
+		<div id="volunteers-links" class="link-cell">
 		<h3>Volunteers</h3>
 		<%= image_tag 'down-the-bore_sm.jpg', :style => 'color:#61c361' %>
-		<p>
-			<%= link_to 'Learn About Current Studies', study_descriptions_path %><br />
-			<%= link_to 'Contact a Coordinator', people_path %>
-		</p>
+		<ul>
+			<li><%= link_to 'Learn About Current Studies', study_descriptions_path %></li>
+			<li><%= link_to 'Contact a Coordinator', people_path %></li>
+		</ul>
 	</div>
 	
 	<div id="students-links" class="link-cell">
 		<h3>Students</h3>
 		<%= image_tag 'students.jpg', :style => 'color:#910091' %>
-		<p>
-			<%= link_to 'Syllabus & Class Curriculum', pages_path %><br />
-			<%= link_to 'Apply for Undergrad Positions', opportunities_path('students') %>
-		</p>
+		<ul>
+			<li><%= link_to "Syllabus &amp; Class Curriculum", pages_path %></li>
+			<li><%= link_to 'Apply for Undergrad Positions', opportunities_path('students') %></li>
+		</ul>
 	</div>
 	
 	<div id="collaborators-links" class="link-cell">
 		<h3>Collaborators</h3>
 		<%= image_tag 'LP-boosting.jpg', :style => 'color:#ff9900' %>
-		<p>
-			<%= link_to 'Resources: Methods, Procedures, Software, and Downloads', pages_path %><br />
-			<%= link_to 'Available Positions', opportunities_path('researchers') %>
-		</p>
+		<ul>
+			<li><%= link_to 'Resources: Methods, Procedures, Software, and Downloads', pages_path %></li>
+			<li><%= link_to 'Available Positions', opportunities_path('researchers') %></li>
+		</ul>
 	</div>
 	
 	<div id="researchers-links" class="link-cell">
 		<h3>Researchers</h3>
 		<%= image_tag 'asl_alz_cover_horizontal_slash.png', :size => '160x106', :style => 'color:#ff0066' %>
-		<p>
-			<%= link_to 'Our Papers', publications_path %><br />
-			<%= link_to 'Authors & Staff', people_path %><br />
-			<%= link_to 'Ongoing Studies', study_descriptions_path %>
-		</p>
+		<ul>
+			<li><%= link_to 'Our Papers', publications_path %></li>
+			<li><%= link_to "Authors &amp; Staff", people_path %></li>
+			<li><%= link_to 'Ongoing Studies', study_descriptions_path %></li>
+		</ul>
 	</div>
-	
 </div>
 	
-<hr class="yellow-hr" />
+</div>
+
+<hr class="gray" />
 
 <div class="cell-row clearfix">
 	<div id="home-pubs">
@@ -77,7 +75,7 @@
 				<% end %>
 			</ul>
 		<% end %>
-		<%= link_to 'read more research...', publications_path %>
+		<p><%= link_to 'see more peer-reviewed research...', publications_path %></p>
 	</div>
 
 	<div id="home-news">
@@ -92,7 +90,7 @@
 				<% end %>
 			</ul>
 		<% end %>
-		<%= link_to 'read more news...', events_path %>
+		<%= link_to 'read more recent events...', events_path %>
 	</div>
 </div>
 

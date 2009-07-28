@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'publications' %>
+
 <h1>New publication</h1>
 
 <% form_for(@publication) do |f| %>
@@ -17,7 +19,7 @@
   </p>
 	<p>
 		<%= f.label :authors_info %><br />
-		<%= f.text_area :authors_info %>
+		<%= f.text_area :authors_info, :rows => 3 %>
 	</p>
   <p>
     <%= f.label :abstract %><br />
