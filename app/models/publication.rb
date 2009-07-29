@@ -1,6 +1,7 @@
 class Publication < ActiveRecord::Base
   default_scope :order => 'publication_date DESC'
   
+  
   has_many :authorships
   has_many :people, :through => :authorships
   
@@ -10,4 +11,7 @@ class Publication < ActiveRecord::Base
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"
   end
   
+  def year
+    self.publication_date.beginning_of_year
+  end
 end

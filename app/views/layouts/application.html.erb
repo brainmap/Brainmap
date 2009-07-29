@@ -17,32 +17,33 @@
 	
 <p style="color: green"><%= flash[:notice] %></p>
 
-<%= link_to image_tag('vaseal_sm.png', :size => '60x60', :style => 'float:right; margin-top:-12px; margin-right:10px'), 'http://www.madison.va.gov/' %>
-<%= link_to image_tag('uwcrest_sm.png', :size => '42x60', :style => 'float:right; margin-top:-12px; margin-right:10px'), 'http://www.wisc.edu' %>
-
-<ul id="top-nav" class="clearfix">
-  <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'WADRC Imaging Core', root_url, :class => 'lower-case' %>
-	</li>
-	<li id="about-tab" <%= @active_nav_tab == "about-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'about us', research_objectives_url %>
-	</li>
-	<li id="pubs-tab" <%= @active_nav_tab == "pubs-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'publications', publications_path %>
-	</li>
-	<li id="resources-tab" <%= @active_nav_tab == "resources-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'resources', pages_path %>
-	</li>
-	<li id="opportunities-tab" <%= @active_nav_tab == "opportunites-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'opportunities', opportunities_path(:volunteers) %>
-	</li>
-	<li id="news-tab" <%= @active_nav_tab == "news-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'news', events_path %>
-	</li>
-	<li id="contact-tab" <%= @active_nav_tab == "contact-tab" ? 'class="selected-nav-tab"' : "" %>>
-		<%= link_to 'contact', people_path %>
-	</li>
-</ul>
+<div id="nav-and-logos">
+	<%= link_to image_tag('vaseal_sm.png', :size => '60x60'), 'http://www.madison.va.gov/' %>
+	<%= link_to image_tag('uwcrest_sm.png', :size => '42x60'), 'http://www.wisc.edu' %>
+	<ul id="top-nav">
+	  <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'WADRC Imaging Core', root_url, :class => 'lower-case' %>
+		</li>
+		<li id="about-tab" <%= @active_nav_tab == "about-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'about us', research_objectives_url %>
+		</li>
+		<li id="pubs-tab" <%= @active_nav_tab == "pubs-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'publications', publications_path %>
+		</li>
+		<li id="resources-tab" <%= @active_nav_tab == "resources-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'resources', pages_path %>
+		</li>
+		<li id="opportunities-tab" <%= @active_nav_tab == "opportunites-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'opportunities', opportunities_path(:volunteers) %>
+		</li>
+		<li id="news-tab" <%= @active_nav_tab == "news-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'news', events_path %>
+		</li>
+		<li id="contact-tab" <%= @active_nav_tab == "contact-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'contact', people_path %>
+		</li>
+	</ul>
+</div>
 
 <div id="page-content">
 	<%= yield %>

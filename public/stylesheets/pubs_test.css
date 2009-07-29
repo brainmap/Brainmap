@@ -5,24 +5,18 @@
 #pubs-list li p.pub-authors { color:gray; font-size:smaller; margin:0; }
 #pubs-list li p.pub-journal { margin:0.4em 0; }
 
-#pubs-list li:hover { background-color:#DDEBFD; z-index:999;
+#pubs-list li:hover { background-color:#DDEBFD; 
 	-webkit-box-shadow:4px 4px 4px #bbb; 
 	-moz-box-shadow:4px 4px 4px #bbb; 
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 }
-#pubs-list li:hover div.abstract { display:block; position:absolute; z-index:1000!important; padding:1em; 
+#pubs-list li:hover div.abstract { display:block; position:absolute; z-index:1000; padding:1em; 
 	width:150%; top:90%; }
 
-#pubs-list li div.abstract { display:none; background-color:#DDEBFD; z-index:1000!important;
+#pubs-list li div.abstract { display:none; background-color:#DDEBFD; 
 	-webkit-box-shadow:4px 4px 4px #bbb; 
 	-moz-box-shadow:4px 4px 4px #bbb; 
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
 }
-
-/* Publication Show */
-#pubs-show-sidebar { float:left; width:20em; }
-#pub-show-info { margin-left:22em; }
-#pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
-#pub-show-info p.authors { font-size:smaller; color:gray; }

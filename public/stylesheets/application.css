@@ -32,8 +32,12 @@ a:visited { color: #1e77a4; }
 a:hover { text-decoration: underline;}
 a > img { border:none; }
 
-#top-nav { padding:0; margin:2em 0 1.5em 0; list-style:none; color:#6599ff; 
+
+#nav-and-logos { overflow:hidden; width:100%; padding-bottom:2em; }
+#nav-and-logos img { float:right; margin:0; padding:0; position:relative; margin-bottom:-45px; }
+#top-nav { padding:0; margin:0; list-style:none; color:#6599ff; 
 	background: url(../images/nav-gradient-inside.jpg) repeat-x bottom #eee;
+	overflow:hidden; width:100%; float:left;
 }
 
 #top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0; float:left; 
@@ -73,6 +77,7 @@ a > img { border:none; }
 	background: url(../images/monkey_brain_banner.png) no-repeat top left #e3f8fb;
 	min-height:200px;
 	clear: both;
+	margin-bottom:1em;
 }
 
 
@@ -101,8 +106,9 @@ hr.yellow-hr { color:#ffcc00; background-color:#ffcc00; height:1px; border:none;
 hr.blue { color:#98C5DA; background-color:#98C5DA; height:1px; border:none; clear: both; }
 hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: both; }
 
-#research-objectives div { float:left; vertical-align:top; margin-right:1.5em; margin-bottom:3em; }
-#research-objectives ul { list-style:none outside url(../images/objectives-bullet.jpg); width:425px; padding-left:20px; }
+#research-objectives { overflow:hidden; width:100%; }
+#research-objectives div { float:left; vertical-align:top; margin-right:1.5em; margin-bottom:3em; width:45%; }
+#research-objectives ul { list-style:none outside url(../images/objectives-bullet.jpg); padding-left:20px; }
 #research-objectives ul li { margin-bottom:1em; }
 
 .study-description { float:left; width:260px; vertical-align:top; padding:20px; }
@@ -143,6 +149,20 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
     clear: left;
     visibility: hidden; margin:0; padding:0;
 }
+
+/* This is used for section dividers and top links in the people and pubs index pages */
+div.section-header h3 { margin:2em 0 0 0; }
+div.section-header .divider .upbutton { 
+	float:right; position:relative; top:0.7em; margin-top:-1em;
+	padding:0 0.7em; background-color:#fde47a;
+	-webkit-border-radius:0.5em; -moz-border-radius:0.5em;
+}
+/* #ffcc00  */
+div#greeting-and-links { overflow:auto; }
+div#greeting-and-links h2 { float:left; margin:30px 0 4px 0; }
+div#greeting-and-links ul { float:right; list-style:none; margin:34px 0 0 0;}
+div#greeting-and-links ul li { float:left; margin-left:1em; }
+div#greeting-and-links ul li a { font-family:sans-serif; }
 
 
 
@@ -214,3 +234,5 @@ table.textile-example caption {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+

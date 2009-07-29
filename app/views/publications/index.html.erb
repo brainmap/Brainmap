@@ -4,37 +4,64 @@
 	<h2>Publications from the WADRC Imaging Lab and Collaborators</h2>
 </div>
 
-<div id="pubs-index">
-	<ul id="pubs-list">
-		<% @publications.each do |pub| %>
-			<% pubid = "pub-#{pub.id}" %>
-			<% pubtog = "#{pubid}-tog" %>
-			<li class="pub">
-				<h3 class="pub-title"><%= link_to pub.title, pub %></h3>
-				<p class="pub-authors"><%= pub.authors_info %></p>
-				<div class="abstract">
-					<p class="pub-journal"><%= pub.journal_info %></p>
-					<h3>Abstract</h3>
-					<% if pub.abstract.empty? %>
-						<p>No abstract available.</p>
-					<% else %>
-						<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
-						<p><%= pub.abstract%></p>
-					<% end %>
-					<p class="pub-footer">
-						<% if logged_in? %>
-				    	<%= link_to 'edit', edit_publication_path(pub) %>
-				    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
-						<% end %>
-						<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.empty? %>
-					</p>
-				</div>
-			</li>
+<div id="greeting-and-links">
+	<h2>Publication years</h2>
+	<ul>
+		<% @publications.reverse.group_by(&:year).each do |year, pubs| %>
+			<li><%= link_to year.year, "##{year.year}-section" %></li>
 		<% end %>
 	</ul>
 </div>
+<hr class='yellow-hr'></hr>
 
-<p style="margin-bottom:500px;">
+<div id="pubs-index">
+	<% @publications.group_by(&:year).each do |year, pubs| %>
+		<div class="section-header">
+			<a name="<%= year.year.to_s + '-section' %>"></a>
+			<h3><%= year.year %></h3>
+			<div class="divider">
+				<div class="upbutton"><%= link_to 'top', '#top-of-page' %></div>
+				<hr class="gray"></hr>
+			</div>
+		</div>
+		<ul id="pubs-list">
+			<% pubs.each_with_index do |pub, i| %>
+				<% pubid = "pub-#{pub.id}" %>
+				<% pubtog = "#{pubid}-tog" %>
+				<% if i % 3 == 0 %>
+					<div class="row" style="overflow:visible; width:100%; clear:both;">
+				<% end %>
+				<li class="pub">
+					<h3 class="pub-title"><%= link_to pub.title, pub %></h3>
+					<p class="pub-authors"><%= pub.authors_info %></p>
+					<p class="pub-journal"><%= pub.journal_info %></p>
+					<div class="abstract" style="<%= i % 3 == 2 ? 'right:0;' : 'left:0;' %>">
+						<h3>Abstract</h3>
+						<% if pub.abstract.empty? %>
+							<p>No abstract available.</p>
+						<% else %>
+							<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
+							<p><%= pub.abstract %></p>
+						<% end %>
+						<p class="pub-footer">
+							<% if logged_in? %>
+					    	<%= link_to 'edit', edit_publication_path(pub) %>
+					    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
+							<% end %>
+							<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.empty? %>
+						</p>
+					</div>
+				</li>
+				<% if i % 3 == 2 && i != 0 %>
+					</div>
+				<% end %>
+			<% end %>
+		</ul>
+		<br style="clear:both"></br>
+	<% end %>
+</div>
+
+<p>
 	<% if logged_in? %>
 		<%= link_to 'New publication', new_publication_path %>
 	<% end %>

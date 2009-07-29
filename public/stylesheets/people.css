@@ -1,19 +1,9 @@
-div.section-header h3 { margin:2em 0 0 0; }
-div.section-header .divider .upbutton { 
-	float:right; position:relative; top:0.7em; margin-top:-1em;
-	padding:0 0.7em; background-color:#ffcc00;
-	-webkit-border-radius:0.5em; -moz-border-radius:0.5em;
-}
-div#greeting-and-links { overflow:auto; }
-div#greeting-and-links h2 { float:left; margin:30px 0 4px 0; }
-div#greeting-and-links ul { float:right; list-style:none; margin:34px 0 0 0;}
-div#greeting-and-links ul li { float:left; margin-left:1em; }
-div#greeting-and-links ul li a { font-family:sans-serif; }
+
 
 
 
 .people-list { list-style:none; padding:0;}
-.people-list li { float:left; margin:0; padding:0; width:215px; vertical-align:top; 
+.people-list li { float:left; margin:0; padding:0; width:210px; vertical-align:top; 
    margin-right:20px; margin-bottom:1em; }
 .people-list img { float:left; margin-right:1em; margin-bottom:1em; }
 .people-list h3 { margin:0 0 .4em; padding:0; font-size:14px; line-height: normal;}
