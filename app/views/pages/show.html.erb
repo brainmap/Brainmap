@@ -1,3 +1,5 @@
+<% @page_title = title("Resource Page - " + @page.title) %>
+
 <p id="page-ancestors-nav">
 	<%= link_to 'Resources', pages_url %> >>
 	<% for page in @page.ancestors.reverse %>

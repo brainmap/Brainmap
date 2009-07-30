@@ -8,20 +8,25 @@
 #pubs-list li:hover { z-index:999;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+	-webkit-box-shadow:3px 5px 5px #555;
+	-moz-box-shadow:3px 5px 5px #555;
 	color:white;
-	background-image:url(../images/blue-texture.png);
-	opacity:0.93;
+	background-image:url(../images/blue-texture-liter.png);
+	background-position:bottom;
+	opacity:0.97;
 }
 #pubs-list li:hover a { color:#A6D9FF; }
 #pubs-list li:hover p.pub-authors { color:#ccc; }
 #pubs-list li:hover div.abstract { display:block; position:absolute; z-index:1000!important; padding:1em; 
-	width:150%; top:91%; }
+	width:150%; top:100%; margin-top:-14px; }
 
 #pubs-list li div.abstract { display:none;z-index:1000!important;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+	-webkit-box-shadow:3px 5px 5px #555;
+	-moz-box-shadow:3px 5px 5px #555;
 	color:white; 
-	background-image:url(../images/blue-texture.png);
+	background-image:url(../images/blue-texture-liter.png);
 	font-size:24pt;
 }
 #pubs-list li div.abstract a { color:#A6D9FF; }

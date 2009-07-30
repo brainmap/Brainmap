@@ -1,3 +1,5 @@
+<% @page_title = title("Opportunities available for " + @opp_type) %>
+
 <ul id="subpages" class="clearfix">
 	<%= content_tag :li, link_to('Volunteers', opportunities_path(:volunteers)), :class => subpage_class(@opp_type, 'volunteers') %>
 	<%= content_tag :li, link_to('Researchers', opportunities_path(:researchers)), :class => subpage_class(@opp_type, 'researchers') %>

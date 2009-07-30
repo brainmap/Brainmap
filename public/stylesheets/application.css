@@ -109,7 +109,7 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
 
 #research-objectives { overflow:hidden; width:100%; }
 #research-objectives div { float:left; vertical-align:top; margin-right:1.5em; margin-bottom:3em; width:45%; }
-#research-objectives ul { list-style:none outside url(../images/objectives-bullet.jpg); padding-left:20px; }
+#research-objectives ul { list-style:none outside url(../images/objectives-bullet.jpg); padding-left:23px; }
 #research-objectives ul li { margin-bottom:1em; }
 
 
