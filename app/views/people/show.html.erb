@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag 'people' %>
 
-<ul id="subpages" class="clearfix">
+<ul id="subpages">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
 	<li class="active-subpage"><%= link_to 'People', people_path %></li>
@@ -10,25 +10,29 @@
 	&nbsp;
 </div>
 
-<div id="people-nav" class="clear-fix">
-<% for group in [ @scientists, @staff, @grads, @studs ] %>
-	<h3><%= group.first.group unless group.empty? %></h3>
-	<ul>
-	<% group.each do |person| %>
-		<li>
-			<% if person == @person %>
-				<%= person.full_name %>
-				<% else %>
-				<%= link_to person.full_name, person %>
+<div id="people-nav">
+	<% for group in [ @scientists, @staff, @grads, @studs ] %>
+		<h3><%= group.first.group unless group.empty? %></h3>
+		<ul>
+			<% group.each do |person| %>
+				<li>
+					<% if person == @person %>
+						<%= person.full_name %>
+					<% else %>
+						<%= link_to person.full_name, person %>
+					<% end %>
+				</li>
 			<% end %>
-		</li>
+		</ul>
 	<% end %>
-	</ul>
-<% end %>
 </div>
 
-<div id="person-description" class="clear-fix">
-	<div id="person-contactcard" class="clear-fix">
+<div id="person-description">
+	<% if logged_in? %>
+		<p><%= link_to 'Edit profile', edit_person_path(@person) %></p>
+	<% end %>
+	
+	<div id="person-contactcard">
 		<%= image_tag @person.photo.url(:small) %>
 		<h2><%=h @person.full_name %></h2>
 		<h3><%=h @person.job_title %></h3>
@@ -53,7 +57,7 @@
 	<div id="person-details">
 		<% unless @person.long_bio.empty? %>
 			<h3>Biography:</h3>
-		  	<%= RedCloth.new(@person.long_bio).to_html %>
+		  <p><%= RedCloth.new(@person.long_bio).to_html %></p>
 		<% end %>
 	</div>
 
@@ -70,7 +74,3 @@
 	</div>
 </div>
 
-<% if logged_in? %>
-	<%= link_to 'Edit', edit_person_path(@person) %> |
-	<%= link_to 'Back', people_path %>
-<% end %>

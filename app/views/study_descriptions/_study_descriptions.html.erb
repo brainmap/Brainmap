@@ -1,0 +1,17 @@
+<ul id="study-descriptions-list">
+	<% @study_descriptions.each_with_index do |study_description, i| %>
+		<% if i % 3 == 0 %><div class="row"><% end %>
+		
+			<li class="study-description">
+				<h3><%=h study_description.title %></h3>
+				<hr class="blue" />
+				<p><%= RedCloth.new(study_description.body).to_html %></p>
+				<% if logged_in? %>
+					<%= link_to 'edit', edit_study_description_path(study_description) %>
+			  	<%= link_to 'delete', study_description, :confirm => 'Are you sure?', :method => :delete %>
+				<% end %>
+			</li>
+		
+		<% if (i % 3 == 2) or (i == @study_descriptions.length - 1) %></div><% end %>
+	<% end %>
+</ul>

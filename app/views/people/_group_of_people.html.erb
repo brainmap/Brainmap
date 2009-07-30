@@ -1,0 +1,32 @@
+<% brief ||= false %>
+
+<div class="people-section">
+	<a name="<%= group.first.group %>"></a>
+	<div class="section-header">
+		<h3><%= group.first.group unless group.empty? %></h3>
+		<div class="divider">
+			<div class="upbutton">
+				<%= link_to 'top', '#top-of-page' %>
+			</div>
+			<hr class="gray" />
+		</div>
+	</div>
+	<ul class="people-list">
+		<% group.each_with_index do |person, i| %>
+			<% if i % 4 == 0 %><div class="row"><% end %>
+				<li>
+					<%= link_to(image_tag(person.photo.url(:thumb)), person) unless brief %>
+					<h3><%=h person.first_name %> <%=h person.last_name %></h3>
+					<!-- <h4><%=h person.degree %></h4> -->
+					<h4><%=h person.job_title unless brief %></h4>
+					<!-- <p>Ext. <%= person.lab_phone_ext %></p> -->
+					<p style="clear:left"><%=h person.brief_bio unless brief %></p>
+					<% if logged_in? %>
+						<%= link_to 'edit', edit_person_path(person) %>
+						<%= link_to 'delete', person, :confirm => 'Are you sure?', :method => :delete %>
+					<% end %>
+				</li>
+			<% if (i % 4 == 3) or (i == (group.length - 1)) %></div><% end %>
+		<% end %>
+	</ul>
+</div>

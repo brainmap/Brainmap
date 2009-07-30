@@ -1,0 +1,4 @@
+#study-descriptions-list { list-style:none; padding:0; margin:0; overflow:visible; width:110%; }
+#study-descriptions-list div.row { clear:both; overflow:visible; width:100%; }
+#study-descriptions-list li.study-description { float:left; width:286px; vertical-align:top; padding:0; margin-right:42px; }
+#study-descriptions-list li.study-description h3 { font-family: arial; sans-serif; }

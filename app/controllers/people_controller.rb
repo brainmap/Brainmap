@@ -1,8 +1,19 @@
 class PeopleController < ApplicationController
   before_filter :set_active_tab
-  
+   before_filter :login_required, :except => [ :show, :index, :research_objectives, :collaborators ]
+   
   def set_active_tab
     @active_nav_tab = 'about-tab'
+  end
+  
+  # GET /people/collaborators
+  # GET /people/collborators.xml
+  def collaborators
+    @collabs = Person.in_group('Collaborators')
+    respond_to do |format|
+      format.html # collaborators.html.erb
+      format.xml  { render :xml => @collabs }
+    end
   end
   
   # GET /people
@@ -13,7 +24,6 @@ class PeopleController < ApplicationController
     @staff = Person.in_group('Research Staff')
     @grads = Person.in_group('Graduate Students')
     @studs = Person.in_group('Research Assistants')
-    @collabs = Person.in_group('Collaborators')
     @alumni = Person.in_group('Alumni')
 
     respond_to do |format|

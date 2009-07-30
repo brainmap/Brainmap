@@ -16,6 +16,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/index.php/Neuropsychology_Neuroimaging_Lab', :controller => 'redirect'
   map.connect '/index.php/:title', :controller => 'redirect'
 
+  map.collaborators 'people/collaborators', :controller => 'people', :action => 'collaborators'
   map.current_studies 'about/current_studies', :controller => 'application', :action => 'current_studies'
   map.research_objectives 'about/research_objectives', :controller => 'application', :action => 'research_objectives'
   map.opportunities 'opportunites/:opportunity_type', :controller => 'job_advertisements', :action => 'index'

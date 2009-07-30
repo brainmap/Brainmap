@@ -1,9 +1,10 @@
-<ul id="page-ancestors-nav" class="pages-nav clearfix">
-	<li><%= link_to 'Resources', pages_url %> > </li>
+<p id="page-ancestors-nav">
+	<%= link_to 'Resources', pages_url %> >>
 	<% for page in @page.ancestors.reverse %>
-		<li><%= link_to page.title, page %> > </li>
+		<%= link_to page.title, page %> >>
 	<% end %>
-</ul>
+	<%= @page.title %>
+</p>
 
 
 <div class="banner-row">
@@ -17,7 +18,7 @@
 
 <% unless @page.children.empty? %>
 	<h3>Related pages:</h3>
-	<ul id=page-children-nav class="pages-nav clearfix">
+	<ul id="page-children-nav">
 		<% for page in @page.children %>
 			<li><%= link_to page.title, page %></li>
 		<% end %>

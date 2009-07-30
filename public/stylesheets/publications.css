@@ -5,24 +5,38 @@
 #pubs-list li p.pub-authors { color:gray; font-size:smaller; margin:0; }
 #pubs-list li p.pub-journal { margin:0.4em 0; }
 
-#pubs-list li:hover { background-color:#DDEBFD; z-index:999;
-	-webkit-box-shadow:4px 4px 4px #bbb; 
-	-moz-box-shadow:4px 4px 4px #bbb; 
+#pubs-list li:hover { z-index:999;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+	color:white;
+	background-image:url(../images/blue-texture.png);
+	opacity:0.93;
 }
+#pubs-list li:hover a { color:#A6D9FF; }
+#pubs-list li:hover p.pub-authors { color:#ccc; }
 #pubs-list li:hover div.abstract { display:block; position:absolute; z-index:1000!important; padding:1em; 
-	width:150%; top:90%; }
+	width:150%; top:91%; }
 
-#pubs-list li div.abstract { display:none; background-color:#DDEBFD; z-index:1000!important;
-	-webkit-box-shadow:4px 4px 4px #bbb; 
-	-moz-box-shadow:4px 4px 4px #bbb; 
+#pubs-list li div.abstract { display:none;z-index:1000!important;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;
+	color:white; 
+	background-image:url(../images/blue-texture.png);
+	font-size:24pt;
 }
+#pubs-list li div.abstract a { color:#A6D9FF; }
+
+/*  background-color:#DDEBFD; */
 
 /* Publication Show */
 #pubs-show-sidebar { float:left; width:20em; }
 #pub-show-info { margin-left:22em; }
 #pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
 #pub-show-info p.authors { font-size:smaller; color:gray; }
+
+
+/*
+rgb(81, 112, 246)
+rgb(55, 90, 245)
+rgb(27, 68, 243)
+*/
