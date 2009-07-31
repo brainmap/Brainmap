@@ -1,0 +1,11 @@
+<h3>Other Recent News & Events</h3>
+<ul>
+  <% for event in events %>
+    <li>
+      <%= event == current_event ? event.title : link_to(event.title, event) %>
+      <br />
+      <%= event.date.to_s(:long) %>
+    </li>
+  <% end %>
+</ul>
+<p><%= link_to 'more news...', events_path %></p>

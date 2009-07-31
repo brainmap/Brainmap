@@ -1,34 +1,24 @@
+<%= stylesheet_link_tag 'pages' %>
 <% @page_title = title("Resource Page - " + @page.title) %>
 
-<p id="page-ancestors-nav">
-	<%= link_to 'Resources', pages_url %> >>
-	<% for page in @page.ancestors.reverse %>
-		<%= link_to page.title, page %> >>
-	<% end %>
-	<%= @page.title %>
-</p>
-
-
 <div class="banner-row">
-	<h2><%= @page.title %></h2>
+	<h2>Wisconsin ADRC Imaging Core Resource Pages</h2>
 </div>
 
-<div id="page-content">
-  <%= RedCloth.new(@page.content).to_html %>
+<div id="resources-wrapper">
+
+  <%= render :partial => 'resources_sidebar', :locals => { :current_page => @page } %>
+
+  <div id="resources-content">
+    <h3><%=h @page.title %></h3>
+    <hr class="blue" style="clear:none;"/>
+    <%= RedCloth.new(@page.content).to_html %>
+    <% if logged_in? %>
+      <p>
+    	  <%= link_to 'Edit this page', edit_page_path(@page) %> | 
+    	  <%= link_to 'delete this page', @page, :confirm => 'Are you sure?', :method => :delete %>
+      </p>
+    <% end %>
+  </div>
+
 </div>
-
-
-<% unless @page.children.empty? %>
-	<h3>Related pages:</h3>
-	<ul id="page-children-nav">
-		<% for page in @page.children %>
-			<li><%= link_to page.title, page %></li>
-		<% end %>
-	</ul>
-<% end %>
-
-
-<% if logged_in? %>
-	<%= link_to 'Edit this page', edit_page_path(@page) %> | 
-	<%= link_to 'delete this page', @page, :confirm => 'Are you sure?', :method => :delete %>
-<% end %>

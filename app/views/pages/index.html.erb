@@ -1,13 +1,22 @@
+<%= stylesheet_link_tag 'pages' %>
 <% @page_title = title("Resource Pages") %>
 
-<ul id="menu">
-  <% for page in Page.roots %>
-    <%= children_list page %>
-  <% end %>
-</ul>
+<div class="banner-row">
+	<h2>Wisconsin ADRC Imaging Core Resource Pages</h2>
+</div>
 
-<br />
+<div id="resources-wrapper">
+
+  <%= render :partial => 'resources_sidebar' %>
+
+  <div id="resources-content">
+    <h3><%= @welcome.title %></h3>
+    <hr class="blue" style="clear:none;" />
+    <%= RedCloth.new(@welcome.content).to_html %>
+  </div>
+
+</div>
 
 <% if logged_in? %>
-	<%= link_to 'New page', new_page_path %>
+	<p><%= link_to 'New page', new_page_path %></p>
 <% end %>
