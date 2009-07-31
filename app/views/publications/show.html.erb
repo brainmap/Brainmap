@@ -8,10 +8,11 @@
 <br />
 
 <div id="pubs-show-sidebar">
-	<h3>Other Publications</h3>
+	<h3>Related Publications:</h3>
 	<ul>
-		<% for pub in @all_publications.first(10) %>
-			<li><%= link_to pub.title, pub %> <%=h pub.publication_date.to_s(:long) %></li>
+		<% related_publications = @publication.contributer_publications.empty?  ? @all_publications : @publication.contributer_publications %>
+		<% for pub in related_publications.sort_by(&:publication_date).reverse.first(10) %>
+			<li><%= link_to pub.title, pub %> <br/> <%=h pub.publication_date.to_s(:long) %></li>
 		<% end %>
 	</ul>
 	<p><%= link_to 'more publications...', publications_path %></p>

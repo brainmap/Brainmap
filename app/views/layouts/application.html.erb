@@ -15,7 +15,9 @@
 
 <div id="centered-layout-container">
 	
-<p style="color: green"><%= flash[:notice] %></p>
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => "#{key}Explanation" %>
+<% end %>
 
 <div id="nav-and-logos">
 	<%= link_to image_tag('vaseal_sm.png', :size => '60x60'), 'http://www.madison.va.gov/' %>

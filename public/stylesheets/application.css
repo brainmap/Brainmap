@@ -2,7 +2,7 @@
 
 div#centered-layout-container { background-color: #fff; color: #333; 
  width: 940px;
- margin:0 auto 5em;
+ margin: 1em auto 5em;
 }
 
 body { padding:0; margin:0; }
@@ -82,12 +82,10 @@ a > img { border:none; }
 	overflow:hidden; width:100%; clear:both;
 }
 
-
-
-.banner-row div { float:left; vertical-align:top;  }
+.banner-row div { float:left; vertical-align:top; }
 .banner-row div.mid-heading { margin-left:220px; width:340px; padding-left: 2em; padding-top: 1em; line-height: 2em;}
 .banner-row div.detail { padding:1em 1em 1em 0; width:320px; float: right;}
-.banner-row h2 { text-align:right; margin-left:15em; margin-right:3em; margin-top:3em;}
+.banner-row h2 { text-align:right; margin-left:15em; margin-right:3em; margin-top:3em; line-height: 1.5em;}
 .banner-row h4 { margin: 0	;}
 
 
@@ -107,6 +105,22 @@ a > img { border:none; }
 hr.yellow-hr { color:#ffcc00; background-color:#ffcc00; height:1px; border:none; clear: both; }
 hr.blue { color:#98C5DA; background-color:#98C5DA; height:1px; border:none; clear: both; }
 hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: both; }
+
+#home-banner {border-bottom:solid 10px #ffcc00; border-top:solid thin #98c5da;
+	background: url(../images/hp_bg-mri.jpg) no-repeat black;
+	padding: 10px 0 20px; color: white; }
+#home-banner div.mid-heading {margin-left:60px; width:520px; padding: 0; line-height: 2em; font-size: 20px;}
+#home-banner div.detail {margin: 15px 20px; padding: 0; width: 320px; line-height: 1.5em;}
+#home-banner div.detail p {font-size: 16px; line-height: 1.5em;}
+#home-banner h2 {text-align:right; margin-left:15em; margin-right:3em; margin-top:3em;}
+#home-banner h4 {margin: 0;}
+#home-banner a { color: #fc0; }
+
+#research-objectives-banner { background: url(../images/research_obj_bg.jpg); padding: 10px 0 20px; color: black;}
+#research-objectives-banner a { color: #fc0; }
+#research-objectives-banner div.mid-heading { margin-left: 240px; padding: 0; width: 210px; font-size: 14px;}
+#research-objectives-banner div.detail { width: 460px ; padding: 0; margin-top: 0; margin-right: 10px;}
+#research-objectives-banner div p { font-size: 16px; line-height: 1.5em;}
 
 #research-objectives { overflow:hidden; width:100%; }
 #research-objectives div { float:left; vertical-align:top; margin-right:1.5em; margin-bottom:3em; width:45%; }
@@ -205,34 +219,5 @@ table.textile-example caption {
   background-color: red;
   display: table;
 }
- 
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
- 
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
- 
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
- 
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
+#errorExplanation { color: red; }
+#noticeExplanation { color: green; }

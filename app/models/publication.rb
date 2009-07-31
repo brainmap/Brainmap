@@ -18,4 +18,15 @@ class Publication < ActiveRecord::Base
   def abridged_abstract(n = 1)
     "#{abstract.split('. ').first(n).join('. ')}."
   end
+  
+  def contributer_publications
+    contributer_publications = Set.new
+    people.each do |person|
+      person.publications.each do |pub|
+        contributer_publications << pub unless (person.full_name == "Sterling Johnson" or pub == self)
+      end
+    end
+    
+    return contributer_publications
+  end
 end
