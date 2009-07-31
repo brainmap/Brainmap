@@ -9,9 +9,11 @@
 
 <div id="pubs-show-sidebar">
 	<h3>Other Publications</h3>
-	<% for pub in @all_publications.first(10) %>
-		<p><%= link_to pub.title, pub %> <%=h pub.publication_date.to_s(:long) %></p>
-	<% end %>
+	<ul>
+		<% for pub in @all_publications.first(10) %>
+			<li><%= link_to pub.title, pub %> <%=h pub.publication_date.to_s(:long) %></li>
+		<% end %>
+	</ul>
 	<p><%= link_to 'more publications...', publications_path %></p>
 </div>
 

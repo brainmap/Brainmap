@@ -8,6 +8,8 @@ class JobAdvertisementsController < ApplicationController
   # GET /job_advertisements
   # GET /job_advertisements.xml
   def index
+    @all_opps = JobAdvertisement.all
+    
     if params['opportunity_type'].nil?
       @job_advertisements = JobAdvertisement.find_all_by_opp_type('volunteers')
       @opp_type = 'volunteers'
@@ -26,7 +28,8 @@ class JobAdvertisementsController < ApplicationController
   # GET /job_advertisements/1.xml
   def show
     @job_advertisement = JobAdvertisement.find(params[:id])
-
+    @opportunities = JobAdvertisement.all
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @job_advertisement }

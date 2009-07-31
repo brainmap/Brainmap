@@ -14,8 +14,9 @@
 
 <%= render :partial => 'study_descriptions' %>
 
-<br />
+<br style="clear:both" />
 
 <% if logged_in? %>
+	<br style="clear:both" />
 	<%= link_to 'New study description', new_study_description_path %>
 <% end %>

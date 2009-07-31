@@ -14,4 +14,8 @@ class Publication < ActiveRecord::Base
   def year
     self.publication_date.beginning_of_year
   end
+  
+  def abridged_abstract(n = 1)
+    "#{abstract.split('. ').first(n).join('. ')}."
+  end
 end

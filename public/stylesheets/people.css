@@ -26,6 +26,8 @@
 #people-nav h3 { margin: 0 ; font-size: 12pt; }
 #people-nav ul { margin: 0; padding: 0.5em 1em 1.5em; list-style: none}
 
+.people-wrapper { overflow:hidden; width:100%; margin:0; padding:0; margin-bottom:2em; clear:both; }
+
 #person-description { padding: 20px; margin-left: 160px;}
 
 #person-contactcard { font-size: 12px; float: left; overflow:hidden; width: 720px; 

@@ -11,14 +11,14 @@
 	-webkit-box-shadow:3px 5px 5px #555;
 	-moz-box-shadow:3px 5px 5px #555;
 	color:white;
-	background-image:url(../images/blue-texture-liter.png);
-	background-position:bottom;
-	opacity:0.97;
+	background-image:url(../images/tile4.png);
+	background-position:bottom left;
+	opacity:0.95;
 }
 #pubs-list li:hover a { color:#A6D9FF; }
 #pubs-list li:hover p.pub-authors { color:#ccc; }
 #pubs-list li:hover div.abstract { display:block; position:absolute; z-index:1000!important; padding:1em; 
-	width:150%; top:100%; margin-top:-14px; }
+	width:150%; top:100%; margin-top:-16px; }
 
 #pubs-list li div.abstract { display:none;z-index:1000!important;
 	-webkit-border-radius:10px;
@@ -26,7 +26,7 @@
 	-webkit-box-shadow:3px 5px 5px #555;
 	-moz-box-shadow:3px 5px 5px #555;
 	color:white; 
-	background-image:url(../images/blue-texture-liter.png);
+	background-image:url(../images/tile4.png);
 	font-size:24pt;
 }
 #pubs-list li div.abstract a { color:#A6D9FF; }
@@ -35,6 +35,8 @@
 
 /* Publication Show */
 #pubs-show-sidebar { float:left; width:20em; }
+#pubs-show-sidebar ul { list-style:none inside url(../images/paper-icon.jpg); margin:0; padding:0; }
+#pubs-show-sidebar ul li { margin-bottom:1em; }
 #pub-show-info { margin-left:22em; }
 #pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
 #pub-show-info p.authors { font-size:smaller; color:gray; }
@@ -44,4 +46,5 @@
 rgb(81, 112, 246)
 rgb(55, 90, 245)
 rgb(27, 68, 243)
+background-image:url(../images/blue-texture-liter.png);
 */

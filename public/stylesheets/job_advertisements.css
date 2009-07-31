@@ -1,0 +1,7 @@
+.opportunities-wrapper { overflow:hidden; width:100%; margin:0 0 2em; }
+
+#opportunities-sidebar { float:left; width:225px; }
+#opportunities-sidebar ul { list-style:none; padding:0; }
+#opportunities-sidebar ul li { margin-bottom:10px; }
+#opportunities-content { margin-left:260px; padding:0 1em; }
+#opportunities-content h3 { font-size:18pt; }

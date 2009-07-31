@@ -3,7 +3,7 @@
 		<% if i % 3 == 0 %><div class="row"><% end %>
 		
 			<li class="study-description">
-				<h3><%=h study_description.title %></h3>
+				<div class="study-title"><h3><%=h study_description.title %></h3></div>
 				<hr class="blue" />
 				<p><%= RedCloth.new(study_description.body).to_html %></p>
 				<% if logged_in? %>

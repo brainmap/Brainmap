@@ -11,67 +11,70 @@
 	&nbsp;
 </div>
 
-<div id="people-nav">
-	<% for group in [ @scientists, @staff, @grads, @studs ] %>
-		<h3><%= group.first.group unless group.empty? %></h3>
-		<ul>
-			<% group.each do |person| %>
-				<li>
-					<% if person == @person %>
-						<%= person.full_name %>
-					<% else %>
-						<%= link_to person.full_name, person %>
-					<% end %>
-				</li>
-			<% end %>
-		</ul>
-	<% end %>
-</div>
-
-<div id="person-description">
-	<% if logged_in? %>
-		<p><%= link_to 'Edit profile', edit_person_path(@person) %></p>
-	<% end %>
-	
-	<div id="person-contactcard">
-		<%= image_tag @person.photo.url(:small) %>
-		<h2><%=h @person.full_name %></h2>
-		<h3><%=h @person.job_title %></h3>
-
-		<p class="left">
-		  <%= @person.address.to_html %>
-		</p>
-
-		<p class="right">
-		  <b>Office:</b>
-		  <%=h @person.office_phone_formatted %><br/>
-		  <b>Lab:</b>
-		  <%=h @person.lab_phone_formatted %><br/>
-		  <b>Fax:</b>
-		  <%=h @person.fax_formatted %><br/>
-		  <b>Email:</b>
-		  <%=h @person.email %>
-		</p>
+<div id="people-show-wrapper" class="people-wrapper">
+	<div id="people-nav">
+		<% for group in [ @scientists, @staff, @grads, @studs ] %>
+			<h3><%= group.first.group unless group.empty? %></h3>
+			<ul>
+				<% group.each do |person| %>
+					<li>
+						<% if person == @person %>
+							<%= person.full_name %>
+						<% else %>
+							<%= link_to person.full_name, person %>
+						<% end %>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
+		<h3><%= link_to 'Collaborators', collaborators_path %></h3>
 	</div>
 
+	<div id="person-description">
+		<% if logged_in? %>
+			<p><%= link_to 'Edit profile', edit_person_path(@person) %></p>
+		<% end %>
 	
-	<div id="person-details">
-		<% unless @person.long_bio.empty? %>
-			<h3>Biography:</h3>
-		  <p><%= RedCloth.new(@person.long_bio).to_html %></p>
-		<% end %>
-	</div>
+		<div id="person-contactcard">
+			<%= image_tag @person.photo.url(:small) %>
+			<h2><%=h @person.full_name %></h2>
+			<h3><%=h @person.job_title %></h3>
 
-	<div style="float:left" id="person-pubs">
-		<% unless @person.publications.empty? %>
-		<h3>Publications:</h3>
-		<ul>
-			<% for pub in @person.publications %>
-				<li><%= link_to pub.title, pub %></li>
+			<p class="left">
+			  <%= @person.address.to_html %>
+			</p>
+
+			<p class="right">
+			  <b>Office:</b>
+			  <%=h @person.office_phone_formatted %><br/>
+			  <b>Lab:</b>
+			  <%=h @person.lab_phone_formatted %><br/>
+			  <b>Fax:</b>
+			  <%=h @person.fax_formatted %><br/>
+			  <b>Email:</b>
+			  <%=h @person.email %>
+			</p>
+		</div>
+
+	
+		<div id="person-details">
+			<% unless @person.long_bio.empty? %>
+				<h3>Biography:</h3>
+			  <p><%= RedCloth.new(@person.long_bio).to_html %></p>
 			<% end %>
-		</ul>
-		<% end %>
+		</div>
+
+		<div style="float:left" id="person-pubs">
+			<% unless @person.publications.empty? %>
+			<h3>Publications:</h3>
+			<ul>
+				<% for pub in @person.publications %>
+					<li><%= link_to pub.title, pub %></li>
+				<% end %>
+			</ul>
+			<% end %>
 		
+		</div>
 	</div>
-</div>
 
+</div>

@@ -1,25 +1,38 @@
+<%= stylesheet_link_tag 'job_advertisements' %>
 <% @page_title = title("Opportunity - " + @job_advertisement.title) %>
 
-<p>
-  <b>Title:</b>
-  <%=h @job_advertisement.title %>
-</p>
+<div class="banner-row">
+	<h2>Current Opportunities</h2>
+</div>
 
-<p>
-  <b>Body:</b>
-  <%=h @job_advertisement.body %>
-</p>
+<div id="opportunities-show-wrapper" class="opportunities-wrapper">
+	
+	<div id="opportunities-sidebar">
+		<%= render :partial => 'opp_sidebar', :locals => { :opps => @opportunities, :current_opp => @job_advertisement } %>
+	</div>
 
-<p>
-  <b>Pvl:</b>
-  <%=h @job_advertisement.pvl %>
-</p>
+	<div id="opportunities-content">
+		<h3><i><%=h @job_advertisement.title %></i></h3>
 
-<p>
-  <b>Responder:</b>
-  <%=h @job_advertisement.responder_id %>
-</p>
+		<p><%= RedCloth.new(@job_advertisement.body).to_html %></p>
+		
+		<% unless @job_advertisement.pvl.nil? or @job_advertisement.pvl.empty? %>
+			<p><b>Pvl:</b><%=h @job_advertisement.pvl %></p>
+		<% end %>
 
+		<% unless @job_advertisement.responder.nil? %>
+			<p>Interested applicants please contact:</p>
+		  <p>
+				<%=h @job_advertisement.responder.first_name %> <%=h @job_advertisement.responder.last_name %><br />
+				<%= @job_advertisement.responder.address.to_html %><br />
+				<%= @job_advertisement.responder.office_phone_formatted %>
+			</p>
+		<% end %>
 
-<%= link_to 'Edit', edit_job_advertisement_path(@job_advertisement) %> |
-<%= link_to 'Back', job_advertisements_path %>
+		<% if logged_in? %>
+			<%= link_to 'Edit', edit_job_advertisement_path(@job_advertisement) %> |
+			<%= link_to 'Back', job_advertisements_path %>
+		<% end %>
+	</div>
+
+</div>

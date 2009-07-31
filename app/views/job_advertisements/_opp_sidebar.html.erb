@@ -1,0 +1,13 @@
+<% current_opp ||= nil %>
+
+<h3>Other Opportunities</h3>
+<% opps.group_by(&:opp_type).each do |opp_group, group_opps| %>
+	<h3><%=h opp_group %></h3>
+	<ul>
+		<% for opp in group_opps %>
+			<li>
+				<%= opp == current_opp ? opp.title : link_to(opp.title, opp) %>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

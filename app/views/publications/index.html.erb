@@ -36,13 +36,16 @@
 					<h3 class="pub-title"><%= link_to pub.title, pub %></h3>
 					<p class="pub-authors"><%= pub.authors_info %></p>
 					<p class="pub-journal"><%= pub.journal_info %></p>
-					<div class="abstract" style="<%= i % 3 == 2 ? 'right:0;' : 'left:0;' %>">
+					<div class="abstract" style="<%= i % 3 == 2 ? 'right:0;margin-top:-17px;' : 'left:0;' %>">
 						<h3>Abstract</h3>
 						<% if pub.abstract.empty? %>
 							<p>No abstract available.</p>
 						<% else %>
 							<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
-							<p><%= pub.abstract %></p>
+							<p>
+								<%= pub.abridged_abstract 2 %>..
+								<%= link_to '[read more]', pub %>
+							</p>
 						<% end %>
 						<p class="pub-footer">
 							<% if logged_in? %>
