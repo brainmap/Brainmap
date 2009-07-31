@@ -9,6 +9,7 @@ class PagesController < ApplicationController
   # GET /pages.xml
   def index
     @pages = Page.all
+    @welcome = Page.find_by_permalink('welcome')
 
     respond_to do |format|
       format.html # index.html.erb

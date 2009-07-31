@@ -1,0 +1,6 @@
+#events-wrapper { overflow:hidden; width:100%; clear:both; margin-bottom:2em; }
+#events-sidebar { float:left; width:250px; }
+#events-sidebar ul { list-style:none; padding:0; margin:0; }
+#events-sidebar ul li { margin-bottom:.8em; }
+#events-content { margin-left:275px; }
+#events-content h3 { font-size:24pt; line-height:1em; margin-top:0.4em;}

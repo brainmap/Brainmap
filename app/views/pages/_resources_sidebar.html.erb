@@ -1,0 +1,9 @@
+<% current_page ||= nil %>
+<div id="resources-sidebar">
+  <h3>Other Resource Pages</h3>
+  <ul>
+    <% for page in Page.roots %>
+      <%= children_list page, current_page %>
+    <% end %>
+  </ul>
+</div>
