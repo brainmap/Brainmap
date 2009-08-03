@@ -1,0 +1,8 @@
+<% blurb_not_found = RedCloth.new("h3. _Blurb not found. Please create a new blurb entry with permalink: #{permalink}_").to_html %>
+<% blurb = Blurb.find_by_permalink(permalink) %>
+<%= blurb.nil? ? blurb_not_found : RedCloth.new(blurb.content).to_html %>
+<% if logged_in? %>
+	<p>
+		<%= blurb.nil? ? link_to('create new blurb', new_blurb_path) : link_to('edit this blurb', edit_blurb_path(blurb)) %>
+	</p>
+<% end %>

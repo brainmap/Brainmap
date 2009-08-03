@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090722212107) do
+ActiveRecord::Schema.define(:version => 20090803144900) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20090722212107) do
   create_table "authorships", :force => true do |t|
     t.integer  "person_id"
     t.integer  "publication_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blurbs", :force => true do |t|
+    t.string   "permalink"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

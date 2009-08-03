@@ -10,9 +10,7 @@
   <%= render :partial => 'resources_sidebar' %>
 
   <div id="resources-content">
-    <h3><%= @welcome.title %></h3>
-    <hr class="blue" style="clear:none;" />
-    <%= RedCloth.new(@welcome.content).to_html %>
+    <%= render :partial => 'application/blurb', :locals => { :permalink => 'resources-index-welcome' } %>
   </div>
 
 </div>

@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   before_filter :set_active_tab
-   before_filter :login_required, :except => [ :show, :index, :research_objectives, :collaborators ]
+  before_filter :login_required, :except => [ :show, :index, :research_objectives, :collaborators ]
    
   def set_active_tab
     @active_nav_tab = 'about-tab'

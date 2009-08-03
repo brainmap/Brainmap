@@ -1,0 +1,13 @@
+<p>
+  <b>Permalink:</b>
+  <%=h @blurb.permalink %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @blurb.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_blurb_path(@blurb) %> |
+<%= link_to 'Back', blurbs_path %>

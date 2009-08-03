@@ -2,61 +2,36 @@
 
 <div id="home-banner" class="banner-row clearfix">
 	<div class="mid-heading">
-		<h3>Our lab investigates brain structure and function in aging and Alzheimer's Disease</h3>
+		<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-main-title' } %>
 	</div>
 	<div class="detail">
-		<p>The <%= link_to 'Wisconsin Alzheimers Disease Research Center (WADRC)', 'http://wisconsinadrc.wisc.edu/' %> Imaging Core uses MRI &amp; PET neuroimaging techniques, clinical neuropsych evaluations, and genetic and laboratory tests to determine how large scale brain changes relate to cognitive function in aging, neuro-degenerative disease, and recovery after injury.
-		</p>
-		<%= link_to 'More info...', research_objectives_path %>
+		<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-subtitle' } %>
 	</div>
 </div>
 <br style="clear: left;"/>
 <div class="cell-row clearfix">
 	
 	<div id="info-indicator" class="arrow-cell">
-		<h3 class="indicator-box">Information for:</h3>
-		<p><%= link_to 'about the images...', permalinked_pages_path('front-page-image-captions') %></p>
-		
+		<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-prompt-cell' } %>
 	</div>
 	
 	<div id="link-cell-container">
 		<div id="volunteers-links" class="link-cell">
-		<h3>Volunteers</h3>
-		<%= image_tag 'down-the-bore_sm.jpg', :style => 'color:#61c361' %>
-		<ul>
-			<li><%= link_to 'Learn About Current Studies', study_descriptions_path %></li>
-			<li><%= link_to 'Contact a Coordinator', opportunities_path('volunteers') %></li>
-		</ul>
-	</div>
+			<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-volunteers-cell' } %>
+		</div>
 	
-	<div id="students-links" class="link-cell">
-		<h3>Students</h3>
-		<%= image_tag 'students.jpg', :style => 'color:#910091' %>
-		<ul>
-			<li><%= link_to "Syllabus &amp; Class Curriculum", pages_path %></li>
-			<li><%= link_to 'Apply for Undergrad Positions', opportunities_path('students') %></li>
-		</ul>
-	</div>
+		<div id="students-links" class="link-cell">
+			<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-students-cell' } %>
+		</div>
 	
-	<div id="collaborators-links" class="link-cell">
-		<h3>Collaborators</h3>
-		<%= image_tag 'LP-boosting.jpg', :style => 'color:#ff9900' %>
-		<ul>
-			<li><%= link_to 'Resources: Methods, Procedures, Software, and Downloads', pages_path %></li>
-			<li><%= link_to 'Available Positions', opportunities_path('researchers') %></li>
-		</ul>
-	</div>
+		<div id="collaborators-links" class="link-cell">
+			<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-collaborators-cell' } %>
+		</div>
 	
-	<div id="researchers-links" class="link-cell">
-		<h3>Researchers</h3>
-		<%= image_tag 'asl_alz_cover_horizontal_slash.png', :size => '160x106', :style => 'color:#ff0066' %>
-		<ul>
-			<li><%= link_to 'Our Papers', publications_path %></li>
-			<li><%= link_to "Authors &amp; Staff", people_path %></li>
-			<li><%= link_to 'Ongoing Studies', study_descriptions_path %></li>
-		</ul>
+		<div id="researchers-links" class="link-cell">
+			<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-researchers-cell' } %>
+		</div>
 	</div>
-</div>
 	
 </div>
 

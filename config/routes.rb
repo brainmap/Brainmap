@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :blurbs
+
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   
@@ -19,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
   map.collaborators 'people/collaborators', :controller => 'people', :action => 'collaborators'
   map.current_studies 'about/current_studies', :controller => 'application', :action => 'current_studies'
   map.research_objectives 'about/research_objectives', :controller => 'application', :action => 'research_objectives'
-  map.opportunities 'opportunites/:opportunity_type', :controller => 'job_advertisements', :action => 'index'
+  map.opportunities 'opportunities/:opportunity_type', :controller => 'job_advertisements', :action => 'index'
   
   # map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'

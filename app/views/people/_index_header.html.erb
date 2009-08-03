@@ -8,31 +8,13 @@
 
 <div id="people-banner" class="banner-row">
 	<div id="sterling-blurb">
-		<h3>Sterling C. Johnson, PhD</h3>
-		<p>
-			Dr. Johnson is a neuropsychologist with research interests in brain function in clinical disorders. Current projects focus on 
-			A) the neurobiological and psychological processes that affect memory; B) early detection of Alzheimer's Disease; 
-			C) imaging markers of AD progression; D) brain changes in normal aging; E) the effect of intervention on the brain 
-			in aging and AD. His lab has funding from The National Institute on Aging, The US Dept of Veterans Affairs, 
-			and the State of Wisconsin.
-		</p>
+		<%= render :partial => 'application/blurb', :locals => { :permalink => 'people-header-sterling-bio' } %>
 	</div>
 	<div id="contact-blurb">
-		<h4><%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %></h4>
-		<h4><%= link_to "We're hiring!", opportunities_path('students') %></h4>
-		<h3>Keep in touch!</h3>
-		<p>
-			WADRC Imaging Core<br />
-			D4225 GRECC<br />
-			William S. Middleton VA Hospital<br />
-			2500 Overlook Terrace (11G)<br />
-			Madison, WI, 53705<br />
-			tel: (608) 256-1901 ext. 11418<br />
-			<%= mail_to 'fmri@medicine.wisc.edu' %>
-		</p>
+		<%= render :partial => 'application/blurb', :locals => { :permalink => 'people-header-contact-us' } %>
 	</div>
 	<div id="sterling-photo">
-		<%= image_tag 'scj-sans.gif', :height => '250px' %>
+		<%= render :partial => 'application/blurb', :locals => { :permalink => 'people-header-sterling-photo' } %>
 	</div>
 </div>
 

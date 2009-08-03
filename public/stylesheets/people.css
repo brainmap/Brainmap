@@ -14,13 +14,14 @@
 
 /* People Index */
 #sterling-blurb { width:30em; padding: 1em; float:left; }
-#sterling-photo { vertical-align:bottom; float:right; margin-right:30px; }
+#sterling-photo { position:absolute; bottom:0; left:500px; }
+#sterling-photo p { margin:0; padding:0; }
 #contact-blurb { width:15em; padding:1em; padding-bottom:0; float:right; }
 #contact-blurb h3 { margin: .5em 0 }
 
 
 
-#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x; min-height: 1em;}
+#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x; min-height: 1em; position:relative; }
 
 #people-nav { float: left; width: 180px; padding-top: 20px; font-weight: bold;}
 #people-nav h3 { margin: 0 ; font-size: 12pt; }
