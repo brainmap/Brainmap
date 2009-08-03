@@ -40,20 +40,22 @@
 			<h2><%=h @person.full_name %></h2>
 			<h3><%=h @person.job_title %></h3>
 
-			<p class="left">
-			  <%= @person.address.to_html %>
-			</p>
+			<% unless @person.group == "Collaborators" %>
+				<p class="left">
+				  <%= @person.address.to_html unless @person.address == nil %>
+				</p>
 
-			<p class="right">
-			  <b>Office:</b>
-			  <%=h @person.office_phone_formatted %><br/>
-			  <b>Lab:</b>
-			  <%=h @person.lab_phone_formatted %><br/>
-			  <b>Fax:</b>
-			  <%=h @person.fax_formatted %><br/>
-			  <b>Email:</b>
-			  <%=h @person.email %>
-			</p>
+				<p class="right">
+				  <b>Office:</b>
+				  <%=h @person.office_phone_formatted unless @person.office_phone == nil%><br/>
+				  <b>Lab:</b>
+				  <%=h @person.lab_phone_formatted unless @person.lab_phone ==nil %><br/>
+				  <b>Fax:</b>
+				  <%=h @person.fax_formatted unless @person.fax == nil %><br/>
+				  <b>Email:</b>
+				  <%=h @person.email unless @person.email == nil %>
+				</p>
+			<% end %>
 		</div>
 
 	

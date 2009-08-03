@@ -6,22 +6,23 @@
 .people-list li { float:left; margin:0; padding:0; width:210px; vertical-align:top; 
    margin-right:20px; margin-bottom:1em; }
 .people-list img { float:left; margin-right:1em; margin-bottom:1em; }
-.people-list h3 { margin:0 0 .4em; padding:0; font-size:14px; line-height: normal;}
+.people-list h3 { margin:0 0 .4em; padding:0; font-size:14px; line-height: normal; font-weight: bold;}
 .people-list h4 { margin:0; padding:0; font-size:11px; color: gray; line-height: normal;}
 .people-list p { margin:0; padding:0; font-size:0.9em; }
 .people-list div.row { overflow:hidden; width:100%; clear:both; }
 
 
 /* People Index */
-#sterling-blurb { width:30em; padding: 1em; float:left; }
 #sterling-photo { position:absolute; bottom:0; left:500px; }
 #sterling-photo p { margin:0; padding:0; }
-#contact-blurb { width:15em; padding:1em; padding-bottom:0; float:right; }
 #contact-blurb h3 { margin: .5em 0 }
+#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x #EAF9F9; min-height: 1em;  position:relative; }
+#sterling-blurb { width:460px; float:left; margin: 20px 20px 0;}
+#contact-blurb { float:right; margin: 20px 20px 0;}
+#contact-blurb p { font-size: 12px;}
 
 
 
-#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x; min-height: 1em; position:relative; }
 
 #people-nav { float: left; width: 180px; padding-top: 20px; font-weight: bold;}
 #people-nav h3 { margin: 0 ; font-size: 12pt; }
