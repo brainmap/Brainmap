@@ -4,7 +4,7 @@
 <ul id="subpages">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
-	<li class="active-subpage"><%= link_to 'People', people_path %></li>
+	<li class="active-subpage">People</li>
 </ul>
 
 <div id="people-banner" class="banner-row">
@@ -55,7 +55,7 @@
 				  <b>Email:</b>
 				  <%=h @person.email unless @person.email == nil %><br/>
 					<b>Web:</b>
-					<%= content_tag :a, @person.web_address, :href => @person.web_address %>
+					<%= content_tag(:a, '[visit personal web site]', :href => @person.web_address) unless @person.web_address.nil? %>
 				</p>
 			<% end %>
 		</div>

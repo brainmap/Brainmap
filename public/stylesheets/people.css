@@ -35,7 +35,7 @@
 #person-contactcard { font-size: 12px; float: left; overflow:hidden; width: 720px; 
 	padding-bottom: 5px; margin-bottom: 5px; border-bottom: solid #ccc thin;}
 #person-contactcard h3 { color: #666; margin: 0.5em; font-size: 11px;}
-#person-contactcard p { float: left; font-size: 12px;}
+#person-contactcard p { float: left; font-size: 12px; }
 #person-contactcard p.left { margin-right: 7em; }
 
 /* #person-description #person-details { clear: left;} */
