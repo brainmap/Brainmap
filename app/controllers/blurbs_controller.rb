@@ -1,5 +1,5 @@
 class BlurbsController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :except => []
   
   # GET /blurbs
   # GET /blurbs.xml

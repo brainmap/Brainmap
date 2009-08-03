@@ -53,7 +53,9 @@
 				  <b>Fax:</b>
 				  <%=h @person.fax_formatted unless @person.fax == nil %><br/>
 				  <b>Email:</b>
-				  <%=h @person.email unless @person.email == nil %>
+				  <%=h @person.email unless @person.email == nil %><br/>
+					<b>Web:</b>
+					<%= content_tag :a, @person.web_address, :href => @person.web_address %>
 				</p>
 			<% end %>
 		</div>

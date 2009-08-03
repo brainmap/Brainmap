@@ -15,8 +15,20 @@
 		<% group.each_with_index do |person, i| %>
 			<% if i % 4 == 0 %><div class="row"><% end %>
 				<li>
-					<%= link_to(image_tag(person.photo.url(:thumb)), person) unless brief %>
-					<h3><%= link_to person.full_name, person %></h3>
+					<% unless brief %>
+						<% if person.group == "Collaborators" %>
+							<%= link_to(image_tag(person.photo.url(:thumb)), person.web_address) %>
+						<% else %>	
+							<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
+						<% end %>
+					<% end %>
+					<h3>
+						<% if person.group == "Collaborators" %>
+							<%= link_to person.full_name, person.web_address %>
+						<% else %>	
+							<%= link_to person.full_name, person %>
+						<% end %>
+					</h3>
 					<!-- <h4><%=h person.degree %></h4> -->
 					<h4><%=h person.job_title unless brief %></h4>
 					<!-- <p>Ext. <%= person.lab_phone_ext %></p> -->
