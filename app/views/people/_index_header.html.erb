@@ -3,7 +3,7 @@
 <ul id="subpages">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
 	<li><%= link_to 'Current Studies', study_descriptions_path %></li>
-	<li class="active-subpage"><%= link_to 'People', people_path %></li>
+	<li class="active-subpage">People</li>
 </ul>
 
 <div id="people-banner" class="banner-row">
@@ -18,21 +18,20 @@
 		</p>
 	</div>
 	<div id="contact-blurb">
-		<h4><%= link_to 'Want to be part of our research?', opportunities_path('volunteers') %></h4>
-		<h4><%= link_to "We're hiring!", opportunities_path('students') %></h4>
 		<h3>Keep in touch!</h3>
 		<p>
 			WADRC Imaging Core<br />
 			D4225 GRECC<br />
 			William S. Middleton VA Hospital<br />
 			2500 Overlook Terrace (11G)<br />
-			Madison, WI, 53705<br />
-			tel: (608) 256-1901 ext. 11418<br />
+			Madison, WI, 53705</p>
+			<p>tel: (608) 256-1901 ext. 11418<br />
 			<%= mail_to 'fmri@medicine.wisc.edu' %>
 		</p>
+		
 	</div>
 	<div id="sterling-photo">
-		<%= image_tag 'scj-sans.gif', :height => '250px' %>
+		<%= image_tag 'scj-sans.gif', :height => '223px' %>
 	</div>
 </div>
 

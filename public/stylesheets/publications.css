@@ -35,9 +35,7 @@
 /*  background-color:#DDEBFD; */
 
 /* Publication Show */
-#pubs-show-sidebar { float:left; width:20em; }
-#pubs-show-sidebar ul { list-style:none outside url(../images/paper-icon.jpg); margin:0 0 0 1.5em; padding:0; }
-#pubs-show-sidebar ul li { margin-bottom:1em; }
+#pubs-show-sidebar { float:left; width:21em; }
 #pub-show-info { margin-left:22em; }
 #pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
 #pub-show-info p.authors { font-size:smaller; color:gray; }
