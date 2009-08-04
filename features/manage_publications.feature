@@ -1,11 +1,11 @@
-@broken_feature
-Feature: Manage publications
-	In order manage publications
+@working_feature
+Feature: Manage Publications
+	In order to manage publications
 	As a member of the lab
 	I want make sure the publications page updates, etc. when I say so.
 	
 	Background: 
-		Given the following publication
+		Given the following publication records
 		 | title                       | authors_info         |
 		 | Super Awesome Science Paper | Kris & Erik          |
 		 | Not So Super Awesome Paper  | Some Other Lab et al |
@@ -43,7 +43,3 @@ Feature: Manage publications
 	    And I should see "Read it!"
 	    And I should see "123456"
 	    And I should have 1 publication
-
-
-
-

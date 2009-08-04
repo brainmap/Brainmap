@@ -16,6 +16,8 @@ module NavigationHelpers
       publications_path
     when /contact us form/
       contact_path
+    when /the news page/
+      events_path
     
     # Add more mappings here.
     # Here is a more fancy example:

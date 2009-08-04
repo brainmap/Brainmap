@@ -1,8 +1,8 @@
-Given /^the following (.+)$/ do |factory, table|
-  table.hashes.each do |hash|
-    Factory(factory, hash)
-  end
-end
+# Given /^the following (.+)$/ do |factory, table|
+#   table.hashes.each do |hash|
+#     Factory(factory, hash)
+#   end
+# end
 
 Given /^I have no publications$/ do
   Publication.delete_all

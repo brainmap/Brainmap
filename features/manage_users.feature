@@ -5,7 +5,7 @@ Feature: Manage Users
 	I want edits made only by authorized users
 	
 	Background: 
-		Given the following user record
+		Given the following user records
 		 | login | password |
 		 | admin | secret   |
 	
