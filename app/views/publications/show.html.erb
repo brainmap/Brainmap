@@ -28,14 +28,14 @@
 	<p class="journal"><%=h @publication.journal_info %></p>
 	<h3>Abstract</h3>
 	<p class="abstract">
-		<% if @publication.abstract.empty? %>
+		<% if @publication.abstract.nil? %>
 			No abstract available.
 		<% else %>
 			<%=h @publication.abstract %>
 		<% end %>
 	</p>
 	<p class="pubmed-link">Pubmed ID:
-		<% if @publication.pmid.empty? %>
+		<% if @publication.pmid.nil? %>
 			not available
 		<% else %>
 			<%= link_to(@publication.pmid, @publication.pubmed_link) %>

@@ -38,7 +38,7 @@
 					<p class="pub-journal"><%= pub.journal_info %></p>
 					<div class="abstract" style="<%= i % 3 == 2 ? 'right:0;margin-top:-17px;' : 'left:0;' %>">
 						<h3>Abstract</h3>
-						<% if pub.abstract.empty? %>
+						<% if pub.abstract.nil? %>
 							<p>No abstract available.</p>
 						<% else %>
 							<%#= image_tag(pub.figure.url(:small), :class => 'pub-figure') unless pub.figure.nil? %>
@@ -52,7 +52,7 @@
 					    	<%= link_to 'edit', edit_publication_path(pub) %>
 					    	<%= link_to 'delete', pub, :confirm => 'Are you sure?', :method => :delete %>
 							<% end %>
-							<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.empty? %>
+							<%= link_to '[pubmed]', pub.pubmed_link unless pub.pmid.nil? %>
 						</p>
 					</div>
 				</li>

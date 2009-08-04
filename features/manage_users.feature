@@ -1,4 +1,4 @@
-# @broken_feature
+@working_feature
 Feature: Manage Users
 	In order to manage users
 	As a security enthusiast

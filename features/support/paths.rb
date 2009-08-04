@@ -14,6 +14,8 @@ module NavigationHelpers
       login_path
     when /the publications page/
       publications_path
+    when /contact us form/
+      contact_path
     
     # Add more mappings here.
     # Here is a more fancy example:
