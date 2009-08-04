@@ -22,6 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   map.current_studies 'about/current_studies', :controller => 'application', :action => 'current_studies'
   map.research_objectives 'about/research_objectives', :controller => 'application', :action => 'research_objectives'
   map.opportunities 'opportunities/:opportunity_type', :controller => 'job_advertisements', :action => 'index'
+  map.contact 'contact', :controller => 'contact', :action => 'index'
   
   # map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
@@ -47,7 +48,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :addresses
 
   map.resources :people
-  
+    
   map.root :controller => 'application', :action => 'index'
 
   # The priority is based upon order of creation: first created -> highest priority.
