@@ -1,5 +1,4 @@
 class Notifications < ActionMailer::Base
-  validates_presence_of :name, :address, :subject, :body
   
   def inquiry(email_params, sent_at = Time.now)
       subject "[brainmap.wisc.edu] " << email_params[:subject]
