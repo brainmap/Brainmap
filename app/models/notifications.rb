@@ -1,8 +1,9 @@
 class Notifications < ActionMailer::Base
+  validates_presence_of :name, :address, :subject, :body
   
   def inquiry(email_params, sent_at = Time.now)
       subject "[brainmap.wisc.edu] " << email_params[:subject]
-      recipients email_params[:recipient] # Perhaps your address here?
+      recipients "FMRI <fmri@medicine.wisc.edu>" # Perhaps your address here?
       from "#{email_params[:name]} <#{email_params[:address]}>"
       reply_to "#{email_params[:name]} <#{email_params[:address]}>"
       sent_on sent_at
