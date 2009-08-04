@@ -6,7 +6,9 @@ Factory.define :user do |f|
 end
 
 Factory.define :publication do |f|
-  f.publication_date DateTime.now
+  f.sequence(:publication_date) { |n| DateTime.now - n.to_i.weeks }
+  f.sequence(:authors_info) { |n| "authors-list-#{n}" }
+  f.sequence(:title) { |n| "title-#{n}" }
 end
 
 Factory.define :event do |f|
