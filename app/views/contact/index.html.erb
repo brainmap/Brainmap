@@ -1,0 +1,30 @@
+<% form_tag :action => "send_mail" do %>
+  <p>
+    <%= label :email, :name, "Name" %><br />
+    <%= text_field :email, :name %>
+  </p>
+
+  <p>
+    <%= label :email, :address, "Your e-mail address" %><br />
+    <%= text_field :email, :address %>
+  </p>
+
+	<p>
+		<%= label :email, :recipient, "Recipient's e-mail address" %><br />
+		<%= text_field :email, :recipient %>
+	</p>
+
+  <p>
+    <%= label :email, :subject, "Subject" %><br />
+    <%= text_field :email, :subject %>
+  </p>
+
+  <p>
+    <%= label :email, :body, "Your message" %><br />
+    <%= text_area :email, :body, :rows => 8, :cols => 50 %>
+  </p>
+
+  <p>
+    <%= submit_tag "Submit" %>
+  </p>
+<% end %>
