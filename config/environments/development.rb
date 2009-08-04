@@ -16,18 +16,4 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = true
 
-config.action_mailer.delivery_method = :smtp
-
-config.action_mailer.smtp_settings = {
-  :address        => 'medicine.wisc.edu',
-  :port           => 25,
-  :domain         => 'medicine.wisc.edu',
-}
-
-config.gem "cucumber",    :lib => false,        :version => ">=0.3.91" unless File.directory?(File.join(Rails.root, 'vendor/plugins/cucumber'))
-config.gem "webrat",      :lib => false,        :version => ">=0.4.4" unless File.directory?(File.join(Rails.root, 'vendor/plugins/webrat'))
-config.gem "rspec",       :lib => false,        :version => ">=1.2.6" unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec'))
-config.gem "rspec-rails", :lib => 'spec/rails', :version => ">=1.2.6" unless File.directory?(File.join(Rails.root, 'vendor/plugins/rspec-rails'))
-config.gem "thoughtbot-factory_girl",
-           :lib    => "factory_girl",
-           :source => "http://gems.github.com"
+config.action_mailer.delivery_method = :sendmail
