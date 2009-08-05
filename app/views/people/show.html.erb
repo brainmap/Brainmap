@@ -15,7 +15,7 @@
 	<div id="people-nav">
 		<% for group in [ @scientists, @staff, @grads, @studs ] %>
 			<h3><%= group.first.group unless group.empty? %></h3>
-			<ul>
+			<ul class="sidebar-list">
 				<% group.each do |person| %>
 					<li>
 						<% if person == @person %>
@@ -71,9 +71,12 @@
 		<div style="float:left" id="person-pubs">
 			<% unless @person.publications.empty? %>
 			<h3>Publications:</h3>
-			<ul>
+			<ul id="pubs-by-this-author" class="link-and-subtext with-icon">
 				<% for pub in @person.publications %>
-					<li><%= link_to pub.title, pub %></li>
+					<li>
+						<%= link_to pub.title, pub %>
+						<p><%= pub.publication_date.to_s(:long) %></p>
+					</li>
 				<% end %>
 			</ul>
 			<% end %>

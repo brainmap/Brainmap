@@ -2,22 +2,15 @@ class JobAdvertisementsController < ApplicationController
   before_filter :set_active_tab
   
   def set_active_tab
-    @active_nav_tab = 'opportunites-tab'
+    @active_nav_tab = 'opportunities-tab'
   end
   
   # GET /job_advertisements
   # GET /job_advertisements.xml
   def index
-    @all_opps = JobAdvertisement.all
-    
-    if params['opportunity_type'].nil?
-      @job_advertisements = JobAdvertisement.find_all_by_opp_type('volunteers')
-      @opp_type = 'volunteers'
-    else
-      @job_advertisements = JobAdvertisement.find_all_by_opp_type(params['opportunity_type'])
-      @opp_type = params['opportunity_type']
-    end
-      
+    @job_advertisements = JobAdvertisement.all
+    @volunteer_ad = JobAdvertisement.find_by_title('Volunteer for a study!')
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @job_advertisements }

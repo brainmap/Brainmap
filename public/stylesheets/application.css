@@ -116,33 +116,17 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
 #research-objectives ul li { margin-bottom:1em; }
 
 
-#home-pubs { width:600px; float:left; }
-#home-news { width:300px; float:left; }
-#home-news ul { list-style:none; margin:0; padding:0; }
+div#news-box { width:300px; float:left; }
+div#pubs-box { width:600px; float:left; }
 
-.publications-list ul { list-style:none outside url(../images/paper-icon.jpg); margin:0 1.5em 0; padding:0; }
-.publications-list ul li, #home-news ul li { margin-bottom:1em; }
-.publications-list ul p, #home-news ul p { color:gray; font-style:italic; margin:0; padding:0; }
-.publications-list p { margin-left: 1.5em;}
+/* the link-and-subtext class must be above with-icon due to css precedence rules when you have more than one class on an element */
+ul.link-and-subtext { padding:0; margin:0; list-style:none; }
+ul.with-icon { list-style:none outside url(../images/paper-icon.jpg); margin:0 1.5em 0; padding:0; }
+ul.link-and-subtext li { margin-bottom:1em; font-family:arial, sans-serif; }
+ul.link-and-subtext li a { font-family:arial, sans-serif; }
+ul.link-and-subtext li p { color:gray; font-style:italic; margin:0; padding:0; }
 
-
-
-#events-list li div.event-header { 
-	overflow:auto; font-weight: bold; margin:0; padding:0.5em; background-color:#eee; border:solid thin #ddd;
-	-webkit-border-top-left-radius:10px; -webkit-border-top-right-radius:10px; 
-	-moz-border-radius-topleft:10px; -moz-border-radius-topright:10px;
-	border-top-left-radius:10px; border-top-right-radius:10px;
-}
-#events-list li div.event-header h3 { float:left; margin:0; padding:0; }
-#events-list li div.event-header h4 { float:right; margin:0; padding:0; }
-#events-list { list-style:none; padding:0; }
-#events-list li { margin-bottom:2em; }
-#events-list img { float:left; margin-right:1em; }
-#events-list li div.event-content { padding:0.5em; border:solid thin #ddd; 
-	-webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px; 
-	-moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px; 
-	border-bottom-left-radius:5px; border-bottom-right-radius:5px; 
-}
+ul.sidebar-list { margin: 0; padding: 0.5em 1em 1.5em; list-style: none; font-family:arial, sans-serif; font-weight:normal; } 
 
 .pages-nav { list-style:none; padding-left:0; }
 .pages-nav li { float:left; }

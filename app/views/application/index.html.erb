@@ -37,11 +37,11 @@
 
 <hr class="gray" />
 
-<div class="cell-row clearfix">
-	<div id="home-pubs" class="publications-list">
+<div id="pubs-and-events-row">
+	<div id="pubs-box">
 		<h3>Recent Publications:</h3>
 		<% unless @recent_pubs.nil? %>
-			<ul>
+			<ul id="home-pubs" class="link-and-subtext with-icon">
 				<% for pub in @recent_pubs %>
 					<li>
 						<%= link_to pub.title, pub %><br />
@@ -53,10 +53,10 @@
 		<p><%= link_to 'see more peer-reviewed research...', publications_path %></p>
 	</div>
 
-	<div id="home-news">
+	<div id="home-box">
 		<h3>News:</h3>
 		<% unless @recent_news_items.nil? %>
-			<ul>
+			<ul id="home-news" class="link-and-subtext">
 				<% for news_item in @recent_news_items %>
 					<li>
 						<%= link_to news_item.title, news_item %><br />

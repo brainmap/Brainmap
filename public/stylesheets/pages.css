@@ -3,7 +3,7 @@
 }
 
 #resources-sidebar { float:left; width:225px; }
-#resources-sidebar ul { padding-left:1.6em; }
+#resources-sidebar ul { padding-left:1.6em; font-family:arial, sans-serif; }
 #resources-content { margin-left:270px; padding:0; }
 #resources-content h3 { font-size:24pt; margin-top:0.4em; margin-bottom:0;
 	 line-height:1em; }

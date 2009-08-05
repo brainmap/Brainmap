@@ -12,7 +12,7 @@
 	</div>
 
 	<div id="opportunities-content">
-		<h3><i><%=h @job_advertisement.title %></i></h3>
+		<h3><%=h @job_advertisement.title %></h3>
 
 		<p><%= RedCloth.new(@job_advertisement.body).to_html %></p>
 		

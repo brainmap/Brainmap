@@ -1,41 +1,32 @@
 <%= stylesheet_link_tag 'job_advertisements' %>
-<% @page_title = title("Opportunities available for " + @opp_type) %>
-
-<ul id="subpages">
-	<%= content_tag :li, link_to('Volunteers', opportunities_path(:volunteers)), :class => subpage_class(@opp_type, 'volunteers') %>
-	<%= content_tag :li, link_to('Researchers', opportunities_path(:researchers)), :class => subpage_class(@opp_type, 'researchers') %>
-	<%= content_tag :li, link_to('Students', opportunities_path(:students)), :class => subpage_class(@opp_type, 'students') %>
-</ul>
 
 <div class="banner-row">
-	<h2>Opportunities available for <%= @opp_type %></h2>
+	<h2>Opportunities Available at the WADRC Imaging Core</h2>
 </div>
 
 
 <div id="opportunities-index-wrapper" class="opportunities-wrapper">
 	<div id="opportunities-sidebar">
-		<%= render :partial => 'opp_sidebar', :locals => { :opps => @all_opps } %>
+		<%= render :partial => 'opp_sidebar', :locals => { :opps => @job_advertisements } %>
 	</div>
 	<div id="opportunities-content">
 		<div id="opportunities-listing">
-			<% for ad in @job_advertisements %>
-				<p><b><%=h "PVL: #{ad.pvl}" unless ad.pvl.nil? or ad.pvl.empty? %></b></p>
-		    <h3><i><%=h ad.title %></i></h3>
+			<p><b><%=h "PVL: #{@volunteer_ad.pvl}" unless @volunteer_ad.pvl.nil? or @volunteer_ad.pvl.empty? %></b></p>
+	    <h3><%=h @volunteer_ad.title %></h3>
+			<p>
+	    	<%= RedCloth.new(@volunteer_ad.body).to_html %>
+			</p>
+			<% unless @volunteer_ad.responder.nil? %>
 				<p>
-		    	<%= RedCloth.new(ad.body).to_html %>
+					Interested applicants please contact:<br />
+		    	<%=h @volunteer_ad.responder.first_name %> <%=h @volunteer_ad.responder.last_name %><br />
+					<%= @volunteer_ad.responder.address.to_html %><br />
+					<%= @volunteer_ad.responder.office_phone_formatted %>
 				</p>
-				<% unless ad.responder.nil? %>
-					<p>
-						Interested applicants please contact:<br />
-			    	<%=h ad.responder.first_name %> <%=h ad.responder.last_name %><br />
-						<%= ad.responder.address.to_html %><br />
-						<%= ad.responder.office_phone_formatted %>
-					</p>
-				<% end %>
-				<% if logged_in? %>
-		    	<%= link_to 'edit', edit_job_advertisement_path(ad) %>
-		    	<%= link_to 'delete', ad, :confirm => 'Are you sure?', :method => :delete %>
-				<% end %>
+			<% end %>
+			<% if logged_in? %>
+	    	<%= link_to 'edit', edit_job_advertisement_path(@volunteer_ad) %>
+	    	<%= link_to 'delete', @volunteer_ad, :confirm => 'Are you sure?', :method => :delete %>
 			<% end %>
 		</div>
 

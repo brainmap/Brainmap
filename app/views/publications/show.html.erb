@@ -9,7 +9,7 @@
 
 <div id="pubs-show-sidebar" class="publications-list">
 	<h3>Related Publications:</h3>
-	<ul>
+	<ul id="list-of-related-pubs" class="link-and-subtext">
 		<% related_publications = @publication.contributer_publications.empty?  ? @all_publications : @publication.contributer_publications %>
 		<% for pub in related_publications.sort_by(&:publication_date).reverse.first(10) %>
 			<li>

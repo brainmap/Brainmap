@@ -1,10 +1,9 @@
 <h3>Other Recent News & Events</h3>
-<ul>
+<ul id="sidebar-recent-events-list" class="link-and-subtext no-icon">
   <% for event in events %>
     <li>
       <%= event == current_event ? event.title : link_to(event.title, event) %>
-      <br />
-      <%= event.date.to_s(:long) %>
+      <p><%= event.date.to_s(:long) %></p>
     </li>
   <% end %>
 </ul>
