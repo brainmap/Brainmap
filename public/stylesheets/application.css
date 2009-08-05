@@ -15,6 +15,8 @@ body, p, ol, ul, td {
   font-family: Georgia, 'Times New Roman', serif;
 }
 
+div.overflow-container { overflow:visible; width:100%; clear:both; }
+
 /* Header Sans-serif Styles */
 .link-cell ul, .arrow-cell, .publications-list ul, #top-nav, #subpages, #footer, #home-news ul, #people-nav, #person-contactcard, #pubs-show-sidebar, h1, h2, h3, h4 {
 	font-family: arial; sans-serif;
@@ -116,7 +118,7 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
 #research-objectives ul li { margin-bottom:1em; }
 
 
-div#news-box { width:300px; float:left; }
+div#news-box { width:300px; float:left; margin-bottom:2em; }
 div#pubs-box { width:600px; float:left; }
 
 /* the link-and-subtext class must be above with-icon due to css precedence rules when you have more than one class on an element */

@@ -37,7 +37,7 @@
 
 <hr class="gray" />
 
-<div id="pubs-and-events-row">
+<div id="pubs-and-events-row" class="overflow-container">
 	<div id="pubs-box">
 		<h3>Recent Publications:</h3>
 		<% unless @recent_pubs.nil? %>
@@ -53,7 +53,7 @@
 		<p><%= link_to 'see more peer-reviewed research...', publications_path %></p>
 	</div>
 
-	<div id="home-box">
+	<div id="news-box">
 		<h3>News:</h3>
 		<% unless @recent_news_items.nil? %>
 			<ul id="home-news" class="link-and-subtext">
