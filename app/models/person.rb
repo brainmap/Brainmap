@@ -6,7 +6,8 @@ class Person < ActiveRecord::Base
   has_many :publications, :through => :authorships
   has_many :job_advertisements, :foreign_key => 'responder_id'
   
-  accepts_nested_attributes_for :address, :allow_destroy => true
+  accepts_nested_attributes_for :address, :allow_destroy => true, :reject_if => proc { |attributes| attributes.values.map { |v| v == "" ? nil : v }.compact.empty? }
+  
   
   has_attached_file :photo,
     :styles => {
