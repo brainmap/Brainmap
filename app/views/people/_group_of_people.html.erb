@@ -25,7 +25,9 @@
 					<h3>
 						<% if person.group == "Collaborators" %>
 							<%= link_to person.full_name, person.web_address %>
-						<% else %>	
+						<% elsif brief %>	
+							<%=h person.full_name %>
+						<% else %>
 							<%= link_to person.full_name, person %>
 						<% end %>
 					</h3>
