@@ -66,6 +66,8 @@ class PeopleController < ApplicationController
   # GET /people/1/edit
   def edit
     @person = Person.find(params[:id])
+    @person.build_address if @person.address.blank?
+    
   end
 
   # POST /people

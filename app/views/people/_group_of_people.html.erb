@@ -1,9 +1,10 @@
 <% brief ||= false %>
 
 <div class="people-section">
-	<a name="<%= group.first.group %>"></a>
-	<div class="section-header">
-		<h3><%= group.first.group unless group.empty? %></h3>
+	<% unless group.blank? %>
+          <a name="<%= group.first.group %>"></a>
+	  <div class="section-header">
+		<h3><%= group.first.group unless group.blank? or group.blank? %></h3>
 		<div class="divider">
 			<div class="upbutton">
 				<%= link_to 'top', '#top-of-page' %>
@@ -43,4 +44,6 @@
 			<% if (i % 4 == 3) or (i == (group.length - 1)) %></div><% end %>
 		<% end %>
 	</ul>
+
+<% end %>
 </div>
