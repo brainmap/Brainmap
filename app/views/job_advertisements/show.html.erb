@@ -31,7 +31,8 @@
 
 		<% if logged_in? %>
 			<%= link_to 'Edit', edit_job_advertisement_path(@job_advertisement) %> |
-			<%= link_to 'Back', job_advertisements_path %>
+			<%= link_to 'Back', job_advertisements_path %> |
+			<%= link_to 'delete', @job_advertisement, :confirm => 'Are you sure?', :method => :delete %>
 		<% end %>
 	</div>
 
