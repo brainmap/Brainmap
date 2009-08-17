@@ -1,3 +1,7 @@
+<div id="contact-banner" class="banner-row"></div>
+
+<h2>Contact Us!</h2>
+
 <% form_tag :action => "send_mail" do %>
   <p>
     <%= label :email, :name, "Name" %><br />
@@ -20,6 +24,6 @@
   </p>
 
   <p>
-    <%= submit_tag "Submit" %>
+    <%= submit_tag "Send" %>
   </p>
 <% end %>

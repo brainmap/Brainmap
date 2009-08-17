@@ -16,7 +16,7 @@
 #sterling-photo { position:absolute; bottom:0; left:500px; }
 #sterling-photo p { margin:0; padding:0; }
 #contact-blurb h3 { margin: .5em 0 }
-#people-banner { background :url(../images/introduction-gradient.jpg) repeat-x #EAF9F9; min-height: 1em;  position:relative; }
+#people-banner { background :url(../images/blue-grad-repeater.png) repeat-x #EAF9F9; min-height: 1em;  position:relative; }
 #sterling-blurb { width:460px; float:left; margin: 20px 20px 0;}
 #contact-blurb { float:right; margin: 20px 20px 0;}
 #contact-blurb p { font-size: 12px;}

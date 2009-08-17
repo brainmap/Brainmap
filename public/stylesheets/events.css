@@ -1,3 +1,5 @@
+#events-banner { background:url(../images/xeta-banner.png) no-repeat black; color:white; }
+
 #events-list li div.event-header { 
 	overflow:auto; font-weight: bold; margin:0; padding:0.5em; background-color:#eee; border:solid thin #ddd;
 	-webkit-border-top-left-radius:10px; -webkit-border-top-right-radius:10px; 

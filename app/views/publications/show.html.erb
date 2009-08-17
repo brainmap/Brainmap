@@ -1,14 +1,14 @@
 <%= stylesheet_link_tag 'publications' %>
 <% @page_title = title("Publication - " + @publication.title) %>
 
-<div class="banner-row">
+<div id="pubs-banner" class="banner-row">
 	<h2>Publications from the WADRC Imaging Lab and Collaborators</h2>
 </div>
 
 <br />
 
 <div id="pubs-show-sidebar" class="publications-list">
-	<h3>Related Publications:</h3>
+	<h3>Other Publications by These Authors:</h3>
 	<ul id="list-of-related-pubs" class="link-and-subtext">
 		<% related_publications = @publication.contributer_publications.empty?  ? @all_publications : @publication.contributer_publications %>
 		<% for pub in related_publications.sort_by(&:publication_date).reverse.first(10) %>
@@ -18,7 +18,7 @@
 			</li>
 		<% end %>
 	</ul>
-	<p><%= link_to 'more publications...', publications_path %></p>
+	<p><%= link_to 'back to the list of publications...', publications_path %></p>
 </div>
 
 <div id="pub-show-info">

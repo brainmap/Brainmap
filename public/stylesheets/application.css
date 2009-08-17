@@ -62,7 +62,7 @@ text-align:center; font-variant:small-caps; font-size: 17px;
 
 #page-content { clear: both; margin: 0; padding: 0;}
 
-.banner-row { border-bottom:solid thin #ffcc00; border-top:solid thin #98c5da;
+.banner-row { border-bottom:solid 7px #ffcc00; border-top:solid 2px #98c5da;
 	background: url(../images/monkey_brain_banner.png) no-repeat top left #e3f8fb;
 	min-height:200px;
 	clear: both;
@@ -95,18 +95,18 @@ hr.blue { color:#98C5DA; background-color:#98C5DA; height:1px; border:none; clea
 hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: both; }
 
 #home-banner {border-bottom:solid 10px #ffcc00; border-top:solid thin #98c5da;
-	background: url(../images/hp_bg-mri.jpg) no-repeat black;
+	background: url(../images/pcc-activation.png) no-repeat black;
 	padding: 10px 0 20px; color: white; }
-#home-banner div.mid-heading {margin-left:60px; width:520px; padding: 0; line-height: 2em; font-size: 20px;}
-#home-banner div.detail {margin: 15px 20px; padding: 0; width: 320px; line-height: 1.5em;}
+#home-banner div.mid-heading {margin-left:250px; width:300px; padding: 0; line-height: 2em; font-size: 20px; display:none; }
+#home-banner div.detail {margin: 15px 20px; padding: 0; width: 500px; line-height: 1.5em;}
 #home-banner div.detail p {font-size: 16px; line-height: 1.5em;}
 #home-banner h2 {text-align:right; margin-left:15em; margin-right:3em; margin-top:3em;}
 #home-banner h4 {margin: 0;}
 #home-banner a { color: #fc0; }
 
-#research-objectives-banner { background: url(../images/research_obj_bg.jpg); padding: 10px 0 20px; color: black;}
+#research-objectives-banner { background: url(../images/pib-banner.png); padding: 10px 0 20px; color: black;}
 #research-objectives-banner a { color: #fc0; }
-#research-objectives-banner div.mid-heading { margin-left: 240px; padding: 0; width: 210px; font-size: 14px;}
+#research-objectives-banner div.mid-heading { margin-left: 240px; padding: 0; width: 210px; font-size: 14px; }
 #research-objectives-banner div.detail { width: 460px ; padding: 0; margin-top: 0; margin-right: 10px;}
 #research-objectives-banner div p { font-size: 16px; line-height: 1.5em;}
 
@@ -155,7 +155,7 @@ div#greeting-and-links ul { float:right; list-style:none; margin:34px 0 0 0;}
 div#greeting-and-links ul li { float:left; margin-left:1em; }
 div#greeting-and-links ul li a { font-family:sans-serif; }
 
-
+#contact-banner { background:url(../images/LabPhoto09-940crop.jpg) no-repeat; height:253px; }
 
 
 #footer p { font-size:x-small; color:gray; }

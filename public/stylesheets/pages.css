@@ -1,3 +1,5 @@
+#pages-index-banner { background:url(../images/vipr-banner.png) no-repeat black; color:white; }
+
 #resources-wrapper {
 	overflow:hidden; width:100%; clear:both; margin:0; padding:0; margin-bottom:2em;
 }

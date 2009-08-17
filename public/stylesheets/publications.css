@@ -1,3 +1,5 @@
+#pubs-banner { background:url(../images/mesh-banner.png) no-repeat black; color:white; }
+
 #pubs-index { padding-bottom:400px; margin-top:2em; }
 #pubs-list { overflow:visible; width:100%; list-style:none; padding:0; margin:0; }
 #pubs-list li { width:283px; float:left; padding:1em; position:relative; }
