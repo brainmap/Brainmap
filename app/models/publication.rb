@@ -12,7 +12,7 @@ class Publication < ActiveRecord::Base
   end
   
   def year
-    self.publication_date.beginning_of_year
+    publication_date.blank? ? DateTime.current.beginning_of_year : publication_date.beginning_of_year 
   end
   
   def abridged_abstract(n = 1)

@@ -40,7 +40,7 @@
 #pubs-show-sidebar { float:left; width:21em; }
 #pub-show-info { margin-left:22em; }
 #pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
-#pub-show-info p.authors { font-size:smaller; color:gray; }
+#pub-show-info p.authors { color:gray; }
 
 
 /*

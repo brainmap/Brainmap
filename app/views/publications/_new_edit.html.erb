@@ -1,0 +1,45 @@
+<% form_for(@publication) do |f| %>
+  <%= f.error_messages %>
+  <div style="float:left;">
+    <p>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :journal_info %><br />
+      <%= f.text_field :journal_info %>
+    </p>
+  	<p>
+  		<%= f.label :authors_info %><br />
+  		(Copy the authors list from the pubmed citation)<br />
+  		<%= f.text_area :authors_info %>
+  	</p>
+    <p>
+      <%= f.label :abstract %><br />
+      <%= f.text_area :abstract %>
+    </p>
+    <p>
+      <%= f.label :publication_date %><br />
+      <%= f.date_select :publication_date, :start_year => 2000, :end_year => 2020, :include_blank => true %>
+    </p>
+    <p>
+      <%= f.label :pmid %><br />
+      <%= f.text_field :pmid %>
+    </p>
+  </div>
+  <div style="float:left; margin-left:200px;">
+    <h3>Contributors:</h3>
+    <p>(Check any people that are co-authors)</p>
+    <p>
+  	  <!-- products/_form.rhtml -->
+      <% for contributor in Person.find(:all) %>
+        <%= check_box_tag "publication[person_ids][]", contributor.id, @publication.people.include?(contributor) %>
+        <%= contributor.last_name_first %><br />
+      <% end %>
+    </p>
+  </div>
+  <br style="clear:both">
+  <p>
+    <%= f.submit action %>
+  </p>
+<% end %>

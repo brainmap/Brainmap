@@ -33,6 +33,10 @@ class Person < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
   
+  def last_name_first
+    "#{last_name}, #{first_name}"
+  end
+  
   def office_phone_formatted
     "(#{office_phone.first(3)})#{office_phone[3..5]}-#{office_phone[6..9]} x #{office_phone_ext}"
   end
