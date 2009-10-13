@@ -45,7 +45,7 @@
 	</span>
     <p>
   	  <!-- products/_form.rhtml -->
-      <% for contributor in Person.find(:all) %>
+      <% for contributor in Person.find(:all, :order => :last_name) %>
         <%= check_box_tag "publication[person_ids][]", contributor.id, @publication.people.include?(contributor) %>
         <%= contributor.last_name_first %><br />
       <% end %>
