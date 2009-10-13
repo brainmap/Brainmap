@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<ul id="pubs-list">
-			<% pubs.each_with_index do |pub, i| %>
+			<% pubs.sort_by { |pub| pub.publication_date || DateTime.current }.reverse.each_with_index do |pub, i| %>
 				<% pubid = "pub-#{pub.id}" %>
 				<% pubtog = "#{pubid}-tog" %>
 				<% if i % 3 == 0 %>

@@ -15,7 +15,7 @@
 		<% for pub in related_publications.sort_by { |pub| pub.publication_date || DateTime.current }.reverse.first(10) %>
 			<li>
 				<%= link_to pub.title, pub %> 
-				<p> <%=h pub.publication_date.to_s(:long) unless pub.publication_date.blank? %></p>
+				<p> <%=h pub.publication_date.blank? ? "In Press" : pub.publication_date.to_s(:long) %></p>
 			</li>
 		<% end %>
 	</ul>

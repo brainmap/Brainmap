@@ -75,7 +75,7 @@
 				<% for pub in @person.publications %>
 					<li>
 						<%= link_to pub.title, pub %>
-						<p><%= pub.publication_date.to_s(:long) unless pub.publication_date.blank? %></p>
+						<p> <%=h pub.publication_date.blank? ? "In Press" : pub.publication_date.to_s(:long) %></p>
 					</li>
 				<% end %>
 			</ul>
