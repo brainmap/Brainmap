@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
       :thumb=> "100x100#",
       :small  => "150x150>",
       :medium => "300x300>",
-      :large =>   "400x400>" 
+      :large =>   "700x700>" 
     }
 
   validates_attachment_size :image, :less_than => 2.megabytes

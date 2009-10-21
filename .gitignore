@@ -1,4 +1,6 @@
-tmp
+tmp/*
+*.log
 *.sqlite3
 .DS_Store
 ._*
+public/system/images/**/*
