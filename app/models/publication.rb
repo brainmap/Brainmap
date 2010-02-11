@@ -6,13 +6,17 @@ class Publication < ActiveRecord::Base
   has_many :people, :through => :authorships
   
   validates_presence_of :title, :authors_info
-  
+    
   def pubmed_link
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"
   end
   
   def year
     publication_date.blank? ? DateTime.current.beginning_of_year : publication_date.beginning_of_year 
+  end
+  
+  def publication_or_inpress_date
+    publication_date.blank? ? DateTime.now : publication_date
   end
   
   def abridged_abstract(n = 1)

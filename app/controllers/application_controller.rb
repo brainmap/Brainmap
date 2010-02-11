@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def index
     @active_nav_tab = 'brainmap-tab'
     @recent_news_items = Event.all.first(4)
-    @recent_pubs = Publication.all.first(3)
+    @recent_pubs = Publication.all.sort_by {|pub| pub.publication_or_inpress_date}.reverse.first(3)
     @courses_page = Page.find_by_title('Courses Offered')
     
     respond_to do |format|
