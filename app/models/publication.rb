@@ -1,4 +1,6 @@
 class Publication < ActiveRecord::Base
+  include ActionView::Helpers::TextHelper
+
   default_scope :order => 'publication_date DESC'
   
   
@@ -33,4 +35,9 @@ class Publication < ActiveRecord::Base
     
     return contributer_publications
   end
+  
+  def to_param
+    "#{id}-#{title.gsub(" ", "-")[0..30]}"
+  end
 end
+

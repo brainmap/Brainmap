@@ -46,4 +46,13 @@ class Person < ActiveRecord::Base
   def fax_formatted
     "(#{fax.first(3)})#{fax[3..5]}-#{fax[6..9]}"
   end
+  
+  def to_param
+    param = ""
+    param << "#{id}-#{first_name[0..0].capitalize}"
+    param << "#{middle_initial.capitalize}" unless middle_initial.blank?
+    param << "-#{last_name.capitalize}"
+    return param
+  end
+  
 end
