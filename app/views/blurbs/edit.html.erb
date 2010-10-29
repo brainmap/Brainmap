@@ -1,6 +1,6 @@
 <h1>Editing blurb</h1>
 
-<% form_for(@blurb) do |f| %>
+<% form_for @blurb, :html => { :multipart => true }  do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -11,9 +11,18 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
+	<p>
+		<%= f.label :style %><br />
+		<%= f.text_area :style, :rows => 4 %>
+	</p>
+	<p>
+		<%= f.label :image %><br />
+		<%= f.file_field :image %>
+	</p>
   <p>
     <%= f.submit 'Update' %>
   </p>
+	<p class="form_note">Note: Style &amp; Image are currently only in limited use (ie the front page).</p>
 <% end %>
 
 <%= link_to 'Show', @blurb %> |

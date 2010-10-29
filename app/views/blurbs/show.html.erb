@@ -8,6 +8,11 @@
   <%=h @blurb.content %>
 </p>
 
+<p>
+  <b>Image:</b>
+  <%= image_tag @blurb.image.url(:medium) if @blurb.image? %>
+</p>
+
 
 <%= link_to 'Edit', edit_blurb_path(@blurb) %> |
 <%= link_to 'Back', blurbs_path %>

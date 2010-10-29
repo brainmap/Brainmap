@@ -1,6 +1,7 @@
 <% @page_title = title("Welcome") %>
 
-<div id="home-banner" class="banner-row clearfix">
+<% @blurb_home_banner = Blurb.find_by_permalink('home-page-subtitle') %>
+<div id="home-banner" class="banner-row clearfix" <%= "style='background-image: url(#{@blurb_home_banner.image.url(:medium)}); #{@blurb_home_banner.style} '" if @blurb_home_banner && @blurb_home_banner.image? %> >
 	<div class="detail">
 		<%= render :partial => 'blurb', :locals => { :permalink => 'home-page-subtitle' } %>
 	</div>

@@ -12,7 +12,7 @@ body { padding:0; margin:0; }
 body, p, ol, ul, td {
   font-size:   14px;
   line-height: 18px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Bembo', 'Palatino Linotype', 'Book Antiqua', serif;
 }
 
 div.overflow-container { overflow:visible; width:100%; clear:both; }
@@ -96,7 +96,8 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
 
 #home-banner {border-bottom:solid 10px #ffcc00; border-top:solid thin #98c5da;
 	background: url(../images/pcc-activation.png) no-repeat black;
-	padding: 10px 0 20px; color: white; }
+	padding: 10px 0 20px; color: white; 
+	text-shadow: black 1px 1px 1px;}
 #home-banner div.mid-heading {margin-left:250px; width:300px; padding: 0; line-height: 2em; font-size: 20px; display:none; }
 #home-banner div.detail {margin: 15px 20px; padding: 0; width: 500px; line-height: 1.5em;}
 #home-banner div.detail p {font-size: 16px; line-height: 1.5em;}
@@ -189,6 +190,8 @@ table.textile-example caption {
 	font-size: x-large;
 	font-variant: small-caps;
 }
+
+.form_note { font-size: 11px; color: #999; }
 
 /* Rails CLasses */ 
 .fieldWithErrors {

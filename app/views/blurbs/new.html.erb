@@ -1,6 +1,6 @@
 <h1>New blurb</h1>
 
-<% form_for(@blurb) do |f| %>
+<% form_for @blurb, :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -11,6 +11,10 @@
     <%= f.label :content %><br />
     <%= f.text_area :content %>
   </p>
+	<p>
+		<%= f.label :image %><br />
+		<%= f.file_field :image %>
+	</p>
   <p>
     <%= f.submit 'Create' %>
   </p>
