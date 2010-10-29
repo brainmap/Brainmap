@@ -63,7 +63,16 @@ text-align:center; font-variant:small-caps; font-size: 17px;
 #page-content { clear: both; margin: 0; padding: 0;}
 
 .banner-row { border-bottom:solid 7px #ffcc00; border-top:solid 2px #98c5da;
-	background: url(../images/monkey_brain_banner.png) no-repeat top left #e3f8fb;
+	background-color: #F0F5F8;
+	background: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.85, rgba(154,199,219,0.1)),
+	    color-stop(0.95, rgba(154,199,219,0.5))
+	);
+	background: -moz-linear-gradient(top, rgba(154,199,219,0.5), rgba(154,199,219,0.1) 15%);
+/*		;*/
 	min-height:200px;
 	clear: both;
 	margin-bottom:1em;
@@ -105,7 +114,10 @@ hr.gray { color:#ccc; background-color:#ccc; height:1px; border:none; clear: bot
 #home-banner h4 {margin: 0;}
 #home-banner a { color: #fc0; }
 
-#research-objectives-banner { background: url(../images/pib-banner.png); padding: 10px 0 20px; color: black;}
+#research-objectives-banner { 
+	padding: 10px 0 20px; color: black;
+	background: url("/images/pcc.png") 25px 25px no-repeat, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, rgba(154,199,219,0.1)), color-stop(0.95, rgba(154,199,219,0.5)) );
+	background: url("/images/pcc.png") 25px 25px no-repeat, -moz-linear-gradient(top, rgba(154,199,219,0.5), rgba(154,199,219,0.1) 15%);  }
 #research-objectives-banner a { color: #fc0; }
 #research-objectives-banner div.mid-heading { margin-left: 240px; padding: 0; width: 210px; font-size: 14px; }
 #research-objectives-banner div.detail { width: 460px ; padding: 0; margin-top: 0; margin-right: 10px;}

@@ -60,6 +60,9 @@ class BlurbsController < ApplicationController
   # PUT /blurbs/1.xml
   def update
     @blurb = Blurb.find(params[:id])
+    if params[:remove_image]
+      @blurb.image = nil
+    end
 
     respond_to do |format|
       if @blurb.update_attributes(params[:blurb])

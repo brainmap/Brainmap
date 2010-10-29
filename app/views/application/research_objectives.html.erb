@@ -6,8 +6,8 @@
 	<li><%= link_to 'People', people_path %></li>
 </ul>
 
-<div id="research-objectives-banner" class="banner-row">
-	<div class="mid-heading">
+<div id="research-objectives-banner" class="banner-row" <%= blurb_backgroundwithgradient_style( Blurb.find_by_permalink('research-objectives-mid-heading')) %> >
+	<div class="mid-heading" >
 		<%= render :partial => 'blurb', :locals => { :permalink => 'research-objectives-mid-heading' } %>
 	</div>
 	<div class="detail">
