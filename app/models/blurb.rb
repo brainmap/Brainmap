@@ -3,6 +3,7 @@ class Blurb < ActiveRecord::Base
   
   has_attached_file :image, :styles => {
     :thumb=> "100x100#",
+    :cell => "160x106#",
     :small  => "150x150>",
     :medium => "300x300>",
     :large =>   "700x700>" 
