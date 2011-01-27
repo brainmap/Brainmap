@@ -5,7 +5,7 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title><%= @page_title ||= "Wisconsin ADRC - Johnson Neuroimage Core Laboratory" %></title>
+  <title><%= @page_title ||= "Wisconsin ADRC - Neuroimaging Group" %></title>
   <%= stylesheet_link_tag 'application' %>
 </head>
 
@@ -24,7 +24,7 @@
 	<%= link_to image_tag('uwcrest_sm.png', :size => '42x60'), 'http://www.wisc.edu' %>
 	<ul id="top-nav">
 	  <li id="brainmap-tab" <%= @active_nav_tab == "brainmap-tab" ? 'class="selected-nav-tab"' : "" %>>
-			<%= link_to 'WADRC Imaging Core', root_url, :class => 'lower-case' %>
+			<%= link_to 'WADRC Imaging Group', root_url, :class => 'lower-case' %>
 		</li>
 		<li id="about-tab" <%= @active_nav_tab == "about-tab" ? 'class="selected-nav-tab"' : "" %>>
 			<%= link_to 'about us', research_objectives_url %>
