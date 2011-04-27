@@ -4,3 +4,5 @@ tmp/*
 .DS_Store
 ._*
 public/system/images/**/*
+vendor/cache
+public/assets
