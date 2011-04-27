@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 default_run_options[:pty] = true
 ssh_options[:paranoid] = false
 

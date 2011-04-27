@@ -2,8 +2,10 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
+  include ExceptionNotification::Notifiable
+  # Uncomment to test Exception Notification in dev mode
+  # alias :rescue_action_locally :rescue_action_in_public
   
   before_filter :login_required, :except => [ :show, :index, :research_objectives ]
   

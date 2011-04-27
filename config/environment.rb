@@ -7,6 +7,13 @@ RAILS_GEM_VERSION = '>=2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  ExceptionNotification::Notifier.exception_recipients = %w(noreply_johnson_lab@medicine.wisc.edu erik.kastman@gmail.com)
+  # defaults to exception.notifier@default.com
+  ExceptionNotification::Notifier.sender_address =
+      %("Application Error" <noreply_johnson_lab@medicine.wisc.edu>)
+  # defaults to "[ERROR] "
+  ExceptionNotification::Notifier.email_prefix = "[BRAINMAP] "
+  
   # config.gem "RedCloth"
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
