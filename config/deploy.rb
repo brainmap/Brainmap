@@ -30,8 +30,9 @@ namespace :deploy do
     
     run "ln -nfs #{shared_path}/assets #{release_path}/public/assets"
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/initializers/akismet.rb #{release_path}/config/initializers/akismet.rb"
     run "ln -nfs #{release_path}/db/production.sqlite3 #{shared_path}/db/production.sqlite3"
-    run "ln -nfs #{release_path}/config/initializers/akismet.rb #{shared_path}/config/initializers/akismet.rb"
+
     #run "ln -nfs #{shared_path}/images #{release_path}/public/images"
   end
   
