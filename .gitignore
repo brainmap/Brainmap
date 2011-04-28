@@ -6,3 +6,4 @@ tmp/*
 public/system/images/**/*
 vendor/cache
 public/assets
+config/initializers/akismet.rb
