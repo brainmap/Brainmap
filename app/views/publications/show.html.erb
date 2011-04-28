@@ -43,7 +43,7 @@
 		<% end %>
 	</p>
 	<p>
-		<%= link_to(image_tag('pdficon_small.gif') + "PDF", @publication.pubfile.url) if @publication.pubfile.exists? %>
+		<%= link_to("PDF", @publication.pubfile.url, :class => "pdflink") if @publication.pubfile.exists? %>
 	</p>
 	<h3>Contributing Lab Members</h3>
 	<ul id="contributor-list">

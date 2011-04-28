@@ -42,6 +42,14 @@
 #pub-show-info h3.title { font-size:x-large; line-height:1.2em;}
 #pub-show-info p.authors { color:gray; }
 
+.pdflink {
+	background-image: url(/images/pdficon_small.gif);
+	background-position: bottom left;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+)
+
 
 /*
 rgb(81, 112, 246)
