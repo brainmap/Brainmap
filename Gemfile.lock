@@ -46,6 +46,9 @@ GEM
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
     nokogiri (1.4.4)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     rack (1.1.0)
     rack-test (0.5.7)
       rack (>= 1.0)
@@ -87,6 +90,7 @@ DEPENDENCIES
   cucumber (>= 0.3.91)
   exception_notification!
   factory_girl
+  paperclip (~> 2.3.8)
   rails (= 2.3.9)
   rspec (>= 1.2.6)
   rspec-rails (>= 1.2.6)

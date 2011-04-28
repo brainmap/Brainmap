@@ -7,6 +7,7 @@ gem "sqlite3-ruby", :require => "sqlite3"
 # This branch provides a hack to fix actual sending of emails. May be pulled into the official one later.
 gem "exception_notification", :git => "https://github.com/vovik/exception_notification.git", :branch => '2-3-stable', :require => "exception_notification"
 gem 'capistrano', '~>2.5.19'
+gem 'paperclip', '~>2.3.8'
 
 [:test, :cucumber].each do |group_name|
   group group_name do
