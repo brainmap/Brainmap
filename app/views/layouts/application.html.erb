@@ -53,16 +53,16 @@
 
 <div id="footer">
 	<hr class="yellow-hr" />
-	<p id="copyright">&copy; Copyright - Brainmap</p>
+	<p id="copyright">&copy; Brainmap | Site design <a href='http://www.38one.com'>38one</p>
 	<p id="attribution">
+		<a href='http://www.supportuw.org/giving?seq=13086'>Donate to our program!</a> | 
 		<% if logged_in? %>
 			Logged in as <%= current_user.login %> |
 			<%= link_to 'Manage', users_path %> |
 			<%= link_to 'Logout', logout_path %> |
 		<% else %>
-			<%= link_to 'Login', login_path %> |
+			<%= link_to 'Login', login_path %>
 		<% end %>
-		Site design <%= link_to '38one', 'http://www.38one.com' %>
 	</p>
 </div>
 
