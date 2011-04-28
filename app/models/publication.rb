@@ -8,6 +8,10 @@ class Publication < ActiveRecord::Base
   has_many :people, :through => :authorships
   
   validates_presence_of :title, :authors_info
+  
+  has_attached_file :pubfile
+  validates_attachment_size :pubfile, :less_than => 50.megabytes
+  validates_attachment_content_type :pubfile, :content_type => ['application/pdf']
     
   def pubmed_link
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"

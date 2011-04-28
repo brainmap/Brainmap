@@ -1,4 +1,4 @@
-<% form_for(@publication) do |f| %>
+<% form_for(@publication, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
   <div style="float:left;">
     <p>
@@ -37,6 +37,10 @@
       	<%= f.label :pmid %><br />
       	<%= f.text_field :pmid %>
     </p>
+		<p>
+			<%= f.label :pubfile, "Upload a PDF" %><br />
+			<%= f.file_field :pubfile %>
+		</p>
   </div>
   <div style="float:left; margin-left:200px;">
     <h3>Contributors:</h3>
