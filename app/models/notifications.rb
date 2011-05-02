@@ -1,10 +1,8 @@
 class Notifications < ActionMailer::Base
   
   def inquiry(email_params, sent_at = Time.now)
-      # recipients_list = "erik <erik.kastman@gmail.com>"
-      recipients_list = "FMRI <fmri@medicine.wisc.edu>"
       subject "[brainmap.wisc.edu] " << email_params[:subject]
-      recipients = recipients_list
+      recipients "FMRI <fmri@medicine.wisc.edu>"
       from "#{email_params[:name]} <#{email_params[:address]}>"
       reply_to "#{email_params[:name]} <#{email_params[:address]}>"
       sent_on sent_at
