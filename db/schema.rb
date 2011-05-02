@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428165354) do
+ActiveRecord::Schema.define(:version => 20110429162738) do
 
   create_table "addresses", :force => true do |t|
     t.string   "line1"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20110428165354) do
     t.string   "pubfile_content_type"
     t.integer  "pubfile_file_size"
     t.datetime "pubfile_updated_at"
+    t.string   "doi"
   end
 
   create_table "study_descriptions", :force => true do |t|

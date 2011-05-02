@@ -17,6 +17,10 @@ class Publication < ActiveRecord::Base
     "http://www.ncbi.nlm.nih.gov/pubmed/#{pmid}"
   end
   
+  def doi_link
+    "http://dx.doi.org/#{doi}"
+  end
+  
   def year
     publication_date.blank? ? DateTime.current.beginning_of_year : publication_date.beginning_of_year 
   end

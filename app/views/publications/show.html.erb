@@ -43,6 +43,14 @@
 		<% end %>
 	</p>
 	<p>
+	<p class="pubmed-link">DOI:
+		<% if @publication.doi.blank? %>
+			Not Available
+		<% else %>
+			<%= link_to(@publication.doi, @publication.doi_link) %>
+		<% end %>
+	</p>
+	
 		<%= link_to("PDF", @publication.pubfile.url, :class => "pdflink") if @publication.pubfile.exists? %>
 	</p>
 	<h3>Contributing Lab Members</h3>
