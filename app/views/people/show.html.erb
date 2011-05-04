@@ -35,10 +35,10 @@
 			<p><%= link_to 'Edit profile', edit_person_path(@person) %></p>
 		<% end %>
 	
-		<div id="person-contactcard">
-			<%= image_tag @person.photo.url(:small) %>
-			<h2><%=h @person.full_name %></h2>
-			<h3><%=h @person.job_title %></h3>
+		<div id="person-contactcard" class="vcard">
+			<%= image_tag @person.photo.url(:small), :class => "photo" %>
+			<h2 class="fn"><%=h @person.full_name %></h2>
+			<h3 class="title"><%=h @person.job_title %></h3>
 
 			<% unless @person.group == "Collaborators" %>
 				<p class="left">
@@ -46,16 +46,22 @@
 				</p>
 
 				<p class="right">
-				  <b>Office:</b>
-				  <%=h @person.office_phone_formatted unless @person.office_phone.blank? %><br/>
-				  <b>Lab:</b>
-				  <%=h @person.lab_phone_formatted unless @person.lab_phone.blank? %><br/>
-				  <b>Fax:</b>
-				  <%=h @person.fax_formatted unless @person.fax.blank? %><br/>
+				  <span class="tel">
+						<b class="type">Office:</b>
+				  	<span class="value"><%=h @person.office_phone_formatted unless @person.office_phone.blank? %></span><br/>
+					</span>
+					<span class="tel">
+					  <b class="type">Lab:</b>
+					  <span class="value"><%=h @person.lab_phone_formatted unless @person.lab_phone.blank? %></span><br/>						
+					</span>
+					<span class="tel">
+					  <b type="type">Fax:</b>
+					  <span class="value"><%=h @person.fax_formatted unless @person.fax.blank? %></span><br/>
+					</span>
 				  <b>Email:</b>
-				  <%=h @person.email unless @person.email.blank? %><br/>
+				  <span class="email"><%=h @person.email unless @person.email.blank? %></span><br/>
 					<b>Web:</b>
-					<%= content_tag(:a, '[visit personal web site]', :href => @person.web_address) unless @person.web_address.blank? %>
+					<%= content_tag(:a, '[visit personal web site]', :href => @person.web_address, :class => "url") unless @person.web_address.blank? %>
 				</p>
 			<% end %>
 		</div>
