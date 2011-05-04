@@ -55,7 +55,7 @@
 					  <span class="value"><%=h @person.lab_phone_formatted unless @person.lab_phone.blank? %></span><br/>						
 					</span>
 					<span class="tel">
-					  <b type="type">Fax:</b>
+					  <b class="type">Fax:</b>
 					  <span class="value"><%=h @person.fax_formatted unless @person.fax.blank? %></span><br/>
 					</span>
 				  <b>Email:</b>
@@ -70,7 +70,7 @@
 		<div id="person-details">
 			<% unless @person.long_bio.empty? %>
 				<h3>Biography:</h3>
-			  <p><%= RedCloth.new(@person.long_bio).to_html %></p>
+			  <%= RedCloth.new(@person.long_bio).to_html %>
 			<% end %>
 		</div>
 
