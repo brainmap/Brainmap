@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag 'people' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'people' %>
+<% end %>
+
 
 <ul id="subpages" class="clearfix">
 	<li><%= link_to 'Research Objectives', research_objectives_path %></li>
@@ -22,9 +25,9 @@
 	<h2>Meet the Imaging Team</h2>
 	<ul>
 		<li><%= link_to 'Scientists', people_path(:anchor => 'Scientists') %></li>
-		<li><%= link_to 'Research Staff', people_path(:anchor => 'Research Staff') %></li>
-		<li><%= link_to 'Graduate Students', people_path(:anchor => 'Graduate Students') %></li>
-		<li><%= link_to 'Research Assistants', people_path(:anchor => 'Research Assistants') %></li>
+		<li><%= link_to 'Research Staff', people_path(:anchor => 'Research_Staff') %></li>
+		<li><%= link_to 'Graduate Students', people_path(:anchor => 'Graduate_Students') %></li>
+		<li><%= link_to 'Research Assistants', people_path(:anchor => 'Research_Assistants') %></li>
 		<li><%= link_to 'Alumni', people_path(:anchor => 'Alumni') %></li>
 		<li><%= link_to 'Collaborators', collaborators_path %></li>
 	</ul>

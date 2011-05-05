@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'job_advertisements' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'job_advertisements' %>
+<% end %>
 <% @page_title = title("Create new opportunity") %>
 
 <h1>New Opportunity</h1>

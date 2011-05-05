@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag 'publications' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'publications' %>
+<% end %>
+
 <% @page_title = title("Edit publication - " + @publication.title) %>
 
 <h1>Editing publication</h1>

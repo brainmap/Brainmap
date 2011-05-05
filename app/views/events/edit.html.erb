@@ -1,4 +1,8 @@
-<%= stylesheet_link_tag 'events' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'events' %>
+<% end %>
+
+
 <% @page_title = title("Edit event - " + @event.title) %>
 
 <h1>Editing event</h1>

@@ -1,8 +1,11 @@
-<%= stylesheet_link_tag 'events' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'events' %>
+<% end %>
+
 <% @page_title = title("Recent News and Events") %>
 
 <div id="events-banner" class="banner-row">
-	<h2>Recent Events & Announcements</h2>
+	<h2>Recent Events &amp; Announcements</h2>
 </div>
 
 <div>
@@ -15,13 +18,13 @@
 				</div>
 				<div class="event-content">
 					<%= image_tag(event.image.url(:small)) if event.image.exists? %>
-					<p>
-						<%= RedCloth.new(event.body).to_html %>
-						<% if logged_in? %>
-							<%= link_to 'edit', edit_event_path(event) %>
-			    		<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
-						<% end %>
-					</p>
+					<%= RedCloth.new(event.body).to_html %>
+					<% if logged_in? %>
+						<p>
+						<%= link_to 'edit', edit_event_path(event) %>
+		    		<%= link_to 'delete', event, :confirm => 'Are you sure?', :method => :delete %>
+						</p>
+					<% end %>
 				</div>
 			</li>
 		<% end %>

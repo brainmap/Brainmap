@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'publications' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'publications' %>
+<% end %>
 <% @page_title = title("Publication - " + @publication.title) %>
 
 <div id="pubs-banner" class="banner-row">
@@ -42,7 +44,6 @@
 			<%= link_to(@publication.pmid, @publication.pubmed_link) %>
 		<% end %>
 	</p>
-	<p>
 	<p class="pubmed-link">DOI:
 		<% if @publication.doi.blank? %>
 			Not Available
@@ -50,7 +51,7 @@
 			<%= link_to(@publication.doi, @publication.doi_link) %>
 		<% end %>
 	</p>
-	
+	<p>
 		<%= link_to("PDF", @publication.pubfile.url, :class => "pdflink") if @publication.pubfile.exists? %>
 	</p>
 	<h3>Contributing Lab Members</h3>

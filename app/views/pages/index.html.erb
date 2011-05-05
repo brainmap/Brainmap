@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag 'pages' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'pages' %>
+<% end %>
+
 <% @page_title = title("Resource Pages") %>
 
 <div id="pages-index-banner" class="banner-row">

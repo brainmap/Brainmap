@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag 'publications' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'publications' %>
+<% end %>
+
 <% @page_title = title("Peer Reviewed Publications") %>
 
 <div id="pubs-banner" class="banner-row">

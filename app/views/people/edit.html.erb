@@ -1,4 +1,7 @@
-<%= stylesheet_link_tag 'people' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'people' %>
+<% end %>
+
 <% @page_title = title("Edit profile for " + @person.full_name) %>
 
 <h1>Editing person</h1>

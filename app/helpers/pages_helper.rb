@@ -6,11 +6,14 @@ module PagesHelper
     else
       output = "<li>#{link_to page.title, page}</li>"
     end
-    output += "<ul>"
-    page.children.each do |child|
-      output += children_list(child, current_page)
+    unless page.children.blank?
+      output += "<ul>"
+      page.children.each do |child|
+        output += children_list(child, current_page)
+      end
+      output += "</ul>"
     end
-    output += "</ul>"
+    
     return output
   end
 end

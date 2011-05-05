@@ -19,7 +19,7 @@ div.overflow-container { overflow:visible; width:100%; clear:both; }
 
 /* Header Sans-serif Styles */
 .link-cell ul, .arrow-cell, .publications-list ul, #top-nav, #subpages, #footer, #home-news ul, #people-nav, #person-contactcard, #pubs-show-sidebar, h1, h2, h3, h4 {
-	font-family: arial; sans-serif;
+	font-family: arial, sans-serif;
 }
 
 pre {

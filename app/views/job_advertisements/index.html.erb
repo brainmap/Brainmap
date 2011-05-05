@@ -1,4 +1,6 @@
-<%= stylesheet_link_tag 'job_advertisements' %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'job_advertisements' %>
+<% end %>
 
 <div id="job-ads-banner" class="banner-row">
 	<h2>Opportunities Available at the WADRC Imaging Core</h2>
@@ -11,11 +13,9 @@
 	</div>
 	<div id="opportunities-content">
 		<div id="opportunities-listing">
-			<p><b><%=h "PVL: #{@volunteer_ad.pvl}" unless @volunteer_ad.pvl.nil? or @volunteer_ad.pvl.empty? %></b></p>
+			<p><b><%=h "PVL: #{@volunteer_ad.pvl}" unless @volunteer_ad.pvl.blank? %></b></p>
 	    <h3><%=h @volunteer_ad.title %></h3>
-			<p>
-	    	<%= RedCloth.new(@volunteer_ad.body).to_html %>
-			</p>
+    	<%= RedCloth.new(@volunteer_ad.body).to_html %>
 			<% unless @volunteer_ad.responder.nil? %>
 				<p>
 					Interested applicants please contact:<br />
