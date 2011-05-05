@@ -1,0 +1,3 @@
+Akismet.key = 'yourkeyhere092aer'
+Akismet.blog = 'brainmap.wisc.edu'
+Akismet.logger = Rails.logger
