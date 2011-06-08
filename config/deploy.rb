@@ -4,7 +4,7 @@ default_run_options[:pty] = true
 ssh_options[:paranoid] = false
 
 set :application, "Brainmap"
-set :host_server, "pepe.medicine.wisc.edu"
+set :host_server, "mojo.medicine.wisc.edu"
 role :app, host_server
 role :web, host_server
 role :db,  host_server, :primary => true
