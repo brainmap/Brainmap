@@ -45,6 +45,9 @@
 		<li id="contact-tab" <%= @active_nav_tab == "contact-tab" ? 'class="selected-nav-tab"' : "" %>>
 			<%= link_to 'contact', contact_path %>
 		</li>
+		<li id="donate-tab" <%= @active_nav_tab == "donate-tab" ? 'class="selected-nav-tab"' : "" %>>
+			<%= link_to 'donate', 'http://www.supportuw.org/giving?seq=13086' %>
+		</li>
 	</ul>
 </div>
 
@@ -54,9 +57,8 @@
 
 <div id="footer">
 	<hr class="yellow-hr" />
-	<p id="copyright">&copy; Brainmap | Site design <a href='http://www.38one.com'>38one</a></p>
+	<p id="copyright">&copy; WADRC Imaging | Site design <a href='http://www.38one.com'>38one</a></p>
 	<p id="attribution">
-		<a href='http://www.supportuw.org/giving?seq=13086'>Donate to our program!</a> | 
 		<% if logged_in? %>
 			Logged in as <%= current_user.login %> |
 			<%= link_to 'Manage', users_path %> |

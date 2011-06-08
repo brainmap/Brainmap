@@ -44,7 +44,7 @@ a > img { border:none; }
 	overflow:hidden; width:100%; float:left;
 }
 
-#top-nav li { padding:0.5em 0.5em 0.7em 0.5em; margin:0; float:left; 
+#top-nav li { padding:0.4em 0.4em 0.7em 0.5em; margin:0; float:left; 
 text-align:center; font-variant:small-caps; font-size: 17px; 
 }
 
