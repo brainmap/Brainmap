@@ -6,15 +6,15 @@ class PeopleController < ApplicationController
     @active_nav_tab = 'about-tab'
   end
   
-  # # GET /people/collaborators
-  # # GET /people/collborators.xml
-  # def collaborators
-  #   @collabs = Person.in_group('Collaborators')
-  #   respond_to do |format|
-  #     format.html # collaborators.html.erb
-  #     format.xml  { render :xml => @collabs }
-  #   end
-  # end
+  # GET /people/collaborators
+  # GET /people/collborators.xml
+  def collaborators
+    @collabs = Person.in_group('Collaborators')
+    respond_to do |format|
+      format.html # collaborators.html.erb
+      format.xml  { render :xml => @collabs }
+    end
+  end
   
   # GET /people
   # GET /people.xml

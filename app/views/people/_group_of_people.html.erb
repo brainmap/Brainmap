@@ -1,7 +1,6 @@
 <% brief ||= false %>
 
 <div class="people-section">
-	<h2><%= group %></h2>
 	<% unless group.blank? %>
           <a name="<%= group.first.group.gsub(" ", "_") %>"></a>
 	  <div class="section-header">
