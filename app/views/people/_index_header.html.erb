@@ -25,11 +25,13 @@
 	<h2>Meet the Imaging Team</h2>
 	<ul>
 		<li><%= link_to 'Scientists', people_path(:anchor => 'Scientists') %></li>
+		<li><%= link_to 'Collaborators', people_path(:anchor => 'Collaborators') %></li>		
 		<li><%= link_to 'Research Staff', people_path(:anchor => 'Research_Staff') %></li>
 		<li><%= link_to 'Graduate Students', people_path(:anchor => 'Graduate_Students') %></li>
 		<li><%= link_to 'Research Assistants', people_path(:anchor => 'Research_Assistants') %></li>
 		<li><%= link_to 'Alumni', people_path(:anchor => 'Alumni') %></li>
-		<li><%= link_to 'Collaborators', collaborators_path %></li>
+		<!-- Uncomment this line if you want to list collaborators on a separate page -->
+		<!-- <li><%#= link_to 'Collaborators', collaborators_path %></li> -->
 	</ul>
 </div>
 <hr class='yellow-hr' />

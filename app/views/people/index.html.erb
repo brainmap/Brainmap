@@ -2,7 +2,7 @@
 
 <%= render :partial => 'index_header' %>
 
-<% for group in [ @scientists, @staff, @grads, @studs ] %>
+<% for group in [ @scientists, @collabs, @staff, @grads, @studs ] %>
 	<%= render :partial => 'group_of_people', :locals => { :group => group } %>
 <% end %>
 

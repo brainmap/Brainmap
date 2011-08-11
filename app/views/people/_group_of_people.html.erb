@@ -1,6 +1,7 @@
 <% brief ||= false %>
 
 <div class="people-section">
+	<h2><%= group %></h2>
 	<% unless group.blank? %>
           <a name="<%= group.first.group.gsub(" ", "_") %>"></a>
 	  <div class="section-header">
@@ -17,16 +18,18 @@
 			<% if i % 4 == 0 %><div class="row"><% end %>
 				<li>
 					<% unless brief %>
-						<% if person.group == "Collaborators" %>
-							<%= link_to(image_tag(person.photo.url(:thumb)), person.web_address) %>
-						<% else %>	
+						<%# Uncomment this conditional loop if you want Collaborators to link to their external web address instead of their local profile%>
+						<%# if person.group == "Collaborators" %>
+							<%#= link_to(image_tag(person.photo.url(:thumb)), person.web_address) %>
+						<%# else %>	
 							<%= link_to(image_tag(person.photo.url(:thumb)), person) %>
-						<% end %>
+						<%# end %>
 					<% end %>
 					<h3>
-						<% if person.group == "Collaborators" %>
-							<%= link_to person.full_name, person.web_address %>
-						<% elsif brief %>	
+						<%# Uncomment this conditional loop if you want Collaborators to link to their external web address instead of their local profile%>
+						<%# if person.group == "Collaborators" %>
+							<%#= link_to person.full_name, person.web_address %>
+						<% if brief %>	
 							<%=h person.full_name %>
 						<% else %>
 							<%= link_to person.full_name, person %>

@@ -16,7 +16,7 @@
 
 <div id="people-show-wrapper" class="people-wrapper">
 	<div id="people-nav">
-		<% for group in [ @scientists, @staff, @grads, @studs ] %>
+		<% for group in [ @scientists, @collabs, @staff, @grads, @studs ] %>
 			<h3><%= group.first.group unless group.empty? %></h3>
 			<ul class="sidebar-list">
 				<% group.each do |person| %>
@@ -30,7 +30,7 @@
 				<% end %>
 			</ul>
 		<% end %>
-		<h3><%= link_to 'Collaborators', collaborators_path %></h3>
+		<!-- <h3><%#= link_to 'Collaborators', collaborators_path %></h3> -->
 	</div>
 
 	<div id="person-description">

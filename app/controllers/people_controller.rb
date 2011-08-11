@@ -6,21 +6,22 @@ class PeopleController < ApplicationController
     @active_nav_tab = 'about-tab'
   end
   
-  # GET /people/collaborators
-  # GET /people/collborators.xml
-  def collaborators
-    @collabs = Person.in_group('Collaborators')
-    respond_to do |format|
-      format.html # collaborators.html.erb
-      format.xml  { render :xml => @collabs }
-    end
-  end
+  # # GET /people/collaborators
+  # # GET /people/collborators.xml
+  # def collaborators
+  #   @collabs = Person.in_group('Collaborators')
+  #   respond_to do |format|
+  #     format.html # collaborators.html.erb
+  #     format.xml  { render :xml => @collabs }
+  #   end
+  # end
   
   # GET /people
   # GET /people.xml
   def index
     @people = Person.all
     @scientists = Person.in_group('Scientists')
+    @collabs = Person.in_group('Collaborators')
     @staff = Person.in_group('Research Staff')
     @grads = Person.in_group('Graduate Students')
     @studs = Person.in_group('Research Assistants')
