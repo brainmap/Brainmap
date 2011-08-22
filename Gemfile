@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "http://rubygems.org"
 
-gem "rails", '2.3.9'
+gem "rails", '~>2.3.9'
 gem "RedCloth"
 gem "sqlite3-ruby", :require => "sqlite3"
 # This branch provides a hack to fix actual sending of emails. May be pulled into the official one later.
@@ -12,14 +12,11 @@ gem 'ruby-akismet', :require => 'akismet'
 
 [:test, :cucumber].each do |group_name|
   group group_name do
-    gem "cucumber",    ">=0.3.91", :require => false
-    gem "webrat",      ">=0.4.4" , :require => false
-    gem "rspec",       ">=1.2.6" , :require => false
-    gem "rspec-rails", ">=1.2.6", :require => 'spec/rails'
-    gem "factory_girl", :require    => "factory_girl"
+    gem "cucumber-rails",    "~>0.3.2"
+    gem "webrat",      "~>0.4.4" , :require => false
+    gem "rspec",       "~>1.3.0" , :require => false
+    gem "rspec-rails", "~>1.3.2"
+    gem "database_cleaner", "~>0.5.0"
+    gem "factory_girl", '~>1.2.4'
   end
 end
-
-# group :production do
-#   gem 'exceptional'
-# end

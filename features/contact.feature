@@ -6,5 +6,5 @@ Feature: Contact Us Form
 	
 	Scenario: Go to the Contact Us form
 		Given I am on the homepage
-		When I follow "Contact us"
+		When I follow "Contact"
 		Then I should be on the contact us form
