@@ -9,11 +9,12 @@ class PublicationsController < ApplicationController
   # GET /publications.xml
   def index
     @publications = Publication.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @publications }
-    end
+    
+    # Don't need to explicitly respond, so that the rss builder can be used.
+    # respond_to do |format|
+    #   format.html # index.html.erb
+    #   format.xml  { render :xml => @publications }
+    # end
   end
 
   # GET /publications/1

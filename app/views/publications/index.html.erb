@@ -1,5 +1,6 @@
 <% content_for :head do %>
 	<%= stylesheet_link_tag 'publications' %>
+	<%= auto_discovery_link_tag :rss, :format => :rss %>
 <% end %>
 
 <% @page_title = title("Peer Reviewed Publications") %>
@@ -66,6 +67,7 @@
 		</ul>
 		<br style="clear:both"></br>
 	<% end %>
+	<%= link_to image_tag('feed-icon-28x28.png', :size => '28x28'), formatted_publications_url(:rss) %>
 </div>
 
 <p>
