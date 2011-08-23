@@ -16,3 +16,9 @@ Factory.define :event do |f|
   f.sequence(:title) { |n| "Title#{n}"}
   f.sequence(:body) { |n| "#{n}body"}
 end
+
+Factory.define :person do |f|
+  f.first_name
+  f.last_name
+  f.group
+end

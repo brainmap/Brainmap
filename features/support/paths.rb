@@ -14,6 +14,8 @@ module NavigationHelpers
       contact_path
     when /the news page/
       events_path
+    when /the show page for (.+)/  
+      polymorphic_path(model($1))
       
       
 

@@ -25,7 +25,7 @@
 	  </p>
 		<p>
 			<%= f.label :group %><br />
-			<%= f.select :group, ['Scientists','Research Staff','Graduate Students','Research Assistants','Collaborators','Alumni'], :include_blank => 'choose group' %>
+			<%= f.select :group, Person::VALID_GROUPS, :include_blank => 'choose group' %>
 		</p>
 	</div>
 

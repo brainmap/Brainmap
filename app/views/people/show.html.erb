@@ -17,7 +17,7 @@
 <div id="people-show-wrapper" class="people-wrapper">
 	<div id="people-nav">
 		<% for group in [ @scientists, @collabs, @staff, @grads, @studs ] %>
-			<h3><%= group.first.group unless group.empty? %></h3>
+			<h3><%= group.first.group unless group.blank? %></h3>
 			<ul class="sidebar-list">
 				<% group.each do |person| %>
 					<li>
@@ -40,7 +40,7 @@
 	
 		<div id="person-contactcard" class="vcard">
 			<%= image_tag @person.photo.url(:small), :class => "photo" %>
-			<h2 class="fn"><%=h @person.full_name %></h2>
+			<h2 class="fn"><%=h @person.full_name_with_initial %></h2>
 			<h3 class="title"><%=h @person.job_title %></h3>
 
 			<% unless @person.group == "Collaborators" %>
@@ -71,14 +71,14 @@
 
 	
 		<div id="person-details">
-			<% unless @person.long_bio.empty? %>
+			<% unless @person.long_bio.blank? %>
 				<h3>Biography:</h3>
 			  <%= RedCloth.new(@person.long_bio).to_html %>
 			<% end %>
 		</div>
 
 		<div style="float:left" id="person-pubs">
-			<% unless @person.publications.empty? %>
+			<% unless @person.publications.blank? %>
 			<h3>Publications:</h3>
 			<ul id="pubs-by-this-author" class="link-and-subtext with-icon">
 				<% for pub in @person.publications %>

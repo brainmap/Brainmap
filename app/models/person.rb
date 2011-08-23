@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
   default_scope :order => 'job_title ASC, last_name ASC'
+  VALID_GROUPS = ['Scientists','Research Staff','Graduate Students','Research Assistants','Collaborators','Alumni']
   
   has_one :address
   has_many :authorships
@@ -17,9 +18,9 @@ class Person < ActiveRecord::Base
       :large =>   "400x400>" 
     }
     
-  #validates_attachment_size :photo, :less_than => 2.megabytes
-  #validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
-  #validates_format_of :office_phone, :lab_phone, :with => /^(1\s*[-\/\.]?)?(\((\d{3})\)|(\d{3}))\s*[-\/\.]?\s*(\d{3})\s*[-\/\.]?\s*(\d{4})\s*(([xX]|[eE][xX][tT])\.?\s*(\d+))*$/ 
+  validates_attachment_size :photo, :less_than => 2.megabytes
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/gif', 'image/bmp']
+  # validates_format_of :office_phone, :lab_phone, :with => /^(1\s*[-\/\.]?)?(\((\d{3})\)|(\d{3}))\s*[-\/\.]?\s*(\d{3})\s*[-\/\.]?\s*(\d{4})\s*(([xX]|[eE][xX][tT])\.?\s*(\d+))*$/ 
   # Reg. Expr lifted from: http://regexlib.com/DisplayPatterns.aspx?cattabindex=6&categoryId=7
 
   
@@ -28,6 +29,7 @@ class Person < ActiveRecord::Base
   }
   
   validates_presence_of :first_name, :last_name, :group
+  validates_inclusion_of :group, :in => VALID_GROUPS
   
   def full_name
     "#{first_name} #{last_name}"
@@ -35,6 +37,14 @@ class Person < ActiveRecord::Base
   
   def last_name_first
     "#{last_name}, #{first_name}"
+  end
+  
+  def full_name_with_initial
+    name = []
+    name << first_name
+    name << middle_initial if middle_initial
+    name << last_name
+    name.join(" ")
   end
   
   def office_phone_formatted
@@ -48,11 +58,17 @@ class Person < ActiveRecord::Base
   end
   
   def to_param
-    param = ""
-    param << "#{id}-#{first_name[0..0].capitalize}"
-    param << "#{middle_initial.capitalize}" unless middle_initial.blank?
-    param << "-#{last_name.capitalize}"
-    return param
+    "#{id}-#{lettered_name}"
+  end
+  
+  def lettered_name
+    name = []
+    name << first_name.first
+    name << middle_initial.first unless middle_initial.blank?
+    name << "-"
+    name << last_name
+    # Including special characters will botch to_param (dots after intials, for example)
+    return name.map{|s| CGI::escapeHTML(s) }.join
   end
   
 end
