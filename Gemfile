@@ -3,7 +3,7 @@ source "http://rubygems.org"
 
 gem "rails", '~>2.3.9'
 gem "RedCloth"
-gem "sqlite3-ruby", :require => "sqlite3"
+gem "sqlite3", :require => "sqlite3"
 # This branch provides a hack to fix actual sending of emails. May be pulled into the official one later.
 gem "exception_notification", :git => "https://github.com/vovik/exception_notification.git", :branch => '2-3-stable', :require => "exception_notification"
 gem 'capistrano', '~>2.5.19'
@@ -19,5 +19,6 @@ gem 'ruby-akismet', :require => 'akismet'
     gem "database_cleaner", "~>0.5.0"
     gem "factory_girl", '~>1.2.4'
     gem 'pickle', '~>0.3.4'
+    gem 'gherkin', '~>2.4.5'
   end
 end
