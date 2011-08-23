@@ -68,7 +68,7 @@ class Person < ActiveRecord::Base
     name << "-"
     name << last_name
     # Including special characters will botch to_param (dots after intials, for example)
-    return name.map{|s| CGI::escapeHTML(s) }.join
+    return name.map{|s| CGI::escape(s) }.join
   end
   
 end
