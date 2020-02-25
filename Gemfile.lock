@@ -40,7 +40,7 @@ GEM
     gherkin (2.4.15)
       json (>= 1.4.6)
     highline (1.6.1)
-    json (1.5.3)
+    json (2.3.0)
     mini_portile2 (2.4.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
