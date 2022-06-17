@@ -1,7 +1,7 @@
 # A sample Gemfile
 source "http://rubygems.org"
 
-gem "rails", '~>2.3.9'
+gem "rails", '~>3.2.17'
 gem "RedCloth"
 gem "sqlite3", :require => "sqlite3"
 # This branch provides a hack to fix actual sending of emails. May be pulled into the official one later.
